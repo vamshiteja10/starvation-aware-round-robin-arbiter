@@ -1,0 +1,5 @@
+cycles where aging-on and aging-off grants differ: 0 of 20000
+req0 max_wait: aging on = 3, aging off = 3
+req1 max_wait: aging on = 3, aging off = 3
+req2 max_wait: aging on = 3, aging off = 3
+req3 max_wait: aging on = 3, aging off = 3

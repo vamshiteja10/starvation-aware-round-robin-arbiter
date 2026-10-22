@@ -1,0 +1,540 @@
+===== A. GRANT OUTPUT CONNECTIONS =====
+
+--- starvation_aware_arbiter.synthesis_cts.v: grant output buffers ---
+30-    .X(_095_));
+31: sky130_fd_sc_hd__nor2_1 _111_ (.A(net10),
+32-    .B(_095_),
+33-    .Y(_096_));
+34- sky130_fd_sc_hd__nand2_1 _112_ (.A(\age[3][0] ),
+--
+46-    .C1(_097_),
+47-    .X(_048_));
+48: sky130_fd_sc_hd__inv_2 _116_ (.A(net1),
+49-    .Y(_099_));
+50- sky130_fd_sc_hd__clkbuf_2 _117_ (.A(_099_),
+51-    .X(_100_));
+52: sky130_fd_sc_hd__inv_2 _118_ (.A(net9),
+53-    .Y(_101_));
+54: sky130_fd_sc_hd__inv_2 _119_ (.A(net6),
+55-    .Y(_102_));
+56- sky130_fd_sc_hd__o211a_1 _120_ (.A1(_100_),
+57-    .A2(_101_),
+--
+70-    .C1(\age[2][2] ),
+71-    .X(_104_));
+72: sky130_fd_sc_hd__nor2_1 _124_ (.A(net9),
+73-    .B(_104_),
+74-    .Y(_105_));
+75- sky130_fd_sc_hd__nand2_1 _125_ (.A(\age[2][0] ),
+--
+87-    .C1(_106_),
+88-    .X(_044_));
+89: sky130_fd_sc_hd__inv_2 _129_ (.A(net8),
+90-    .Y(_053_));
+91: sky130_fd_sc_hd__clkbuf_2 _130_ (.A(net3),
+92-    .X(_054_));
+93- sky130_fd_sc_hd__o211a_1 _131_ (.A1(_099_),
+94-    .A2(_053_),
+--
+107-    .C1(\age[1][2] ),
+108-    .X(_056_));
+109: sky130_fd_sc_hd__nor2_1 _135_ (.A(net8),
+110-    .B(_056_),
+111-    .Y(_057_));
+112- sky130_fd_sc_hd__nand2_1 _136_ (.A(\age[1][0] ),
+--
+124-    .C1(_058_),
+125-    .X(_040_));
+126: sky130_fd_sc_hd__inv_2 _140_ (.A(net7),
+127-    .Y(_060_));
+128: sky130_fd_sc_hd__buf_1 _141_ (.A(net2),
+129-    .X(_061_));
+130- sky130_fd_sc_hd__o211a_1 _142_ (.A1(_099_),
+131-    .A2(_060_),
+--
+144-    .C1(\age[0][2] ),
+145-    .X(_063_));
+146: sky130_fd_sc_hd__nor2_1 _146_ (.A(net7),
+147-    .B(_063_),
+148-    .Y(_064_));
+149- sky130_fd_sc_hd__nand2_1 _147_ (.A(\age[0][0] ),
+--
+214-    .B(_028_),
+215-    .Y(_029_));
+216: sky130_fd_sc_hd__nand2_1 _167_ (.A(net2),
+217-    .B(_063_),
+218-    .Y(_030_));
+219: sky130_fd_sc_hd__nand2_1 _168_ (.A(net4),
+220-    .B(_104_),
+221-    .Y(_077_));
+222- sky130_fd_sc_hd__inv_2 _169_ (.A(_077_),
+223-    .Y(_078_));
+224: sky130_fd_sc_hd__nand2_1 _170_ (.A(net3),
+225-    .B(_056_),
+226-    .Y(_079_));
+227- sky130_fd_sc_hd__inv_2 _171_ (.A(_079_),
+--
+238-    .B2(_081_),
+239-    .X(_082_));
+240: sky130_fd_sc_hd__nand2_1 _174_ (.A(net5),
+241-    .B(_095_),
+242-    .Y(_083_));
+243- sky130_fd_sc_hd__or3b_2 _175_ (.A(_030_),
+--
+299-    .B(net5),
+300-    .X(_089_));
+301: sky130_fd_sc_hd__inv_2 _191_ (.A(net4),
+302-    .Y(_090_));
+303- sky130_fd_sc_hd__o21ai_1 _192_ (.A1(\rr_ptr[0] ),
+304-    .A2(_090_),
+--
+554- sky130_fd_sc_hd__buf_2 input6 (.A(rst),
+555-    .X(net6));
+556: sky130_fd_sc_hd__clkbuf_2 output7 (.A(net7),
+557:    .X(grant[0]));
+558: sky130_fd_sc_hd__clkbuf_2 output8 (.A(net8),
+559:    .X(grant[1]));
+560: sky130_fd_sc_hd__clkbuf_2 output9 (.A(net9),
+561:    .X(grant[2]));
+562: sky130_fd_sc_hd__clkbuf_2 output10 (.A(net10),
+563:    .X(grant[3]));
+564- sky130_fd_sc_hd__clkbuf_16 clkbuf_0_clk (.A(clk),
+565-    .X(clknet_0_clk));
+566- sky130_fd_sc_hd__clkbuf_1 clkbuf_1_0_0_clk (.A(clknet_0_clk),
+
+--- starvation_aware_arbiter.synthesis_optimized.v: grant output buffers ---
+30-    .X(_095_));
+31: sky130_fd_sc_hd__nor2_1 _111_ (.A(net10),
+32-    .B(_095_),
+33-    .Y(_096_));
+34- sky130_fd_sc_hd__nand2_1 _112_ (.A(\age[3][0] ),
+--
+46-    .C1(_097_),
+47-    .X(_048_));
+48: sky130_fd_sc_hd__inv_2 _116_ (.A(net1),
+49-    .Y(_099_));
+50- sky130_fd_sc_hd__clkbuf_2 _117_ (.A(_099_),
+51-    .X(_100_));
+52: sky130_fd_sc_hd__inv_2 _118_ (.A(net9),
+53-    .Y(_101_));
+54: sky130_fd_sc_hd__inv_2 _119_ (.A(net6),
+55-    .Y(_102_));
+56- sky130_fd_sc_hd__o211a_1 _120_ (.A1(_100_),
+57-    .A2(_101_),
+--
+70-    .C1(\age[2][2] ),
+71-    .X(_104_));
+72: sky130_fd_sc_hd__nor2_1 _124_ (.A(net9),
+73-    .B(_104_),
+74-    .Y(_105_));
+75- sky130_fd_sc_hd__nand2_1 _125_ (.A(\age[2][0] ),
+--
+87-    .C1(_106_),
+88-    .X(_044_));
+89: sky130_fd_sc_hd__inv_2 _129_ (.A(net8),
+90-    .Y(_053_));
+91: sky130_fd_sc_hd__clkbuf_2 _130_ (.A(net3),
+92-    .X(_054_));
+93- sky130_fd_sc_hd__o211a_1 _131_ (.A1(_099_),
+94-    .A2(_053_),
+--
+107-    .C1(\age[1][2] ),
+108-    .X(_056_));
+109: sky130_fd_sc_hd__nor2_1 _135_ (.A(net8),
+110-    .B(_056_),
+111-    .Y(_057_));
+112- sky130_fd_sc_hd__nand2_1 _136_ (.A(\age[1][0] ),
+--
+124-    .C1(_058_),
+125-    .X(_040_));
+126: sky130_fd_sc_hd__inv_2 _140_ (.A(net7),
+127-    .Y(_060_));
+128: sky130_fd_sc_hd__buf_1 _141_ (.A(net2),
+129-    .X(_061_));
+130- sky130_fd_sc_hd__o211a_1 _142_ (.A1(_099_),
+131-    .A2(_060_),
+--
+144-    .C1(\age[0][2] ),
+145-    .X(_063_));
+146: sky130_fd_sc_hd__nor2_1 _146_ (.A(net7),
+147-    .B(_063_),
+148-    .Y(_064_));
+149- sky130_fd_sc_hd__nand2_1 _147_ (.A(\age[0][0] ),
+--
+214-    .B(_028_),
+215-    .Y(_029_));
+216: sky130_fd_sc_hd__nand2_1 _167_ (.A(net2),
+217-    .B(_063_),
+218-    .Y(_030_));
+219: sky130_fd_sc_hd__nand2_1 _168_ (.A(net4),
+220-    .B(_104_),
+221-    .Y(_077_));
+222- sky130_fd_sc_hd__inv_2 _169_ (.A(_077_),
+223-    .Y(_078_));
+224: sky130_fd_sc_hd__nand2_1 _170_ (.A(net3),
+225-    .B(_056_),
+226-    .Y(_079_));
+227- sky130_fd_sc_hd__inv_2 _171_ (.A(_079_),
+--
+238-    .B2(_081_),
+239-    .X(_082_));
+240: sky130_fd_sc_hd__nand2_1 _174_ (.A(net5),
+241-    .B(_095_),
+242-    .Y(_083_));
+243- sky130_fd_sc_hd__or3b_2 _175_ (.A(_030_),
+--
+299-    .B(net5),
+300-    .X(_089_));
+301: sky130_fd_sc_hd__inv_2 _191_ (.A(net4),
+302-    .Y(_090_));
+303- sky130_fd_sc_hd__o21ai_1 _192_ (.A1(\rr_ptr[0] ),
+304-    .A2(_090_),
+--
+554- sky130_fd_sc_hd__buf_2 input6 (.A(rst),
+555-    .X(net6));
+556: sky130_fd_sc_hd__clkbuf_2 output7 (.A(net7),
+557:    .X(grant[0]));
+558: sky130_fd_sc_hd__clkbuf_2 output8 (.A(net8),
+559:    .X(grant[1]));
+560: sky130_fd_sc_hd__clkbuf_2 output9 (.A(net9),
+561:    .X(grant[2]));
+562: sky130_fd_sc_hd__clkbuf_2 output10 (.A(net10),
+563:    .X(grant[3]));
+564- sky130_fd_sc_hd__clkbuf_16 clkbuf_0_clk (.A(clk),
+565-    .X(clknet_0_clk));
+566- sky130_fd_sc_hd__clkbuf_1 clkbuf_1_0_0_clk (.A(clknet_0_clk),
+
+--- starvation_aware_arbiter.synthesis_preroute.v: grant output buffers ---
+30-    .X(_095_));
+31: sky130_fd_sc_hd__nor2_1 _111_ (.A(net10),
+32-    .B(_095_),
+33-    .Y(_096_));
+34- sky130_fd_sc_hd__nand2_1 _112_ (.A(\age[3][0] ),
+--
+46-    .C1(_097_),
+47-    .X(_048_));
+48: sky130_fd_sc_hd__inv_2 _116_ (.A(net1),
+49-    .Y(_099_));
+50- sky130_fd_sc_hd__clkbuf_2 _117_ (.A(_099_),
+51-    .X(_100_));
+52: sky130_fd_sc_hd__inv_2 _118_ (.A(net9),
+53-    .Y(_101_));
+54: sky130_fd_sc_hd__inv_2 _119_ (.A(net6),
+55-    .Y(_102_));
+56- sky130_fd_sc_hd__o211a_1 _120_ (.A1(_100_),
+57-    .A2(_101_),
+--
+70-    .C1(\age[2][2] ),
+71-    .X(_104_));
+72: sky130_fd_sc_hd__nor2_1 _124_ (.A(net9),
+73-    .B(_104_),
+74-    .Y(_105_));
+75- sky130_fd_sc_hd__nand2_1 _125_ (.A(\age[2][0] ),
+--
+87-    .C1(_106_),
+88-    .X(_044_));
+89: sky130_fd_sc_hd__inv_2 _129_ (.A(net8),
+90-    .Y(_053_));
+91: sky130_fd_sc_hd__clkbuf_2 _130_ (.A(net3),
+92-    .X(_054_));
+93- sky130_fd_sc_hd__o211a_1 _131_ (.A1(_099_),
+94-    .A2(_053_),
+--
+107-    .C1(\age[1][2] ),
+108-    .X(_056_));
+109: sky130_fd_sc_hd__nor2_1 _135_ (.A(net8),
+110-    .B(_056_),
+111-    .Y(_057_));
+112- sky130_fd_sc_hd__nand2_1 _136_ (.A(\age[1][0] ),
+--
+124-    .C1(_058_),
+125-    .X(_040_));
+126: sky130_fd_sc_hd__inv_2 _140_ (.A(net7),
+127-    .Y(_060_));
+128: sky130_fd_sc_hd__buf_1 _141_ (.A(net2),
+129-    .X(_061_));
+130- sky130_fd_sc_hd__o211a_1 _142_ (.A1(_099_),
+131-    .A2(_060_),
+--
+144-    .C1(\age[0][2] ),
+145-    .X(_063_));
+146: sky130_fd_sc_hd__nor2_1 _146_ (.A(net7),
+147-    .B(_063_),
+148-    .Y(_064_));
+149- sky130_fd_sc_hd__nand2_1 _147_ (.A(\age[0][0] ),
+--
+214-    .B(_028_),
+215-    .Y(_029_));
+216: sky130_fd_sc_hd__nand2_1 _167_ (.A(net2),
+217-    .B(_063_),
+218-    .Y(_030_));
+219: sky130_fd_sc_hd__nand2_1 _168_ (.A(net4),
+220-    .B(_104_),
+221-    .Y(_077_));
+222- sky130_fd_sc_hd__inv_2 _169_ (.A(_077_),
+223-    .Y(_078_));
+224: sky130_fd_sc_hd__nand2_1 _170_ (.A(net3),
+225-    .B(_056_),
+226-    .Y(_079_));
+227- sky130_fd_sc_hd__inv_2 _171_ (.A(_079_),
+--
+238-    .B2(_081_),
+239-    .X(_082_));
+240: sky130_fd_sc_hd__nand2_1 _174_ (.A(net5),
+241-    .B(_095_),
+242-    .Y(_083_));
+243- sky130_fd_sc_hd__or3b_2 _175_ (.A(_030_),
+--
+299-    .B(net5),
+300-    .X(_089_));
+301: sky130_fd_sc_hd__inv_2 _191_ (.A(net4),
+302-    .Y(_090_));
+303- sky130_fd_sc_hd__o21ai_1 _192_ (.A1(\rr_ptr[0] ),
+304-    .A2(_090_),
+--
+554- sky130_fd_sc_hd__buf_2 input6 (.A(rst),
+555-    .X(net6));
+556: sky130_fd_sc_hd__clkbuf_2 output7 (.A(net7),
+557:    .X(grant[0]));
+558: sky130_fd_sc_hd__clkbuf_2 output8 (.A(net8),
+559:    .X(grant[1]));
+560: sky130_fd_sc_hd__clkbuf_2 output9 (.A(net9),
+561:    .X(grant[2]));
+562: sky130_fd_sc_hd__clkbuf_2 output10 (.A(net10),
+563:    .X(grant[3]));
+564- sky130_fd_sc_hd__clkbuf_16 clkbuf_0_clk (.A(clk),
+565-    .X(clknet_0_clk));
+566- sky130_fd_sc_hd__clkbuf_1 clkbuf_1_0_0_clk (.A(clknet_0_clk),
+
+--- starvation_aware_arbiter.synthesis.v: grant output buffers ---
+672-    .A1(_029_),
+673-    .S(_008_),
+674:    .X(grant[0])
+675-  );
+676-  sky130_fd_sc_hd__mux2_1 _207_ (
+677-    .A0(_014_),
+678-    .A1(_013_),
+679-    .S(_008_),
+680:    .X(grant[1])
+681-  );
+682-  sky130_fd_sc_hd__mux2_1 _208_ (
+683-    .A0(_019_),
+684-    .A1(_018_),
+685-    .S(_008_),
+686:    .X(grant[2])
+687-  );
+688-  sky130_fd_sc_hd__mux2_1 _209_ (
+689-    .A0(_024_),
+690-    .A1(_023_),
+691-    .S(_008_),
+692:    .X(grant[3])
+693-  );
+694-  sky130_fd_sc_hd__mux2_1 _210_ (
+695-    .A0(_016_),
+
+===== B. WHERE NET7-NET10 ARE DRIVEN =====
+
+--- starvation_aware_arbiter.synthesis_cts.v ---
+357:    .X(net7));
+361:    .X(net8));
+365:    .X(net9));
+369:    .X(net10));
+
+--- starvation_aware_arbiter.synthesis_optimized.v ---
+357:    .X(net7));
+361:    .X(net8));
+365:    .X(net9));
+369:    .X(net10));
+
+--- starvation_aware_arbiter.synthesis_preroute.v ---
+357:    .X(net7));
+361:    .X(net8));
+365:    .X(net9));
+369:    .X(net10));
+
+--- starvation_aware_arbiter.synthesis.v ---
+
+===== C. ABC AND NETLIST GENERATION CONTEXT =====
+828-5.23. Executing ABC pass (technology mapping using ABC).
+829-
+830-5.23.1. Extracting gate netlist of module `\starvation_aware_arbiter' to `<abc-temp-dir>/input.blif'..
+831-Extracted 187 gates and 212 wires to a netlist network with 24 inputs and 30 outputs.
+832-
+833-5.23.1.1. Executing ABC.
+834-Running ABC command: <yosys-exe-dir>/yosys-abc -s -f <abc-temp-dir>/abc.script 2>&1
+835-ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+836-ABC: 
+837-ABC: + read_blif <abc-temp-dir>/input.blif 
+838-ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+839-ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+840-ABC: + strash 
+841-ABC: + dretime 
+842-ABC: + map 
+843-ABC: + write_blif <abc-temp-dir>/output.blif 
+844-
+845-5.23.1.2. Re-integrating ABC results.
+846:ABC RESULTS:               AND cells:       10
+847:ABC RESULTS:            ANDNOT cells:       58
+848:ABC RESULTS:               MUX cells:       12
+849:ABC RESULTS:              NAND cells:        4
+850:ABC RESULTS:               NOR cells:        5
+851:ABC RESULTS:               NOT cells:       10
+852:ABC RESULTS:                OR cells:       40
+853:ABC RESULTS:             ORNOT cells:        7
+854:ABC RESULTS:               XOR cells:       12
+855:ABC RESULTS:        internal signals:      158
+856:ABC RESULTS:           input signals:       24
+857:ABC RESULTS:          output signals:       30
+858-Removing temp directory.
+859-
+860-5.24. Executing OPT pass (performing simple optimizations).
+861-
+862-5.24.1. Executing OPT_EXPR pass (perform const folding).
+863-Optimizing module starvation_aware_arbiter.
+864-
+865-5.24.2. Executing OPT_MERGE pass (detect identical cells).
+866-Finding identical cells in module `\starvation_aware_arbiter'.
+867-Removed a total of 0 cells.
+868-
+869-5.24.3. Executing OPT_DFF pass (perform DFF optimizations).
+870-
+871-5.24.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+872-Finding unused cells or wires in module \starvation_aware_arbiter..
+873-Removed 0 unused cells and 136 unused wires.
+874-<suppressed ~4 debug messages>
+875-
+876-5.24.5. Finished fast OPT passes.
+877-
+878-5.25. Executing HIERARCHY pass (managing design hierarchy).
+879-
+--
+1156-ABC: Setting output load to be 17.650000.
+1157-ABC: + read_constr /openLANE_flow/designs/arbiter_pointer_opt/runs/21-10_07-31/tmp/synthesis/yosys.sdc 
+1158-ABC: + fx 
+1159-ABC: + mfs 
+1160-ABC: + strash 
+1161-ABC: + refactor 
+1162-ABC: + balance 
+1163-ABC: + rewrite 
+1164-ABC: + refactor 
+1165-ABC: + balance 
+1166-ABC: + rewrite 
+1167-ABC: + rewrite -z 
+1168-ABC: + balance 
+1169-ABC: + refactor -z 
+1170-ABC: + rewrite -z 
+1171-ABC: + balance 
+1172-ABC: + retime -D -D 10000 -M 5 
+1173-ABC: + scleanup 
+1174:ABC: Error: The network is combinational.
+1175-ABC: + fraig_store 
+1176-ABC: + balance 
+1177-ABC: + fraig_store 
+1178-ABC: + balance 
+1179-ABC: + rewrite 
+1180-ABC: + refactor 
+1181-ABC: + balance 
+1182-ABC: + rewrite 
+1183-ABC: + rewrite -z 
+1184-ABC: + balance 
+1185-ABC: + refactor -z 
+1186-ABC: + rewrite -z 
+1187-ABC: + balance 
+1188-ABC: + fraig_store 
+1189-ABC: + balance 
+1190-ABC: + rewrite 
+1191-ABC: + refactor 
+1192-ABC: + balance 
+1193-ABC: + rewrite 
+1194-ABC: + rewrite -z 
+1195-ABC: + balance 
+1196-ABC: + refactor -z 
+--
+1215-ABC: + upsize -D 10000 
+1216-ABC: Current delay (1829.13 ps) does not exceed the target delay (10000.00 ps). Upsizing is not performed.
+1217-ABC: + dnsize -D 10000 
+1218-ABC: + stime -p 
+1219-ABC: WireLoad = "none"  Gates =     99 ( 25.3 %)   Cap = 10.7 ff (  4.0 %)   Area =      695.67 ( 74.7 %)   Delay =  1678.29 ps  (  9.1 %)               
+1220-ABC: Path  0 --      16 : 0    3 pi                       A =   0.00  Df =  11.9   -8.0 ps  S =  25.0 ps  Cin =  0.0 ff  Cout =   9.6 ff  Cmax =   0.0 ff  G =    0  
+1221-ABC: Path  1 --     119 : 4    2 sky130_fd_sc_hd__a211o_2 A =  10.01  Df = 337.0 -190.8 ps  S =  64.5 ps  Cin =  2.4 ff  Cout =   9.4 ff  Cmax = 325.0 ff  G =  376  
+1222-ABC: Path  2 --     141 : 2    3 sky130_fd_sc_hd__nand2_2 A =   6.26  Df = 475.8 -224.4 ps  S = 139.1 ps  Cin =  4.4 ff  Cout =  23.8 ff  Cmax = 295.7 ff  G =  532  
+1223-ABC: Path  3 --     150 : 1    3 sky130_fd_sc_hd__inv_2   A =   3.75  Df = 522.6 -200.4 ps  S =  44.4 ps  Cin =  4.5 ff  Cout =   5.6 ff  Cmax = 331.4 ff  G =  117  
+1224-ABC: Path  4 --     154 : 2    3 sky130_fd_sc_hd__or2_2   A =   6.26  Df = 813.5 -388.6 ps  S =  59.7 ps  Cin =  1.5 ff  Cout =   4.6 ff  Cmax = 299.4 ff  G =  295  
+1225-ABC: Path  5 --     156 : 4    1 sky130_fd_sc_hd__or4b_2  A =  10.01  Df =1410.1 -886.7 ps  S =  95.7 ps  Cin =  1.5 ff  Cout =   2.4 ff  Cmax = 265.5 ff  G =  157  
+1226-ABC: Path  6 --     157 : 3    1 sky130_fd_sc_hd__a21o_2  A =   8.76  Df =1678.3 -992.8 ps  S =  98.9 ps  Cin =  2.4 ff  Cout =  17.6 ff  Cmax = 309.5 ff  G =  750  
+1227-ABC: Start-point = pi15 (\age[0] [0]).  End-point = po26 ($abc$1253$new_n115_).
+1228-ABC: + print_stats -m 
+1229-ABC: netlist                       : i/o =   36/   44  lat =    0  nd =    99  edge =    239  area =695.74  delay = 6.00  lev = 6
+1230-ABC: + write_blif /tmp/yosys-abc-p1hdIX/output.blif 
+1231-
+1232-21.1.2. Re-integrating ABC results.
+1233:ABC RESULTS:   sky130_fd_sc_hd__a211o_2 cells:        5
+1234:ABC RESULTS:   sky130_fd_sc_hd__a211oi_2 cells:        1
+1235:ABC RESULTS:   sky130_fd_sc_hd__a21o_2 cells:        1
+1236:ABC RESULTS:   sky130_fd_sc_hd__a221o_2 cells:        1
+1237:ABC RESULTS:   sky130_fd_sc_hd__a31oi_2 cells:        2
+1238:ABC RESULTS:   sky130_fd_sc_hd__and2_2 cells:        8
+1239:ABC RESULTS:   sky130_fd_sc_hd__and4_2 cells:        1
+1240:ABC RESULTS:   sky130_fd_sc_hd__buf_1 cells:        7
+1241:ABC RESULTS:   sky130_fd_sc_hd__inv_2 cells:       18
+1242:ABC RESULTS:   sky130_fd_sc_hd__nand2_2 cells:        8
+1243:ABC RESULTS:   sky130_fd_sc_hd__nor2_2 cells:       13
+1244:ABC RESULTS:   sky130_fd_sc_hd__o211a_2 cells:        7
+1245:ABC RESULTS:   sky130_fd_sc_hd__o21a_2 cells:        4
+1246:ABC RESULTS:   sky130_fd_sc_hd__o21ai_2 cells:        1
+1247:ABC RESULTS:   sky130_fd_sc_hd__o22a_2 cells:        3
+1248:ABC RESULTS:   sky130_fd_sc_hd__o32a_2 cells:        3
+1249:ABC RESULTS:   sky130_fd_sc_hd__or2_2 cells:        8
+1250:ABC RESULTS:   sky130_fd_sc_hd__or3_2 cells:        5
+1251:ABC RESULTS:   sky130_fd_sc_hd__or3b_2 cells:        1
+1252:ABC RESULTS:   sky130_fd_sc_hd__or4_2 cells:        1
+1253:ABC RESULTS:   sky130_fd_sc_hd__or4b_2 cells:        1
+1254:ABC RESULTS:        internal signals:      137
+1255:ABC RESULTS:           input signals:       36
+1256:ABC RESULTS:          output signals:       44
+1257-Removing temp directory.
+1258-
+1259-22. Executing SETUNDEF pass (replace undef values with defined constants).
+1260-
+1261-23. Executing HILOMAP pass (mapping to constant drivers).
+1262-
+1263-24. Executing SPLITNETS pass (splitting up multi-bit signals).
+1264-
+1265-25. Executing OPT_CLEAN pass (remove unused cells and wires).
+1266-Finding unused cells or wires in module \starvation_aware_arbiter..
+1267-Removed 0 unused cells and 280 unused wires.
+1268-<suppressed ~1 debug messages>
+1269-
+1270:26. Executing INSBUF pass (insert buffer cells for connected wires).
+1271-
+1272-27. Executing CHECK pass (checking for obvious problems).
+1273-checking module starvation_aware_arbiter..
+1274:Warning: Wire starvation_aware_arbiter.\grant [3] is used but has no driver.
+1275:Warning: Wire starvation_aware_arbiter.\grant [2] is used but has no driver.
+1276:Warning: Wire starvation_aware_arbiter.\grant [1] is used but has no driver.
+1277:Warning: Wire starvation_aware_arbiter.\grant [0] is used but has no driver.
+1278-found and reported 4 problems.
+1279-
+1280-28. Printing statistics.
+1281-
+1282-=== starvation_aware_arbiter ===
+1283-
+1284-   Number of wires:                130
+1285-   Number of wire bits:            136
+1286-   Number of public wires:          23
+1287-   Number of public wire bits:      29
+1288-   Number of memories:               0
+1289-   Number of memory bits:            0
+1290-   Number of processes:              0
+1291-   Number of cells:                129
+1292-     sky130_fd_sc_hd__a211o_2        5
+1293-     sky130_fd_sc_hd__a211oi_2       1
+1294-     sky130_fd_sc_hd__a21o_2         1
+1295-     sky130_fd_sc_hd__a221o_2        1
+1296-     sky130_fd_sc_hd__a31oi_2        2
+1297-     sky130_fd_sc_hd__and2_2         8
+1298-     sky130_fd_sc_hd__and4_2         1
+1299-     sky130_fd_sc_hd__buf_1          7
+
+===== D. REFERENCE RTL OUTPUT LOGIC =====
+grep: Unmatched ( or \(

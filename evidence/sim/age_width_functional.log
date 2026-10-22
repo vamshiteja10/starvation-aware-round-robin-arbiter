@@ -1,0 +1,9 @@
+
+===== AGE-WIDTH FUNCTIONAL TEST SUMMARY =====
+Design: 4 requesters, AGE_WIDTH=2, threshold=3
+Protocol checks: 292
+Requester 0 grant count during sustained requests: 21
+Requester 1 grant count during sustained requests: 20
+Requester 2 grant count during sustained requests: 20
+Requester 3 grant count during sustained requests: 20
+FUNCTIONAL TEST PASSED

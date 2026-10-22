@@ -1,0 +1,40 @@
+===== ROUTING RESULT FILES =====
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/lvs/starvation_aware_arbiter.lvs.powered.v  61321 bytes
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/floorplan/starvation_aware_arbiter.floorplan.def  23775 bytes
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.spef  92879 bytes
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def  143629 bytes
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/placement/starvation_aware_arbiter.placement.def  43795 bytes
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis.v  14152 bytes
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_optimized.v  15681 bytes
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_preroute.v  29121 bytes
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_cts.v  15681 bytes
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/cts/starvation_aware_arbiter.cts.def  44267 bytes
+
+===== LIBERTY CORNERS =====
+sky130_fd_sc_hd__ff_100C_1v65.lib
+sky130_fd_sc_hd__ff_100C_1v95.lib
+sky130_fd_sc_hd__ff_n40C_1v56.lib
+sky130_fd_sc_hd__ff_n40C_1v65.lib
+sky130_fd_sc_hd__ff_n40C_1v76.lib
+sky130_fd_sc_hd__ff_n40C_1v95_ccsnoise.lib
+sky130_fd_sc_hd__ff_n40C_1v95.lib
+sky130_fd_sc_hd__ss_100C_1v40.lib
+sky130_fd_sc_hd__ss_100C_1v60.lib
+sky130_fd_sc_hd__ss_n40C_1v28.lib
+sky130_fd_sc_hd__ss_n40C_1v35.lib
+sky130_fd_sc_hd__ss_n40C_1v40.lib
+sky130_fd_sc_hd__ss_n40C_1v44.lib
+sky130_fd_sc_hd__ss_n40C_1v60_ccsnoise.lib
+sky130_fd_sc_hd__ss_n40C_1v60.lib
+sky130_fd_sc_hd__ss_n40C_1v76.lib
+sky130_fd_sc_hd__tt_025C_1v80.lib
+sky130_fd_sc_hd__tt_100C_1v80.lib
+
+===== ROUTING TIMING SCRIPT REFERENCES =====
+
+===== AVAILABLE STA EXECUTABLES =====
+/usr/bin/sta
+opensta:latest
+efabless/openlane:current
+efabless/openlane:v0.21
+efabless/openlane:rc2

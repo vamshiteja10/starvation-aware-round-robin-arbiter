@@ -1,0 +1,20 @@
+STARVATION-AWARE ROUND-ROBIN ARBITER
+SKY130 HD PRE-LAYOUT TIMING ANALYSIS
+
+Clock period: 10 ns
+Target clock frequency: 100 MHz
+Timing tool: OpenSTA 2.4.0
+
+Process Corner    Max Path Delay    Worst Max Slack    Min Path Delay    Worst Min Slack
+TT (Typical)      3.23 ns           5.77 ns            0.43 ns           0.46 ns
+SS (Slow)         6.21 ns           2.79 ns            0.82 ns           0.94 ns
+FF (Fast)         2.84 ns           6.16 ns            0.36 ns           0.39 ns
+
+CONCLUSION:
+The mapped arbiter was analyzed using the TT, SS, and FF SKY130 HD
+Liberty timing libraries. All reported maximum-delay and minimum-delay
+checks have positive slack under the specified timing constraints.
+The SS corner exhibits the longest maximum-path delay of 6.21 ns.
+These results are pre-layout estimates using an ideal clock network.
+Post-layout timing analysis with extracted parasitics is required to
+evaluate the final physical implementation.

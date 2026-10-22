@@ -1,0 +1,56 @@
+STARVATION-AWARE ARBITER - PHYSICAL DESIGN SUMMARY
+==================================================
+
+GLOBAL ROUTING
+[Overflow Report] Max Overflow  : 0
+[Overflow Report] Final Overflow: 0
+[Overflow Report] Max Overflow  : 0
+[Overflow Report] Final Overflow: 0
+[Overflow Report] Max Overflow  : 0
+[Overflow Report] Final Overflow: 0
+[Overflow Report] Max Overflow  : 0
+[Overflow Report] Final Overflow: 0
+[Overflow Report] Total Usage   : 334
+[Overflow Report] Total Capacity: 5147
+[Overflow Report] Max Overflow  : 0
+[Overflow Report] Final Overflow: 0
+
+DETAILED ROUTING
+total wire length = 2478 um
+total number of vias = 932
+  number of violations = 0
+total wire length = 2478 um
+total number of vias = 932
+  number of violations = 0
+total wire length = 2478 um
+total number of vias = 932
+  number of violations = 0
+total wire length = 2478 um
+total number of vias = 932
+  number of violations = 0
+total wire length = 2478 um
+total number of vias = 932
+  number of violations = 0
+total wire length = 2478 um
+total number of vias = 932
+complete detail routing
+total wire length = 2478 um
+total number of vias = 932
+
+MAGIC DRC
+No errors found.
+[INFO]: COUNT: 0
+No errors found.
+[INFO]: COUNT: 0
+
+LVS
+Netlists match uniquely.
+Result: Circuits match uniquely.
+Netlists match uniquely.
+Result: Circuits match uniquely.
+
+ROUTED OUTPUT FILES
+-rw-r--r-- 1 root root 411K Oct  9 18:13 results/klayout/starvation_aware_arbiter_run7.gds
+-rw-r--r-- 1 root root 1.8M Oct  9 18:13 results/klayout/starvation_aware_arbiter_run7.xor.gds
+-rw-r--r-- 1 root root 614K Oct  9 18:12 results/magic/starvation_aware_arbiter_run7.gds
+-rw-r--r-- 1 root root 143K Oct  9 18:12 results/routing/starvation_aware_arbiter_run7.def

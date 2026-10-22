@@ -1,0 +1,19 @@
+Design Name: starvation_aware_arbiter_run7
+Run Directory: /openLANE_flow/designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1
+----------------------------------------
+
+Magic DRC Summary:
+Source: /openLANE_flow/designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/magic//80-magic.drc
+Total Magic DRC violations is 0
+----------------------------------------
+
+LVS Summary:
+Source: /openLANE_flow/designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/results/lvs/starvation_aware_arbiter_run7.lvs_parsed.lef.log
+LVS reports no net, device, pin, or property mismatches.
+Total errors = 0
+----------------------------------------
+
+Antenna Summary:
+Source: /openLANE_flow/designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/routing//82-antenna.rpt
+Number of pins violated: 0
+Number of nets violated: 0

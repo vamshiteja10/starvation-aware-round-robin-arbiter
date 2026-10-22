@@ -1,0 +1,14 @@
+read_verilog rtl/starvation_aware_arbiter_cond_opt.v
+rename starvation_aware_arbiter arb_ref
+
+read_verilog rtl/starvation_aware_arbiter_age_width_opt.v
+rename starvation_aware_arbiter arb_cand
+
+proc
+memory
+opt
+equiv_make -inames arb_ref arb_cand equiv
+hierarchy -top equiv
+equiv_simple
+equiv_induct -seq 8
+equiv_status -assert

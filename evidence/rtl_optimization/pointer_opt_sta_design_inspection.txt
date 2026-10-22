@@ -1,0 +1,141 @@
+===== NETLIST MODULE DECLARATIONS =====
+--- designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_cts.v ---
+1:module starvation_aware_arbiter (clk,
+570:endmodule
+--- designs/arbiter_pointer_opt/runs/21-10_07-31/results/lvs/starvation_aware_arbiter.lvs.powered.v ---
+1:module starvation_aware_arbiter (clk,
+2578:endmodule
+
+===== GENERATED SDC =====
+set_driving_cell sky130_fd_sc_hd__inv_8
+set_load 17.65
+
+===== SPEF HEADER =====
+*SPEF "IEEE 1481-1998"
+*DESIGN "starvation_aware_arbiter"
+*DATE "Wed Oct 21 07:33:33 2026"
+*VENDOR "AUC CSCE Department"
+*PROGRAM "SPEF Extractor"
+*VERSION "1.0"
+*DESIGN_FLOW "PIN_CAP NONE"
+*DIVIDER /
+*DELIMITER :
+*BUS_DELIMITER []
+*T_UNIT 1.00000 NS
+*C_UNIT 1.00000 PF
+*R_UNIT 1.00000 OHM
+*L_UNIT 1.00000 HENRY
+
+
+*NAME_MAP
+*0 clk
+*1 grant[0]
+*2 grant[1]
+*3 grant[2]
+*4 grant[3]
+*5 ready
+*6 req[0]
+*7 req[1]
+*8 req[2]
+*9 req[3]
+*10 rst
+*11 _000_
+*12 _001_
+*13 _002_
+*14 _003_
+*15 _004_
+*16 _005_
+*17 _006_
+*18 _007_
+*19 _008_
+*20 _009_
+*21 _010_
+*22 _011_
+*23 _012_
+*24 _013_
+*25 _014_
+*26 _015_
+*27 _016_
+
+===== ROUTED NETLIST / SPEF REFERENCES =====
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:2:DIVIDERCHAR "/" ;
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:3:BUSBITCHARS "[]" ;
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:4:DESIGN starvation_aware_arbiter ;
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:125:- _117_ sky130_fd_sc_hd__clkbuf_2 + PLACED ( 41400 38080 ) S ;
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:138:- _130_ sky130_fd_sc_hd__clkbuf_2 + PLACED ( 25300 40800 ) N ;
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:160:- _152_ sky130_fd_sc_hd__clkbuf_2 + PLACED ( 32660 46240 ) N ;
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:167:- _159_ sky130_fd_sc_hd__clkbuf_4 + PLACED ( 31740 27200 ) S ;
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:169:- _161_ sky130_fd_sc_hd__clkbuf_2 + PLACED ( 30360 48960 ) S ;
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:332:- input1 sky130_fd_sc_hd__clkbuf_2 + PLACED ( 60720 59840 ) S ;
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:333:- input2 sky130_fd_sc_hd__clkbuf_1 + PLACED ( 23000 10880 ) FS ;
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:335:- input4 sky130_fd_sc_hd__clkbuf_2 + PLACED ( 59800 65280 ) S ;
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:336:- input5 sky130_fd_sc_hd__clkbuf_2 + PLACED ( 7360 10880 ) FS ;
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:338:- output7 sky130_fd_sc_hd__clkbuf_2 + PLACED ( 36800 65280 ) S ;
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:339:- output8 sky130_fd_sc_hd__clkbuf_2 + PLACED ( 46460 10880 ) S ;
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:340:- output9 sky130_fd_sc_hd__clkbuf_2 + PLACED ( 7360 32640 ) S ;
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:341:- output10 sky130_fd_sc_hd__clkbuf_2 + PLACED ( 13800 65280 ) S ;
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:342:- clkbuf_0_clk sky130_fd_sc_hd__clkbuf_16 + PLACED ( 46000 38080 ) S ;
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:343:- clkbuf_1_0_0_clk sky130_fd_sc_hd__clkbuf_1 + PLACED ( 45080 24480 ) N ;
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:344:- clkbuf_1_1_0_clk sky130_fd_sc_hd__clkbuf_1 + PLACED ( 46460 51680 ) FN ;
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:665:- clk + NET clk + DIRECTION INPUT + USE SIGNAL 
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:668:- grant[0] + NET grant[0] + DIRECTION OUTPUT + USE SIGNAL 
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:671:- grant[1] + NET grant[1] + DIRECTION OUTPUT + USE SIGNAL 
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:674:- grant[2] + NET grant[2] + DIRECTION OUTPUT + USE SIGNAL 
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:677:- grant[3] + NET grant[3] + DIRECTION OUTPUT + USE SIGNAL 
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:683:- req[0] + NET req[0] + DIRECTION INPUT + USE SIGNAL 
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:686:- req[1] + NET req[1] + DIRECTION INPUT + USE SIGNAL 
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:689:- req[2] + NET req[2] + DIRECTION INPUT + USE SIGNAL 
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:692:- req[3] + NET req[3] + DIRECTION INPUT + USE SIGNAL 
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:948:- clk ( PIN clk ) ( clkbuf_0_clk A ) 
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:956:- grant[0] ( PIN grant[0] ) ( output7 X ) 
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:962:- grant[1] ( PIN grant[1] ) ( output8 X ) 
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:968:- grant[2] ( PIN grant[2] ) ( output9 X ) 
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:976:- grant[3] ( PIN grant[3] ) ( output10 X ) 
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:990:- req[0] ( PIN req[0] ) ( input2 A ) 
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:996:- req[1] ( PIN req[1] ) ( input3 A ) 
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:1004:- req[2] ( PIN req[2] ) ( input4 A ) 
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:1010:- req[3] ( PIN req[3] ) ( input5 A ) 
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:3020:- clknet_0_clk ( clkbuf_1_1_0_clk A ) ( clkbuf_1_0_0_clk A ) ( clkbuf_0_clk X ) 
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:3033:- clknet_1_0_0_clk ( _219_ CLK ) ( _220_ CLK ) ( _221_ CLK ) ( _222_ CLK ) 
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:3034:( _223_ CLK ) ( _224_ CLK ) ( _225_ CLK ) ( _226_ CLK ) ( _227_ CLK ) 
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:3035:( clkbuf_1_0_0_clk X ) 
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:3078:- clknet_1_1_0_clk ( _218_ CLK ) ( _228_ CLK ) ( _229_ CLK ) ( _230_ CLK ) 
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:3079:( _231_ CLK ) ( _232_ CLK ) ( _233_ CLK ) ( _234_ CLK ) ( _235_ CLK ) 
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:3080:( clkbuf_1_1_0_clk X ) 
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def:3128:END DESIGN
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_cts.v:1:module starvation_aware_arbiter (clk,
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_cts.v:8: input clk;
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_cts.v:50: sky130_fd_sc_hd__clkbuf_2 _117_ (.A(_099_),
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_cts.v:91: sky130_fd_sc_hd__clkbuf_2 _130_ (.A(net3),
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_cts.v:165: sky130_fd_sc_hd__clkbuf_2 _152_ (.A(_067_),
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_cts.v:189: sky130_fd_sc_hd__clkbuf_4 _159_ (.A(\rr_ptr[1] ),
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_cts.v:194: sky130_fd_sc_hd__clkbuf_2 _161_ (.A(_070_),
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_cts.v:404:    .CLK(clknet_1_1_0_clk));
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_cts.v:407:    .CLK(clknet_1_0_0_clk));
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_cts.v:410:    .CLK(clknet_1_0_0_clk));
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_cts.v:413:    .CLK(clknet_1_0_0_clk));
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_cts.v:416:    .CLK(clknet_1_0_0_clk));
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_cts.v:419:    .CLK(clknet_1_0_0_clk));
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_cts.v:422:    .CLK(clknet_1_0_0_clk));
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_cts.v:425:    .CLK(clknet_1_0_0_clk));
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_cts.v:428:    .CLK(clknet_1_0_0_clk));
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_cts.v:431:    .CLK(clknet_1_0_0_clk));
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_cts.v:434:    .CLK(clknet_1_1_0_clk));
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_cts.v:437:    .CLK(clknet_1_1_0_clk));
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_cts.v:440:    .CLK(clknet_1_1_0_clk));
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_cts.v:443:    .CLK(clknet_1_1_0_clk));
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_cts.v:446:    .CLK(clknet_1_1_0_clk));
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_cts.v:449:    .CLK(clknet_1_1_0_clk));
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_cts.v:452:    .CLK(clknet_1_1_0_clk));
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_cts.v:455:    .CLK(clknet_1_1_0_clk));
+
+===== LIBRARY OPERATING CONDITIONS =====
+--- sky130_fd_sc_hd__ss_n40C_1v28.lib ---
+32:    default_operating_conditions : "ss_n40C_1v28";
+34:    operating_conditions ("ss_n40C_1v28") {
+--- sky130_fd_sc_hd__ff_n40C_1v95.lib ---
+31:    default_operating_conditions : "ff_n40C_1v95";
+32:    operating_conditions ("ff_n40C_1v95") {
+--- sky130_fd_sc_hd__tt_025C_1v80.lib ---
+31:    default_operating_conditions : "tt_025C_1v80";
+32:    operating_conditions ("tt_025C_1v80") {

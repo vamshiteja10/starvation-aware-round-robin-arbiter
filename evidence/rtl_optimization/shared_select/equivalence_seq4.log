@@ -1,0 +1,821 @@
+
+-- Running command `
+read_verilog rtl/starvation_aware_arbiter_cond_opt.v
+read_verilog rtl/starvation_aware_arbiter_shared_select_opt.v
+
+proc
+memory
+opt
+
+equiv_make starvation_aware_arbiter starvation_aware_arbiter_shared_select_opt equiv
+
+hierarchy -check -top equiv
+prep -top equiv
+equiv_simple -seq 4
+equiv_status
+' --
+
+1. Executing Verilog-2005 frontend: rtl/starvation_aware_arbiter_cond_opt.v
+Parsing Verilog input from `rtl/starvation_aware_arbiter_cond_opt.v' to AST representation.
+Generating RTLIL representation for module `\starvation_aware_arbiter'.
+Warning: Replacing memory \age with list of registers. See rtl/starvation_aware_arbiter_cond_opt.v:88
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: rtl/starvation_aware_arbiter_shared_select_opt.v
+Parsing Verilog input from `rtl/starvation_aware_arbiter_shared_select_opt.v' to AST representation.
+Generating RTLIL representation for module `\starvation_aware_arbiter_shared_select_opt'.
+Warning: Replacing memory \age with list of registers. See rtl/starvation_aware_arbiter_shared_select_opt.v:89
+Successfully finished Verilog frontend.
+
+3. Executing PROC pass (convert processes to netlists).
+
+3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 5 switch rules as full_case in process $proc$rtl/starvation_aware_arbiter_shared_select_opt.v:84$134 in module starvation_aware_arbiter_shared_select_opt.
+Removed 1 dead cases from process $proc$rtl/starvation_aware_arbiter_shared_select_opt.v:73$111 in module starvation_aware_arbiter_shared_select_opt.
+Marked 18 switch rules as full_case in process $proc$rtl/starvation_aware_arbiter_shared_select_opt.v:73$111 in module starvation_aware_arbiter_shared_select_opt.
+Marked 5 switch rules as full_case in process $proc$rtl/starvation_aware_arbiter_cond_opt.v:83$59 in module starvation_aware_arbiter.
+Removed 2 dead cases from process $proc$rtl/starvation_aware_arbiter_cond_opt.v:72$15 in module starvation_aware_arbiter.
+Marked 35 switch rules as full_case in process $proc$rtl/starvation_aware_arbiter_cond_opt.v:72$15 in module starvation_aware_arbiter.
+Removed a total of 3 dead cases.
+
+3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 2 redundant assignments.
+Promoted 27 assignments to connections.
+
+3.4. Executing PROC_INIT pass (extract init attributes).
+
+3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~71 debug messages>
+
+3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:84$134'.
+     1/7: $0\rr_ptr[1:0] [1]
+     2/7: $0\rr_ptr[1:0] [0]
+     3/7: $2\i[31:0]
+     4/7: $0\age[3][3:0]
+     5/7: $0\age[2][3:0]
+     6/7: $0\age[1][3:0]
+     7/7: $0\age[0][3:0]
+Creating decoders for process `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:73$111'.
+     1/18: $17\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$101.$result[3:0]$132
+     2/18: $16\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$101.$result[3:0]$131
+     3/18: $15\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$101.$result[3:0]$130
+     4/18: $14\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$101.$result[3:0]$129
+     5/18: $13\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$101.$result[3:0]$128
+     6/18: $12\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$101.$result[3:0]$127
+     7/18: $11\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$101.$result[3:0]$126
+     8/18: $10\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$101.$result[3:0]$125
+     9/18: $9\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$101.$result[3:0]$124
+    10/18: $8\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$101.$result[3:0]$123
+    11/18: $7\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$101.$result[3:0]$122
+    12/18: $6\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$101.$result[3:0]$121
+    13/18: $5\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$101.$result[3:0]$120
+    14/18: $4\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$101.$result[3:0]$119
+    15/18: $3\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$101.$result[3:0]$118
+    16/18: $2\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$101.$result[3:0]$117
+    17/18: $1\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$101.$result[3:0]$116
+    18/18: $1\selected_req[3:0]
+Creating decoders for process `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:65$102'.
+Creating decoders for process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:83$59'.
+     1/7: $0\rr_ptr[1:0] [1]
+     2/7: $0\rr_ptr[1:0] [0]
+     3/7: $2\i[31:0]
+     4/7: $0\age[3][3:0]
+     5/7: $0\age[2][3:0]
+     6/7: $0\age[1][3:0]
+     7/7: $0\age[0][3:0]
+Creating decoders for process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:72$15'.
+     1/35: $1\grant[3:0]
+     2/35: $17\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$5.$result[3:0]$55
+     3/35: $16\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$5.$result[3:0]$54
+     4/35: $15\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$5.$result[3:0]$53
+     5/35: $14\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$5.$result[3:0]$52
+     6/35: $13\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$5.$result[3:0]$51
+     7/35: $12\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$5.$result[3:0]$50
+     8/35: $11\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$5.$result[3:0]$49
+     9/35: $10\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$5.$result[3:0]$48
+    10/35: $9\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$5.$result[3:0]$47
+    11/35: $8\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$5.$result[3:0]$46
+    12/35: $7\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$5.$result[3:0]$45
+    13/35: $6\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$5.$result[3:0]$44
+    14/35: $5\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$5.$result[3:0]$43
+    15/35: $4\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$5.$result[3:0]$42
+    16/35: $3\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$5.$result[3:0]$41
+    17/35: $2\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$5.$result[3:0]$40
+    18/35: $1\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$5.$result[3:0]$39
+    19/35: $17\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$4.$result[3:0]$38
+    20/35: $16\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$4.$result[3:0]$37
+    21/35: $15\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$4.$result[3:0]$36
+    22/35: $14\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$4.$result[3:0]$35
+    23/35: $13\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$4.$result[3:0]$34
+    24/35: $12\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$4.$result[3:0]$33
+    25/35: $11\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$4.$result[3:0]$32
+    26/35: $10\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$4.$result[3:0]$31
+    27/35: $9\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$4.$result[3:0]$30
+    28/35: $8\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$4.$result[3:0]$29
+    29/35: $7\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$4.$result[3:0]$28
+    30/35: $6\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$4.$result[3:0]$27
+    31/35: $5\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$4.$result[3:0]$26
+    32/35: $4\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$4.$result[3:0]$25
+    33/35: $3\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$4.$result[3:0]$24
+    34/35: $2\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$4.$result[3:0]$23
+    35/35: $1\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$4.$result[3:0]$22
+Creating decoders for process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:65$6'.
+
+3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\starvation_aware_arbiter_shared_select_opt.\grant' from process `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:73$111'.
+No latch inferred for signal `\starvation_aware_arbiter_shared_select_opt.\selected_req' from process `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:73$111'.
+No latch inferred for signal `\starvation_aware_arbiter_shared_select_opt.\selected_grant' from process `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:73$111'.
+No latch inferred for signal `\starvation_aware_arbiter_shared_select_opt.\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$101.$result' from process `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:73$111'.
+No latch inferred for signal `\starvation_aware_arbiter_shared_select_opt.\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$101.mask' from process `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:73$111'.
+No latch inferred for signal `\starvation_aware_arbiter_shared_select_opt.\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$101.ptr' from process `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:73$111'.
+No latch inferred for signal `\starvation_aware_arbiter_shared_select_opt.\aged_req' from process `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:65$102'.
+No latch inferred for signal `\starvation_aware_arbiter_shared_select_opt.\i' from process `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:65$102'.
+No latch inferred for signal `\starvation_aware_arbiter.\grant' from process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:72$15'.
+No latch inferred for signal `\starvation_aware_arbiter.\aged_selected' from process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:72$15'.
+No latch inferred for signal `\starvation_aware_arbiter.\rr_selected' from process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:72$15'.
+No latch inferred for signal `\starvation_aware_arbiter.\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$4.$result' from process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:72$15'.
+No latch inferred for signal `\starvation_aware_arbiter.\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$4.mask' from process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:72$15'.
+No latch inferred for signal `\starvation_aware_arbiter.\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$4.ptr' from process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:72$15'.
+No latch inferred for signal `\starvation_aware_arbiter.\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$5.$result' from process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:72$15'.
+No latch inferred for signal `\starvation_aware_arbiter.\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$5.mask' from process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:72$15'.
+No latch inferred for signal `\starvation_aware_arbiter.\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$5.ptr' from process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:72$15'.
+No latch inferred for signal `\starvation_aware_arbiter.\aged_req' from process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:65$6'.
+No latch inferred for signal `\starvation_aware_arbiter.\i' from process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:65$6'.
+
+3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\starvation_aware_arbiter_shared_select_opt.\rr_ptr' using process `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:84$134'.
+  created $dff cell `$procdff$802' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter_shared_select_opt.\i' using process `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:84$134'.
+  created $dff cell `$procdff$803' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter_shared_select_opt.\age[0]' using process `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:84$134'.
+  created $dff cell `$procdff$804' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter_shared_select_opt.\age[1]' using process `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:84$134'.
+  created $dff cell `$procdff$805' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter_shared_select_opt.\age[2]' using process `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:84$134'.
+  created $dff cell `$procdff$806' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter_shared_select_opt.\age[3]' using process `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:84$134'.
+  created $dff cell `$procdff$807' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter.\rr_ptr' using process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:83$59'.
+  created $dff cell `$procdff$808' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter.\i' using process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:83$59'.
+  created $dff cell `$procdff$809' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter.\age[0]' using process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:83$59'.
+  created $dff cell `$procdff$810' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter.\age[1]' using process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:83$59'.
+  created $dff cell `$procdff$811' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter.\age[2]' using process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:83$59'.
+  created $dff cell `$procdff$812' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter.\age[3]' using process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:83$59'.
+  created $dff cell `$procdff$813' with positive edge clock.
+
+3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 9 empty switches in `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:84$134'.
+Removing empty process `starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:84$134'.
+Found and cleaned up 18 empty switches in `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:73$111'.
+Removing empty process `starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:73$111'.
+Removing empty process `starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:65$102'.
+Found and cleaned up 9 empty switches in `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:83$59'.
+Removing empty process `starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:83$59'.
+Found and cleaned up 35 empty switches in `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:72$15'.
+Removing empty process `starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:72$15'.
+Removing empty process `starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:65$6'.
+Cleaned up 71 empty switches.
+
+3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module starvation_aware_arbiter_shared_select_opt.
+<suppressed ~5 debug messages>
+Optimizing module starvation_aware_arbiter.
+<suppressed ~10 debug messages>
+
+4. Executing MEMORY pass.
+
+4.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+4.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+4.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+4.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+4.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+4.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \starvation_aware_arbiter_shared_select_opt..
+Finding unused cells or wires in module \starvation_aware_arbiter..
+Removed 2 unused cells and 255 unused wires.
+<suppressed ~4 debug messages>
+
+4.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+4.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+4.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \starvation_aware_arbiter..
+Finding unused cells or wires in module \starvation_aware_arbiter_shared_select_opt..
+
+4.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+4.11. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+5. Executing OPT pass (performing simple optimizations).
+
+5.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module starvation_aware_arbiter.
+Optimizing module starvation_aware_arbiter_shared_select_opt.
+
+5.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\starvation_aware_arbiter'.
+<suppressed ~114 debug messages>
+Finding identical cells in module `\starvation_aware_arbiter_shared_select_opt'.
+<suppressed ~54 debug messages>
+Removed a total of 56 cells.
+
+5.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \starvation_aware_arbiter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $procmux$444.
+    dead port 1/2 on $mux $procmux$447.
+    dead port 1/2 on $mux $procmux$450.
+    dead port 2/2 on $mux $procmux$452.
+    dead port 1/2 on $mux $procmux$458.
+    dead port 1/2 on $mux $procmux$461.
+    dead port 2/2 on $mux $procmux$463.
+    dead port 1/2 on $mux $procmux$469.
+    dead port 2/2 on $mux $procmux$471.
+    dead port 2/2 on $mux $procmux$476.
+    dead port 1/2 on $mux $procmux$483.
+    dead port 1/2 on $mux $procmux$486.
+    dead port 1/2 on $mux $procmux$489.
+    dead port 2/2 on $mux $procmux$491.
+    dead port 1/2 on $mux $procmux$498.
+    dead port 1/2 on $mux $procmux$501.
+    dead port 2/2 on $mux $procmux$503.
+    dead port 1/2 on $mux $procmux$510.
+    dead port 2/2 on $mux $procmux$512.
+    dead port 2/2 on $mux $procmux$518.
+    dead port 1/2 on $mux $procmux$526.
+    dead port 1/2 on $mux $procmux$529.
+    dead port 1/2 on $mux $procmux$532.
+    dead port 2/2 on $mux $procmux$534.
+    dead port 1/2 on $mux $procmux$542.
+    dead port 1/2 on $mux $procmux$545.
+    dead port 2/2 on $mux $procmux$547.
+    dead port 1/2 on $mux $procmux$555.
+    dead port 2/2 on $mux $procmux$557.
+    dead port 2/2 on $mux $procmux$564.
+    dead port 1/2 on $mux $procmux$573.
+    dead port 1/2 on $mux $procmux$576.
+    dead port 1/2 on $mux $procmux$579.
+    dead port 2/2 on $mux $procmux$581.
+    dead port 1/2 on $mux $procmux$590.
+    dead port 1/2 on $mux $procmux$593.
+    dead port 2/2 on $mux $procmux$595.
+    dead port 1/2 on $mux $procmux$604.
+    dead port 2/2 on $mux $procmux$606.
+    dead port 2/2 on $mux $procmux$614.
+    dead port 1/2 on $mux $procmux$625.
+    dead port 1/2 on $mux $procmux$628.
+    dead port 1/2 on $mux $procmux$631.
+    dead port 2/2 on $mux $procmux$633.
+    dead port 1/2 on $mux $procmux$639.
+    dead port 1/2 on $mux $procmux$642.
+    dead port 2/2 on $mux $procmux$644.
+    dead port 1/2 on $mux $procmux$650.
+    dead port 2/2 on $mux $procmux$652.
+    dead port 2/2 on $mux $procmux$657.
+    dead port 1/2 on $mux $procmux$664.
+    dead port 1/2 on $mux $procmux$667.
+    dead port 1/2 on $mux $procmux$670.
+    dead port 2/2 on $mux $procmux$672.
+    dead port 1/2 on $mux $procmux$679.
+    dead port 1/2 on $mux $procmux$682.
+    dead port 2/2 on $mux $procmux$684.
+    dead port 1/2 on $mux $procmux$691.
+    dead port 2/2 on $mux $procmux$693.
+    dead port 2/2 on $mux $procmux$699.
+    dead port 1/2 on $mux $procmux$707.
+    dead port 1/2 on $mux $procmux$710.
+    dead port 1/2 on $mux $procmux$713.
+    dead port 2/2 on $mux $procmux$715.
+    dead port 1/2 on $mux $procmux$723.
+    dead port 1/2 on $mux $procmux$726.
+    dead port 2/2 on $mux $procmux$728.
+    dead port 1/2 on $mux $procmux$736.
+    dead port 2/2 on $mux $procmux$738.
+    dead port 2/2 on $mux $procmux$745.
+    dead port 1/2 on $mux $procmux$754.
+    dead port 1/2 on $mux $procmux$757.
+    dead port 1/2 on $mux $procmux$760.
+    dead port 2/2 on $mux $procmux$762.
+    dead port 1/2 on $mux $procmux$771.
+    dead port 1/2 on $mux $procmux$774.
+    dead port 2/2 on $mux $procmux$776.
+    dead port 1/2 on $mux $procmux$785.
+    dead port 2/2 on $mux $procmux$787.
+    dead port 2/2 on $mux $procmux$795.
+Running muxtree optimizer on module \starvation_aware_arbiter_shared_select_opt..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $procmux$217.
+    dead port 1/2 on $mux $procmux$220.
+    dead port 1/2 on $mux $procmux$223.
+    dead port 2/2 on $mux $procmux$225.
+    dead port 1/2 on $mux $procmux$231.
+    dead port 1/2 on $mux $procmux$234.
+    dead port 2/2 on $mux $procmux$236.
+    dead port 1/2 on $mux $procmux$242.
+    dead port 2/2 on $mux $procmux$244.
+    dead port 2/2 on $mux $procmux$249.
+    dead port 1/2 on $mux $procmux$256.
+    dead port 1/2 on $mux $procmux$259.
+    dead port 1/2 on $mux $procmux$262.
+    dead port 2/2 on $mux $procmux$264.
+    dead port 1/2 on $mux $procmux$271.
+    dead port 1/2 on $mux $procmux$274.
+    dead port 2/2 on $mux $procmux$276.
+    dead port 1/2 on $mux $procmux$283.
+    dead port 2/2 on $mux $procmux$285.
+    dead port 2/2 on $mux $procmux$291.
+    dead port 1/2 on $mux $procmux$299.
+    dead port 1/2 on $mux $procmux$302.
+    dead port 1/2 on $mux $procmux$305.
+    dead port 2/2 on $mux $procmux$307.
+    dead port 1/2 on $mux $procmux$315.
+    dead port 1/2 on $mux $procmux$318.
+    dead port 2/2 on $mux $procmux$320.
+    dead port 1/2 on $mux $procmux$328.
+    dead port 2/2 on $mux $procmux$330.
+    dead port 2/2 on $mux $procmux$337.
+    dead port 1/2 on $mux $procmux$346.
+    dead port 1/2 on $mux $procmux$349.
+    dead port 1/2 on $mux $procmux$352.
+    dead port 2/2 on $mux $procmux$354.
+    dead port 1/2 on $mux $procmux$363.
+    dead port 1/2 on $mux $procmux$366.
+    dead port 2/2 on $mux $procmux$368.
+    dead port 1/2 on $mux $procmux$377.
+    dead port 2/2 on $mux $procmux$379.
+    dead port 2/2 on $mux $procmux$387.
+Removed 120 multiplexer ports.
+<suppressed ~15 debug messages>
+
+5.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \starvation_aware_arbiter.
+  Optimizing cells in module \starvation_aware_arbiter_shared_select_opt.
+Performed a total of 0 changes.
+
+5.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\starvation_aware_arbiter'.
+Finding identical cells in module `\starvation_aware_arbiter_shared_select_opt'.
+Removed a total of 0 cells.
+
+5.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$813 ($dff) from module starvation_aware_arbiter (D = $procmux$405_Y, Q = \age[3], rval = 4'0000).
+Adding EN signal on $auto$ff.cc:266:slice$814 ($sdff) from module starvation_aware_arbiter (D = $add$rtl/starvation_aware_arbiter_cond_opt.v:95$87_Y, Q = \age[3]).
+Adding SRST signal on $procdff$812 ($dff) from module starvation_aware_arbiter (D = $procmux$413_Y, Q = \age[2], rval = 4'0000).
+Adding EN signal on $auto$ff.cc:266:slice$818 ($sdff) from module starvation_aware_arbiter (D = $add$rtl/starvation_aware_arbiter_cond_opt.v:95$80_Y, Q = \age[2]).
+Adding SRST signal on $procdff$811 ($dff) from module starvation_aware_arbiter (D = $procmux$421_Y, Q = \age[1], rval = 4'0000).
+Adding EN signal on $auto$ff.cc:266:slice$822 ($sdff) from module starvation_aware_arbiter (D = $add$rtl/starvation_aware_arbiter_cond_opt.v:95$73_Y, Q = \age[1]).
+Adding SRST signal on $procdff$810 ($dff) from module starvation_aware_arbiter (D = $procmux$429_Y, Q = \age[0], rval = 4'0000).
+Adding EN signal on $auto$ff.cc:266:slice$826 ($sdff) from module starvation_aware_arbiter (D = $add$rtl/starvation_aware_arbiter_cond_opt.v:95$66_Y, Q = \age[0]).
+Adding SRST signal on $procdff$808 ($dff) from module starvation_aware_arbiter (D = { $or$rtl/starvation_aware_arbiter_cond_opt.v:99$92_Y $or$rtl/starvation_aware_arbiter_cond_opt.v:101$97_Y }, Q = \rr_ptr, rval = 2'00).
+Adding SRST signal on $procdff$807 ($dff) from module starvation_aware_arbiter_shared_select_opt (D = $procmux$181_Y, Q = \age[3], rval = 4'0000).
+Adding EN signal on $auto$ff.cc:266:slice$831 ($sdff) from module starvation_aware_arbiter_shared_select_opt (D = $add$rtl/starvation_aware_arbiter_shared_select_opt.v:96$162_Y, Q = \age[3]).
+Adding SRST signal on $procdff$806 ($dff) from module starvation_aware_arbiter_shared_select_opt (D = $procmux$189_Y, Q = \age[2], rval = 4'0000).
+Adding EN signal on $auto$ff.cc:266:slice$835 ($sdff) from module starvation_aware_arbiter_shared_select_opt (D = $add$rtl/starvation_aware_arbiter_shared_select_opt.v:96$155_Y, Q = \age[2]).
+Adding SRST signal on $procdff$805 ($dff) from module starvation_aware_arbiter_shared_select_opt (D = $procmux$197_Y, Q = \age[1], rval = 4'0000).
+Adding EN signal on $auto$ff.cc:266:slice$839 ($sdff) from module starvation_aware_arbiter_shared_select_opt (D = $add$rtl/starvation_aware_arbiter_shared_select_opt.v:96$148_Y, Q = \age[1]).
+Adding SRST signal on $procdff$804 ($dff) from module starvation_aware_arbiter_shared_select_opt (D = $procmux$205_Y, Q = \age[0], rval = 4'0000).
+Adding EN signal on $auto$ff.cc:266:slice$843 ($sdff) from module starvation_aware_arbiter_shared_select_opt (D = $add$rtl/starvation_aware_arbiter_shared_select_opt.v:96$141_Y, Q = \age[0]).
+Adding SRST signal on $procdff$802 ($dff) from module starvation_aware_arbiter_shared_select_opt (D = { $or$rtl/starvation_aware_arbiter_shared_select_opt.v:100$167_Y $or$rtl/starvation_aware_arbiter_shared_select_opt.v:102$172_Y }, Q = \rr_ptr, rval = 2'00).
+
+5.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \starvation_aware_arbiter..
+Finding unused cells or wires in module \starvation_aware_arbiter_shared_select_opt..
+Removed 28 unused cells and 202 unused wires.
+<suppressed ~30 debug messages>
+
+5.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module starvation_aware_arbiter.
+Optimizing module starvation_aware_arbiter_shared_select_opt.
+
+5.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \starvation_aware_arbiter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \starvation_aware_arbiter_shared_select_opt..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+5.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \starvation_aware_arbiter.
+  Optimizing cells in module \starvation_aware_arbiter_shared_select_opt.
+Performed a total of 0 changes.
+
+5.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\starvation_aware_arbiter'.
+Finding identical cells in module `\starvation_aware_arbiter_shared_select_opt'.
+Removed a total of 0 cells.
+
+5.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \starvation_aware_arbiter..
+Finding unused cells or wires in module \starvation_aware_arbiter_shared_select_opt..
+
+5.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module starvation_aware_arbiter.
+Optimizing module starvation_aware_arbiter_shared_select_opt.
+
+5.16. Finished OPT passes. (There is nothing left to do.)
+
+6. Executing EQUIV_MAKE pass (creating equiv checking module).
+Presumably equivalent wires: age[0]_gold (\age[0]_gold), age[0]_gate (\age[0]_gate) -> age[0]
+Presumably equivalent wires: age[1]_gold (\age[1]_gold), age[1]_gate (\age[1]_gate) -> age[1]
+Presumably equivalent wires: age[2]_gold (\age[2]_gold), age[2]_gate (\age[2]_gate) -> age[2]
+Presumably equivalent wires: age[3]_gold (\age[3]_gold), age[3]_gate (\age[3]_gate) -> age[3]
+Presumably equivalent wires: aged_req_gold (\aged_req_gold), aged_req_gate (\aged_req_gate) -> aged_req
+Presumably equivalent wires: clk_gold (\clk_gold), clk_gate (\clk_gate) -> clk
+Presumably equivalent wires: grant_gold (\grant_gold), grant_gate (\grant_gate) -> grant
+Presumably equivalent wires: i_gold (4), i_gate (4) -> i
+Presumably equivalent wires: ready_gold (\ready_gold), ready_gate (\ready_gate) -> ready
+Presumably equivalent wires: req_gold (\req_gold), req_gate (\req_gate) -> req
+Presumably equivalent wires: rr_ptr_gold (\rr_ptr_gold), rr_ptr_gate (\rr_ptr_gate) -> rr_ptr
+Presumably equivalent wires: rst_gold (\rst_gold), rst_gate (\rst_gate) -> rst
+Changing input A of cell $add$rtl/starvation_aware_arbiter_shared_select_opt.v:96$148_gate ($add): \age[1]_gate -> \age[1]
+Changing input A of cell $add$rtl/starvation_aware_arbiter_shared_select_opt.v:96$155_gate ($add): \age[2]_gate -> \age[2]
+Changing input A of cell $add$rtl/starvation_aware_arbiter_shared_select_opt.v:96$162_gate ($add): \age[3]_gate -> \age[3]
+Changing input A of cell $and$rtl/starvation_aware_arbiter_shared_select_opt.v:101$166_gate ($and): \rr_ptr_gate [1] -> \rr_ptr [1]
+Changing input A of cell $and$rtl/starvation_aware_arbiter_shared_select_opt.v:103$171_gate ($and): \rr_ptr_gate [0] -> \rr_ptr [0]
+Changing input A of cell $ge$rtl/starvation_aware_arbiter_shared_select_opt.v:68$103_gate ($ge): \age[0]_gate -> \age[0]
+Changing input A of cell $ge$rtl/starvation_aware_arbiter_shared_select_opt.v:68$105_gate ($ge): \age[1]_gate -> \age[1]
+Changing input A of cell $ge$rtl/starvation_aware_arbiter_shared_select_opt.v:68$107_gate ($ge): \age[2]_gate -> \age[2]
+Changing input A of cell $ge$rtl/starvation_aware_arbiter_shared_select_opt.v:68$109_gate ($ge): \age[3]_gate -> \age[3]
+Changing input B of cell $logic_and$rtl/starvation_aware_arbiter_shared_select_opt.v:92$136_gate ($logic_and): \grant_gate [0] -> \grant [0]
+Changing input B of cell $logic_and$rtl/starvation_aware_arbiter_shared_select_opt.v:92$143_gate ($logic_and): \grant_gate [1] -> \grant [1]
+Changing input B of cell $logic_and$rtl/starvation_aware_arbiter_shared_select_opt.v:92$150_gate ($logic_and): \grant_gate [2] -> \grant [2]
+Changing input B of cell $logic_and$rtl/starvation_aware_arbiter_shared_select_opt.v:92$157_gate ($logic_and): \grant_gate [3] -> \grant [3]
+Changing input A of cell $logic_not$rtl/starvation_aware_arbiter_shared_select_opt.v:94$138_gate ($logic_not): \grant_gate [0] -> \grant [0]
+Changing input A of cell $logic_not$rtl/starvation_aware_arbiter_shared_select_opt.v:94$145_gate ($logic_not): \grant_gate [1] -> \grant [1]
+Changing input A of cell $logic_not$rtl/starvation_aware_arbiter_shared_select_opt.v:94$152_gate ($logic_not): \grant_gate [2] -> \grant [2]
+Changing input A of cell $logic_not$rtl/starvation_aware_arbiter_shared_select_opt.v:94$159_gate ($logic_not): \grant_gate [3] -> \grant [3]
+Changing input A of cell $lt$rtl/starvation_aware_arbiter_shared_select_opt.v:95$139_gate ($lt): \age[0]_gate -> \age[0]
+Changing input A of cell $lt$rtl/starvation_aware_arbiter_shared_select_opt.v:95$146_gate ($lt): \age[1]_gate -> \age[1]
+Changing input A of cell $lt$rtl/starvation_aware_arbiter_shared_select_opt.v:95$153_gate ($lt): \age[2]_gate -> \age[2]
+Changing input A of cell $lt$rtl/starvation_aware_arbiter_shared_select_opt.v:95$160_gate ($lt): \age[3]_gate -> \age[3]
+Changing input A of cell $or$rtl/starvation_aware_arbiter_shared_select_opt.v:100$163_gate ($or): \grant_gate [1] -> \grant [1]
+Changing input B of cell $or$rtl/starvation_aware_arbiter_shared_select_opt.v:100$163_gate ($or): \grant_gate [2] -> \grant [2]
+Changing input A of cell $or$rtl/starvation_aware_arbiter_shared_select_opt.v:102$168_gate ($or): \grant_gate [0] -> \grant [0]
+Changing input B of cell $or$rtl/starvation_aware_arbiter_shared_select_opt.v:102$168_gate ($or): \grant_gate [2] -> \grant [2]
+Changing input A of cell $procmux$226_CMP0_gate ($eq): \rr_ptr_gate -> \rr_ptr
+Changing input A of cell $procmux$265_CMP0_gate ($eq): \rr_ptr_gate -> \rr_ptr
+Changing input A of cell $procmux$308_CMP0_gate ($eq): \rr_ptr_gate -> \rr_ptr
+Changing input A of cell $procmux$355_CMP0_gate ($logic_not): \rr_ptr_gate -> \rr_ptr
+Changing input B of cell $procmux$395_gate ($mux): \aged_req_gate -> \aged_req
+Changing input A of cell $reduce_or$rtl/starvation_aware_arbiter_shared_select_opt.v:101$164_gate ($reduce_or): \grant_gate -> \grant
+Changing input A of cell $reduce_or$rtl/starvation_aware_arbiter_shared_select_opt.v:74$115_gate ($reduce_or): \aged_req_gate -> \aged_req
+Changing input A of cell $add$rtl/starvation_aware_arbiter_shared_select_opt.v:96$141_gate ($add): \age[0]_gate -> \age[0]
+Changing input A of cell $add$rtl/starvation_aware_arbiter_cond_opt.v:95$73_gold ($add): \age[1]_gold -> \age[1]
+Changing input A of cell $add$rtl/starvation_aware_arbiter_cond_opt.v:95$80_gold ($add): \age[2]_gold -> \age[2]
+Changing input A of cell $add$rtl/starvation_aware_arbiter_cond_opt.v:95$87_gold ($add): \age[3]_gold -> \age[3]
+Changing input A of cell $and$rtl/starvation_aware_arbiter_cond_opt.v:100$91_gold ($and): \rr_ptr_gold [1] -> \rr_ptr [1]
+Changing input A of cell $and$rtl/starvation_aware_arbiter_cond_opt.v:102$96_gold ($and): \rr_ptr_gold [0] -> \rr_ptr [0]
+Changing input A of cell $ge$rtl/starvation_aware_arbiter_cond_opt.v:68$11_gold ($ge): \age[2]_gold -> \age[2]
+Changing input A of cell $ge$rtl/starvation_aware_arbiter_cond_opt.v:68$13_gold ($ge): \age[3]_gold -> \age[3]
+Changing input A of cell $ge$rtl/starvation_aware_arbiter_cond_opt.v:68$7_gold ($ge): \age[0]_gold -> \age[0]
+Changing input A of cell $ge$rtl/starvation_aware_arbiter_cond_opt.v:68$9_gold ($ge): \age[1]_gold -> \age[1]
+Changing input B of cell $logic_and$rtl/starvation_aware_arbiter_cond_opt.v:91$61_gold ($logic_and): \grant_gold [0] -> \grant [0]
+Changing input B of cell $logic_and$rtl/starvation_aware_arbiter_cond_opt.v:91$68_gold ($logic_and): \grant_gold [1] -> \grant [1]
+Changing input B of cell $logic_and$rtl/starvation_aware_arbiter_cond_opt.v:91$75_gold ($logic_and): \grant_gold [2] -> \grant [2]
+Changing input B of cell $logic_and$rtl/starvation_aware_arbiter_cond_opt.v:91$82_gold ($logic_and): \grant_gold [3] -> \grant [3]
+Changing input A of cell $logic_not$rtl/starvation_aware_arbiter_cond_opt.v:93$63_gold ($logic_not): \grant_gold [0] -> \grant [0]
+Changing input A of cell $logic_not$rtl/starvation_aware_arbiter_cond_opt.v:93$70_gold ($logic_not): \grant_gold [1] -> \grant [1]
+Changing input A of cell $logic_not$rtl/starvation_aware_arbiter_cond_opt.v:93$77_gold ($logic_not): \grant_gold [2] -> \grant [2]
+Changing input A of cell $logic_not$rtl/starvation_aware_arbiter_cond_opt.v:93$84_gold ($logic_not): \grant_gold [3] -> \grant [3]
+Changing input A of cell $lt$rtl/starvation_aware_arbiter_cond_opt.v:94$64_gold ($lt): \age[0]_gold -> \age[0]
+Changing input A of cell $lt$rtl/starvation_aware_arbiter_cond_opt.v:94$71_gold ($lt): \age[1]_gold -> \age[1]
+Changing input A of cell $lt$rtl/starvation_aware_arbiter_cond_opt.v:94$78_gold ($lt): \age[2]_gold -> \age[2]
+Changing input A of cell $lt$rtl/starvation_aware_arbiter_cond_opt.v:94$85_gold ($lt): \age[3]_gold -> \age[3]
+Changing input A of cell $or$rtl/starvation_aware_arbiter_cond_opt.v:101$93_gold ($or): \grant_gold [0] -> \grant [0]
+Changing input B of cell $or$rtl/starvation_aware_arbiter_cond_opt.v:101$93_gold ($or): \grant_gold [2] -> \grant [2]
+Changing input A of cell $or$rtl/starvation_aware_arbiter_cond_opt.v:99$88_gold ($or): \grant_gold [1] -> \grant [1]
+Changing input B of cell $or$rtl/starvation_aware_arbiter_cond_opt.v:99$88_gold ($or): \grant_gold [2] -> \grant [2]
+Changing input A of cell $procmux$453_CMP0_gold ($eq): \rr_ptr_gold -> \rr_ptr
+Changing input A of cell $procmux$492_CMP0_gold ($eq): \rr_ptr_gold -> \rr_ptr
+Changing input A of cell $procmux$535_CMP0_gold ($eq): \rr_ptr_gold -> \rr_ptr
+Changing input A of cell $procmux$582_CMP0_gold ($logic_not): \rr_ptr_gold -> \rr_ptr
+Changing input S of cell $procmux$622_gold ($mux): \aged_req_gold [2] -> \aged_req [2]
+Changing input S of cell $procmux$636_gold ($mux): \aged_req_gold [1] -> \aged_req [1]
+Changing input S of cell $procmux$647_gold ($mux): \aged_req_gold [0] -> \aged_req [0]
+Changing input S of cell $procmux$655_gold ($mux): \aged_req_gold [3] -> \aged_req [3]
+Changing input S of cell $procmux$661_gold ($mux): \aged_req_gold [1] -> \aged_req [1]
+Changing input S of cell $procmux$676_gold ($mux): \aged_req_gold [0] -> \aged_req [0]
+Changing input S of cell $procmux$688_gold ($mux): \aged_req_gold [3] -> \aged_req [3]
+Changing input S of cell $procmux$697_gold ($mux): \aged_req_gold [2] -> \aged_req [2]
+Changing input S of cell $procmux$704_gold ($mux): \aged_req_gold [0] -> \aged_req [0]
+Changing input S of cell $procmux$720_gold ($mux): \aged_req_gold [3] -> \aged_req [3]
+Changing input S of cell $procmux$733_gold ($mux): \aged_req_gold [2] -> \aged_req [2]
+Changing input S of cell $procmux$743_gold ($mux): \aged_req_gold [1] -> \aged_req [1]
+Changing input S of cell $procmux$751_gold ($mux): \aged_req_gold [3] -> \aged_req [3]
+Changing input S of cell $procmux$768_gold ($mux): \aged_req_gold [2] -> \aged_req [2]
+Changing input S of cell $procmux$782_gold ($mux): \aged_req_gold [1] -> \aged_req [1]
+Changing input S of cell $procmux$793_gold ($mux): \aged_req_gold [0] -> \aged_req [0]
+Changing input A of cell $reduce_or$rtl/starvation_aware_arbiter_cond_opt.v:100$89_gold ($reduce_or): \grant_gold -> \grant
+Changing input A of cell $reduce_or$rtl/starvation_aware_arbiter_cond_opt.v:76$56_gold ($reduce_or): \aged_req_gold -> \aged_req
+Changing input A of cell $add$rtl/starvation_aware_arbiter_cond_opt.v:95$66_gold ($add): \age[0]_gold -> \age[0]
+
+7. Executing HIERARCHY pass (managing design hierarchy).
+
+7.1. Analyzing design hierarchy..
+Top module:  \equiv
+
+7.2. Analyzing design hierarchy..
+Top module:  \equiv
+Removing unused module `\starvation_aware_arbiter'.
+Removing unused module `\starvation_aware_arbiter_shared_select_opt'.
+Removed 2 unused modules.
+
+8. Executing PREP pass.
+
+8.1. Executing HIERARCHY pass (managing design hierarchy).
+
+8.1.1. Analyzing design hierarchy..
+Top module:  \equiv
+
+8.1.2. Analyzing design hierarchy..
+Top module:  \equiv
+Removed 0 unused modules.
+
+8.2. Executing PROC pass (convert processes to netlists).
+
+8.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+8.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+8.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+8.2.4. Executing PROC_INIT pass (extract init attributes).
+
+8.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+8.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+8.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+8.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+8.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+8.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+8.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+8.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module equiv.
+
+8.3. Executing OPT_EXPR pass (perform const folding).
+Optimizing module equiv.
+
+8.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \equiv..
+Removed 32 unused cells and 1 unused wires.
+<suppressed ~33 debug messages>
+
+8.5. Executing CHECK pass (checking for obvious problems).
+Checking module equiv...
+Found and reported 0 problems.
+
+8.6. Executing OPT pass (performing simple optimizations).
+
+8.6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module equiv.
+
+8.6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\equiv'.
+<suppressed ~159 debug messages>
+Removed a total of 53 cells.
+
+8.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \equiv..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+8.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \equiv.
+Performed a total of 0 changes.
+
+8.6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\equiv'.
+Removed a total of 0 cells.
+
+8.6.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \equiv..
+Removed 0 unused cells and 49 unused wires.
+<suppressed ~1 debug messages>
+
+8.6.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module equiv.
+
+8.6.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+8.6.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \equiv..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+8.6.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \equiv.
+Performed a total of 0 changes.
+
+8.6.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\equiv'.
+Removed a total of 0 cells.
+
+8.6.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \equiv..
+
+8.6.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module equiv.
+
+8.6.14. Finished OPT passes. (There is nothing left to do.)
+
+8.7. Executing WREDUCE pass (reducing word size of cells).
+Removed top 3 bits (of 4) from mux cell equiv.$procmux$704_gold ($mux).
+Removed top 2 bits (of 4) from mux cell equiv.$procmux$661_gold ($mux).
+Removed top 1 bits (of 4) from mux cell equiv.$procmux$622_gold ($mux).
+Removed top 1 bits (of 4) from mux cell equiv.$procmux$214_gate ($mux).
+Removed top 1 bits (of 4) from mux cell equiv.$procmux$228_gate ($mux).
+Removed top 1 bits (of 4) from mux cell equiv.$procmux$239_gate ($mux).
+Removed top 3 bits (of 4) from mux cell equiv.$procmux$523_gold ($mux).
+Removed top 2 bits (of 4) from mux cell equiv.$procmux$253_gate ($mux).
+Removed top 2 bits (of 4) from mux cell equiv.$procmux$268_gate ($mux).
+Removed top 2 bits (of 4) from mux cell equiv.$procmux$480_gold ($mux).
+Removed top 3 bits (of 4) from mux cell equiv.$procmux$296_gate ($mux).
+Removed top 1 bits (of 2) from port B of cell equiv.$procmux$308_CMP0_gate ($eq).
+Removed top 1 bits (of 4) from mux cell equiv.$procmux$441_gold ($mux).
+Removed top 30 bits (of 32) from port B of cell equiv.$lt$rtl/starvation_aware_arbiter_cond_opt.v:94$85_gold ($lt).
+Removed top 30 bits (of 32) from port B of cell equiv.$lt$rtl/starvation_aware_arbiter_cond_opt.v:94$78_gold ($lt).
+Removed top 30 bits (of 32) from port B of cell equiv.$lt$rtl/starvation_aware_arbiter_cond_opt.v:94$71_gold ($lt).
+Removed top 30 bits (of 32) from port B of cell equiv.$lt$rtl/starvation_aware_arbiter_cond_opt.v:94$64_gold ($lt).
+Removed top 30 bits (of 32) from port B of cell equiv.$ge$rtl/starvation_aware_arbiter_cond_opt.v:68$9_gold ($ge).
+Removed top 30 bits (of 32) from port B of cell equiv.$ge$rtl/starvation_aware_arbiter_cond_opt.v:68$7_gold ($ge).
+Removed top 30 bits (of 32) from port B of cell equiv.$ge$rtl/starvation_aware_arbiter_cond_opt.v:68$13_gold ($ge).
+Removed top 30 bits (of 32) from port B of cell equiv.$ge$rtl/starvation_aware_arbiter_cond_opt.v:68$11_gold ($ge).
+Removed top 2 bits (of 4) from wire equiv.$12\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$101.$result[3:0]$127_gate.
+Removed top 2 bits (of 4) from wire equiv.$13\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$4.$result[3:0]$34_gold.
+Removed top 2 bits (of 4) from wire equiv.$13\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$5.$result[3:0]$51_gold.
+Removed top 2 bits (of 4) from wire equiv.$13\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$101.$result[3:0]$128_gate.
+Removed top 1 bits (of 4) from wire equiv.$15\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$101.$result[3:0]$130_gate.
+Removed top 1 bits (of 4) from wire equiv.$16\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$101.$result[3:0]$131_gate.
+Removed top 1 bits (of 4) from wire equiv.$17\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$4.$result[3:0]$38_gold.
+Removed top 1 bits (of 4) from wire equiv.$17\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$5.$result[3:0]$55_gold.
+Removed top 3 bits (of 4) from wire equiv.$9\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$4.$result[3:0]$30_gold.
+Removed top 3 bits (of 4) from wire equiv.$9\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$5.$result[3:0]$47_gold.
+Removed top 3 bits (of 4) from wire equiv.$9\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$101.$result[3:0]$124_gate.
+
+8.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \equiv..
+Removed 0 unused cells and 11 unused wires.
+<suppressed ~1 debug messages>
+
+8.9. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+8.10. Executing OPT pass (performing simple optimizations).
+
+8.10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module equiv.
+
+8.10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\equiv'.
+Removed a total of 0 cells.
+
+8.10.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \equiv..
+
+8.10.4. Finished fast OPT passes.
+
+8.11. Printing statistics.
+
+=== equiv ===
+
+   Number of wires:                144
+   Number of wire bits:            437
+   Number of public wires:          45
+   Number of public wire bits:     197
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                145
+     $add                            4
+     $and                            2
+     $eq                             3
+     $equiv                         26
+     $ge                             4
+     $logic_and                     12
+     $logic_not                      9
+     $logic_or                       4
+     $lt                             4
+     $mux                           53
+     $not                            1
+     $or                             4
+     $pmux                           3
+     $reduce_or                      6
+     $sdff                           2
+     $sdffe                          8
+
+8.12. Executing CHECK pass (checking for obvious problems).
+Checking module equiv...
+Found and reported 0 problems.
+
+9. Executing EQUIV_SIMPLE pass.
+Found 22 unproven $equiv cells (6 groups) in equiv:
+ Grouping SAT models for \grant:
+  Trying to prove $equiv for \grant [0]: success!
+  Trying to prove $equiv for \grant [1]: success!
+  Trying to prove $equiv for \grant [2]: success!
+  Trying to prove $equiv for \grant [3]: success!
+ Grouping SAT models for \rr_ptr:
+  Trying to prove $equiv for \rr_ptr [0]: failed.
+  Trying to prove $equiv for \rr_ptr [1]: failed.
+ Grouping SAT models for \age[0]:
+  Trying to prove $equiv for \age[0] [0]: failed.
+  Trying to prove $equiv for \age[0] [1]: failed.
+  Trying to prove $equiv for \age[0] [2]: failed.
+  Trying to prove $equiv for \age[0] [3]: failed.
+ Grouping SAT models for \age[1]:
+  Trying to prove $equiv for \age[1] [0]: failed.
+  Trying to prove $equiv for \age[1] [1]: failed.
+  Trying to prove $equiv for \age[1] [2]: failed.
+  Trying to prove $equiv for \age[1] [3]: failed.
+ Grouping SAT models for \age[2]:
+  Trying to prove $equiv for \age[2] [0]: failed.
+  Trying to prove $equiv for \age[2] [1]: failed.
+  Trying to prove $equiv for \age[2] [2]: failed.
+  Trying to prove $equiv for \age[2] [3]: failed.
+ Grouping SAT models for \age[3]:
+  Trying to prove $equiv for \age[3] [0]: failed.
+  Trying to prove $equiv for \age[3] [1]: failed.
+  Trying to prove $equiv for \age[3] [2]: failed.
+  Trying to prove $equiv for \age[3] [3]: failed.
+Proved 4 previously unproven $equiv cells.
+
+10. Executing EQUIV_STATUS pass.
+Found 26 $equiv cells in equiv:
+  Of those cells 8 are proven and 18 are unproven.
+  Unproven $equiv $auto$equiv_make.cc:294:find_same_wires$848: \age[0]_gold [0] \age[0]_gate [0]
+  Unproven $equiv $auto$equiv_make.cc:294:find_same_wires$849: \age[0]_gold [1] \age[0]_gate [1]
+  Unproven $equiv $auto$equiv_make.cc:294:find_same_wires$850: \age[0]_gold [2] \age[0]_gate [2]
+  Unproven $equiv $auto$equiv_make.cc:294:find_same_wires$851: \age[0]_gold [3] \age[0]_gate [3]
+  Unproven $equiv $auto$equiv_make.cc:294:find_same_wires$852: \age[1]_gold [0] \age[1]_gate [0]
+  Unproven $equiv $auto$equiv_make.cc:294:find_same_wires$853: \age[1]_gold [1] \age[1]_gate [1]
+  Unproven $equiv $auto$equiv_make.cc:294:find_same_wires$854: \age[1]_gold [2] \age[1]_gate [2]
+  Unproven $equiv $auto$equiv_make.cc:294:find_same_wires$855: \age[1]_gold [3] \age[1]_gate [3]
+  Unproven $equiv $auto$equiv_make.cc:294:find_same_wires$856: \age[2]_gold [0] \age[2]_gate [0]
+  Unproven $equiv $auto$equiv_make.cc:294:find_same_wires$857: \age[2]_gold [1] \age[2]_gate [1]
+  Unproven $equiv $auto$equiv_make.cc:294:find_same_wires$858: \age[2]_gold [2] \age[2]_gate [2]
+  Unproven $equiv $auto$equiv_make.cc:294:find_same_wires$859: \age[2]_gold [3] \age[2]_gate [3]
+  Unproven $equiv $auto$equiv_make.cc:294:find_same_wires$860: \age[3]_gold [0] \age[3]_gate [0]
+  Unproven $equiv $auto$equiv_make.cc:294:find_same_wires$861: \age[3]_gold [1] \age[3]_gate [1]
+  Unproven $equiv $auto$equiv_make.cc:294:find_same_wires$862: \age[3]_gold [2] \age[3]_gate [2]
+  Unproven $equiv $auto$equiv_make.cc:294:find_same_wires$863: \age[3]_gold [3] \age[3]_gate [3]
+  Unproven $equiv $auto$equiv_make.cc:294:find_same_wires$904: \rr_ptr_gold [0] \rr_ptr_gate [0]
+  Unproven $equiv $auto$equiv_make.cc:294:find_same_wires$905: \rr_ptr_gold [1] \rr_ptr_gate [1]
+Found a total of 18 unproven $equiv cells.
+
+Warnings: 2 unique messages, 2 total
+End of script. Logfile hash: fb8b7a259c, CPU: user 0.19s system 0.02s, MEM: 14.48 MB peak
+Yosys 0.29+23 (git sha1 cdeef5481, gcc 7.5.0-3ubuntu1~18.04 -fPIC -Os)
+Time spent: 23% 10x opt_expr (0 sec), 14% 9x opt_clean (0 sec), ...

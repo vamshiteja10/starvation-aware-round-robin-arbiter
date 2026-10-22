@@ -1,0 +1,53 @@
+===== OPENSTA VERSION =====
+2.4.0
+
+===== FINAL TIMING LIBRARIES USED BY RUN =====
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_n40C_1v95.lib
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+/openLANE_flow/designs/arbiter_pointer_opt/runs/21-10_07-31/tmp/cts.lib
+/openLANE_flow/designs/arbiter_pointer_opt/runs/21-10_07-31/tmp/resizer.lib
+/openLANE_flow/designs/arbiter_pointer_opt/runs/21-10_07-31/tmp/trimmed.lib
+
+===== FINAL NETLIST AND ROUTED DEF =====
+lrwxrwxrwx 1 root root   29 Oct 21 13:01 designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/merged_unpadded.lef -> ../../tmp/merged_unpadded.lef
+-rw-r--r-- 1 root root 141K Oct 21 13:03 designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def
+-rw-r--r-- 1 root root  91K Oct 21 13:03 designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.spef
+-rw-r--r-- 1 root root  29K Oct 21 13:03 designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_preroute.v
+
+===== ROUTED DEF HEADER =====
+VERSION 5.8 ;
+DIVIDERCHAR "/" ;
+BUSBITCHARS "[]" ;
+DESIGN starvation_aware_arbiter ;
+UNITS DISTANCE MICRONS 1000 ;
+
+DIEAREA ( 0 0 ) ( 69925 80645 ) ;
+
+ROW ROW_0 unithd 5520 10880 FS DO 128 BY 1 STEP 460 0
+ ;
+ROW ROW_1 unithd 5520 13600 N DO 128 BY 1 STEP 460 0
+ ;
+ROW ROW_2 unithd 5520 16320 FS DO 128 BY 1 STEP 460 0
+ ;
+ROW ROW_3 unithd 5520 19040 N DO 128 BY 1 STEP 460 0
+ ;
+ROW ROW_4 unithd 5520 21760 FS DO 128 BY 1 STEP 460 0
+ ;
+ROW ROW_5 unithd 5520 24480 N DO 128 BY 1 STEP 460 0
+ ;
+ROW ROW_6 unithd 5520 27200 FS DO 128 BY 1 STEP 460 0
+ ;
+ROW ROW_7 unithd 5520 29920 N DO 128 BY 1 STEP 460 0
+ ;
+ROW ROW_8 unithd 5520 32640 FS DO 128 BY 1 STEP 460 0
+ ;
+ROW ROW_9 unithd 5520 35360 N DO 128 BY 1 STEP 460 0
+ ;
+ROW ROW_10 unithd 5520 38080 FS DO 128 BY 1 STEP 460 0
+ ;
+ROW ROW_11 unithd 5520 40800 N DO 128 BY 1 STEP 460 0
+ ;
+ROW ROW_12 unithd 5520 43520 FS DO 128 BY 1 STEP 460 0
+ ;
+ROW ROW_13 unithd 5520 46240 N DO 128 BY 1 STEP 460 0

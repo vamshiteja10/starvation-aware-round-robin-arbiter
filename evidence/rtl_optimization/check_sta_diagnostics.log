@@ -1,0 +1,8 @@
+OpenROAD 0.9.0 1415572a73
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[WARNING STA-0300] no commands match 'report_parasitic_annotation'.
+check_setup
+check_setup   [-verbose] [-no_input_delay] [-no_output_delay] [-multiple_clock] [-no_clock] [-unconstrained_endpoints] [-loops] [-generated_clocks] [> filename] [>> filename]
+set_operating_conditions
+set_operating_conditions   [-analysis_type single|bc_wc|on_chip_variation] [-library lib] [condition] [-min min_condition] [-max max_condition] [-min_library min_lib] [-max_library max_lib]

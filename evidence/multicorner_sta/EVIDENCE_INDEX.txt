@@ -1,0 +1,47 @@
+STARVATION-AWARE ROUND-ROBIN ARBITER
+MULTI-CORNER STA EVIDENCE INDEX
+
+Main report:
+  MULTICORNER_STA_REPORT.md
+
+Numerical summary:
+  multicorner_sta_summary.csv
+
+Validated OpenSTA logs:
+  tt_sta_validated.log
+  ss_sta_validated.log
+  ff_sta_validated.log
+
+STA scripts:
+  tt_sta.tcl
+  ss_sta.tcl
+  ff_sta.tcl
+
+Timing constraints:
+  tt_sta.sdc
+
+Original script backups:
+  tt_sta.tcl.original
+  ss_sta.tcl.original
+  ff_sta.tcl.original
+
+Physical implementation:
+  OpenLane run:
+  ~/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_age_width_opt/runs/21-10_15-43/
+
+Note:
+  Results have documented Liberty operating-condition and tap-cell
+  warnings. Do not describe them as fully sign-off-validated timing.
+
+RTL FUNCTIONAL / FORMAL VERIFICATION:
+  Functional testbench:
+  evidence/sim/age_width_functional_tb.v
+
+  Functional simulation log:
+  evidence/sim/age_width_functional.log
+
+  10-cycle bounded SAT:
+  evidence/rtl_optimization/age_width_opt/formal_sat.log
+
+  30-cycle bounded SAT:
+  evidence/rtl_optimization/age_width_opt/formal_sat_30cycle.log

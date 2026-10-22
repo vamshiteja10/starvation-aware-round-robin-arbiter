@@ -1,0 +1,8 @@
+OpenROAD 0.9.0 1415572a73
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+set_propagated_clock objects
+[WARNING STA-0300] no commands match 'set_ideal_clock'.
+report_clock_skew
+report_clock_skew   [-setup|-hold] [-clock clocks] [-corner corner_name]] [-digits digits]
+estimate_parasitics -placement|-global_routing

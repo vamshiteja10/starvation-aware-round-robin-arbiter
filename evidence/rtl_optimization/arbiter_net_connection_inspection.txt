@@ -1,0 +1,233 @@
+===== 1. MAPPED NETLIST: OUTPUT NET CONNECTIONS =====
+    .D(_054_),
+    .X(_020_));
+ sky130_fd_sc_hd__or2_1 _202_ (.A(_093_),
+    .B(_075_),
+    .X(_021_));
+ sky130_fd_sc_hd__nor2_1 _203_ (.A(_100_),
+    .B(_022_),
+    .Y(_023_));
+ sky130_fd_sc_hd__nor2_1 _204_ (.A(_100_),
+    .B(_007_),
+    .Y(_024_));
+ sky130_fd_sc_hd__and2_1 _205_ (.A(\age[3][3] ),
+    .B(_094_),
+    .X(_051_));
+ sky130_fd_sc_hd__mux2_2 _206_ (.A0(_009_),
+    .A1(_029_),
+    .S(_008_),
+    .X(net7));
+ sky130_fd_sc_hd__mux2_2 _207_ (.A0(_014_),
+    .A1(_013_),
+    .S(_008_),
+    .X(net8));
+ sky130_fd_sc_hd__mux2_2 _208_ (.A0(_019_),
+    .A1(_018_),
+    .S(_008_),
+    .X(net9));
+ sky130_fd_sc_hd__mux2_4 _209_ (.A0(_024_),
+    .A1(_023_),
+    .S(_008_),
+    .X(net10));
+ sky130_fd_sc_hd__mux2_1 _210_ (.A0(_016_),
+    .A1(_015_),
+    .S(_026_),
+    .X(_017_));
+ sky130_fd_sc_hd__mux2_1 _211_ (.A0(_011_),
+    .A1(_010_),
+
+===== 2. GENERIC NETLIST: GRANT LOGIC =====
+    .B(_004_),
+    .Y(_019_)
+  );
+  sky130_fd_sc_hd__or4_2 _201_ (
+    .A(_061_),
+    .B(_093_),
+    .C(req[2]),
+    .D(_054_),
+    .X(_020_)
+  );
+  sky130_fd_sc_hd__or2_2 _202_ (
+    .A(_093_),
+    .B(_075_),
+    .X(_021_)
+  );
+  sky130_fd_sc_hd__nor2_2 _203_ (
+    .A(_100_),
+    .B(_022_),
+    .Y(_023_)
+  );
+  sky130_fd_sc_hd__nor2_2 _204_ (
+    .A(_100_),
+    .B(_007_),
+    .Y(_024_)
+  );
+  sky130_fd_sc_hd__and2_2 _205_ (
+    .A(\age[3][3] ),
+    .B(_094_),
+    .X(_051_)
+  );
+  sky130_fd_sc_hd__mux2_1 _206_ (
+    .A0(_009_),
+    .A1(_029_),
+    .S(_008_),
+    .X(grant[0])
+  );
+  sky130_fd_sc_hd__mux2_1 _207_ (
+    .A0(_014_),
+    .A1(_013_),
+    .S(_008_),
+    .X(grant[1])
+  );
+  sky130_fd_sc_hd__mux2_1 _208_ (
+    .A0(_019_),
+    .A1(_018_),
+    .S(_008_),
+    .X(grant[2])
+  );
+  sky130_fd_sc_hd__mux2_1 _209_ (
+    .A0(_024_),
+    .A1(_023_),
+    .S(_008_),
+    .X(grant[3])
+  );
+  sky130_fd_sc_hd__mux2_1 _210_ (
+    .A0(_016_),
+    .A1(_015_),
+    .S(_026_),
+    .X(_017_)
+  );
+  sky130_fd_sc_hd__mux2_1 _211_ (
+    .A0(_011_),
+    .A1(_010_),
+    .S(_026_),
+    .X(_012_)
+  );
+  sky130_fd_sc_hd__mux2_1 _212_ (
+    .A0(_006_),
+    .A1(_005_),
+    .S(_026_),
+    .X(_007_)
+
+===== 3. RTL: GRANT ASSIGNMENTS =====
+65:    always @(*) begin
+72:    always @(*) begin
+77:            grant = ready ? aged_selected : {N{1'b0}};
+79:            grant = ready ? rr_selected : {N{1'b0}};
+83:    always @(posedge clk) begin
+91:                if (!req[i] || (ready && grant[i]))
+93:                else if (!grant[i] &&
+99:            rr_ptr[1] <= grant[1] | grant[2] |
+101:            rr_ptr[0] <= grant[0] | grant[2] |
+
+===== 4. SYNTHESIS SCRIPT AND ABC SETTINGS =====
+825-
+826-5.22.5. Finished fast OPT passes.
+827-
+828-5.23. Executing ABC pass (technology mapping using ABC).
+829-
+830:5.23.1. Extracting gate netlist of module `\starvation_aware_arbiter' to `<abc-temp-dir>/input.blif'..
+831-Extracted 187 gates and 212 wires to a netlist network with 24 inputs and 30 outputs.
+832-
+833-5.23.1.1. Executing ABC.
+834:Running ABC command: <yosys-exe-dir>/yosys-abc -s -f <abc-temp-dir>/abc.script 2>&1
+835:ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+836-ABC: 
+837:ABC: + read_blif <abc-temp-dir>/input.blif 
+838:ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+839:ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+840-ABC: + strash 
+841-ABC: + dretime 
+842-ABC: + map 
+843:ABC: + write_blif <abc-temp-dir>/output.blif 
+844-
+845-5.23.1.2. Re-integrating ABC results.
+846-ABC RESULTS:               AND cells:       10
+847-ABC RESULTS:            ANDNOT cells:       58
+848-ABC RESULTS:               MUX cells:       12
+849-ABC RESULTS:              NAND cells:        4
+850-ABC RESULTS:               NOR cells:        5
+851-ABC RESULTS:               NOT cells:       10
+--
+996-  Treeifying 12 MUXes:
+997-    Found tree with 1 MUXes at root \grant [0].
+998-    Found tree with 1 MUXes at root \grant [1].
+999-    Found tree with 1 MUXes at root \grant [2].
+1000-    Found tree with 1 MUXes at root \grant [3].
+1001:    Found tree with 1 MUXes at root $abc$1253$new_n151_.
+1002:    Found tree with 1 MUXes at root $abc$1253$new_n139_.
+1003:    Found tree with 1 MUXes at root $abc$1253$new_n125_.
+1004:    Found tree with 1 MUXes at root $abc$1253$new_n116_.
+1005:    Found tree with 1 MUXes at root $abc$1253$new_n97_.
+1006:    Found tree with 1 MUXes at root $abc$1253$new_n106_.
+1007:    Found tree with 1 MUXes at root $abc$1253$new_n69_.
+1008:    Found tree with 1 MUXes at root $abc$1253$new_n164_.
+1009-    Finished treeification: Found 12 trees.
+1010-  Covering trees:
+1011-    Replaced tree at \grant [0]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+1012-    Replaced tree at \grant [1]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+1013-    Replaced tree at \grant [2]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+1014-    Replaced tree at \grant [3]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+1015:    Replaced tree at $abc$1253$new_n151_: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+1016:    Replaced tree at $abc$1253$new_n139_: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+1017:    Replaced tree at $abc$1253$new_n125_: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+1018:    Replaced tree at $abc$1253$new_n116_: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+1019:    Replaced tree at $abc$1253$new_n97_: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+1020:    Replaced tree at $abc$1253$new_n106_: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+1021:    Replaced tree at $abc$1253$new_n69_: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+1022:    Replaced tree at $abc$1253$new_n164_: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+1023-  Added a total of 0 decoder MUXes.
+1024-<suppressed ~205 debug messages>
+1025-
+1026-13. Executing TECHMAP pass (map to technology primitives).
+1027-
+1028-13.1. Executing Verilog-2005 frontend: /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/mux4_map.v
+1029-Parsing Verilog input from `/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/mux4_map.v' to AST representation.
+1030-Generating RTLIL representation for module `\$_MUX4_'.
+--
+1119-
+1120-[INFO]: ABC: WireLoad : S_4
+1121-
+1122-21. Executing ABC pass (technology mapping using ABC).
+1123-
+1124:21.1. Extracting gate netlist of module `\starvation_aware_arbiter' to `/tmp/yosys-abc-p1hdIX/input.blif'..
+1125-Extracted 180 gates and 217 wires to a netlist network with 36 inputs and 44 outputs.
+1126-
+1127-21.1.1. Executing ABC.
+1128:Running ABC command: /build/bin/yosys-abc -s -f /tmp/yosys-abc-p1hdIX/abc.script 2>&1
+1129:ABC: ABC command line: "source /tmp/yosys-abc-p1hdIX/abc.script".
+1130-ABC: 
+1131:ABC: + read_blif /tmp/yosys-abc-p1hdIX/input.blif 
+1132-ABC: + read_lib -w /openLANE_flow/designs/arbiter_pointer_opt/runs/21-10_07-31/tmp/trimmed.lib 
+1133-ABC: Parsing finished successfully.  Parsing time =     0.06 sec
+1134-ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+1135-ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+1136-ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+1137-ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+1138-ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+1139-ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+--
+1222-ABC: Path  2 --     141 : 2    3 sky130_fd_sc_hd__nand2_2 A =   6.26  Df = 475.8 -224.4 ps  S = 139.1 ps  Cin =  4.4 ff  Cout =  23.8 ff  Cmax = 295.7 ff  G =  532  
+1223-ABC: Path  3 --     150 : 1    3 sky130_fd_sc_hd__inv_2   A =   3.75  Df = 522.6 -200.4 ps  S =  44.4 ps  Cin =  4.5 ff  Cout =   5.6 ff  Cmax = 331.4 ff  G =  117  
+1224-ABC: Path  4 --     154 : 2    3 sky130_fd_sc_hd__or2_2   A =   6.26  Df = 813.5 -388.6 ps  S =  59.7 ps  Cin =  1.5 ff  Cout =   4.6 ff  Cmax = 299.4 ff  G =  295  
+1225-ABC: Path  5 --     156 : 4    1 sky130_fd_sc_hd__or4b_2  A =  10.01  Df =1410.1 -886.7 ps  S =  95.7 ps  Cin =  1.5 ff  Cout =   2.4 ff  Cmax = 265.5 ff  G =  157  
+1226-ABC: Path  6 --     157 : 3    1 sky130_fd_sc_hd__a21o_2  A =   8.76  Df =1678.3 -992.8 ps  S =  98.9 ps  Cin =  2.4 ff  Cout =  17.6 ff  Cmax = 309.5 ff  G =  750  
+1227:ABC: Start-point = pi15 (\age[0] [0]).  End-point = po26 ($abc$1253$new_n115_).
+1228-ABC: + print_stats -m 
+1229-ABC: netlist                       : i/o =   36/   44  lat =    0  nd =    99  edge =    239  area =695.74  delay = 6.00  lev = 6
+1230:ABC: + write_blif /tmp/yosys-abc-p1hdIX/output.blif 
+1231-
+1232-21.1.2. Re-integrating ABC results.
+1233-ABC RESULTS:   sky130_fd_sc_hd__a211o_2 cells:        5
+1234-ABC RESULTS:   sky130_fd_sc_hd__a211oi_2 cells:        1
+1235-ABC RESULTS:   sky130_fd_sc_hd__a21o_2 cells:        1
+1236-ABC RESULTS:   sky130_fd_sc_hd__a221o_2 cells:        1
+1237-ABC RESULTS:   sky130_fd_sc_hd__a31oi_2 cells:        2
+1238-ABC RESULTS:   sky130_fd_sc_hd__and2_2 cells:        8
+--
+1319-Dumping module `\starvation_aware_arbiter'.
+1320-
+1321-Warnings: 5 unique messages, 5 total
+1322-End of script. Logfile hash: 5d592e0f57, CPU: user 0.60s system 0.08s, MEM: 44.48 MB peak
+1323-Yosys 0.9+3621 (git sha1 84e9fa7, gcc 8.3.1 -fPIC -Os)
+1324:Time spent: 36% 2x abc (0 sec), 20% 4x stat (0 sec), ...

@@ -1,0 +1,205 @@
+===== A. FINAL CHECK CONTEXT =====
+ABC RESULTS:   sky130_fd_sc_hd__or3_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__or3b_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or4_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or4b_2 cells:        1
+ABC RESULTS:        internal signals:      137
+ABC RESULTS:           input signals:       36
+ABC RESULTS:          output signals:       44
+Removing temp directory.
+
+22. Executing SETUNDEF pass (replace undef values with defined constants).
+
+23. Executing HILOMAP pass (mapping to constant drivers).
+
+24. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+25. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \starvation_aware_arbiter..
+Removed 0 unused cells and 280 unused wires.
+<suppressed ~1 debug messages>
+
+26. Executing INSBUF pass (insert buffer cells for connected wires).
+
+27. Executing CHECK pass (checking for obvious problems).
+checking module starvation_aware_arbiter..
+Warning: Wire starvation_aware_arbiter.\grant [3] is used but has no driver.
+Warning: Wire starvation_aware_arbiter.\grant [2] is used but has no driver.
+Warning: Wire starvation_aware_arbiter.\grant [1] is used but has no driver.
+Warning: Wire starvation_aware_arbiter.\grant [0] is used but has no driver.
+found and reported 4 problems.
+
+28. Printing statistics.
+
+=== starvation_aware_arbiter ===
+
+   Number of wires:                130
+   Number of wire bits:            136
+   Number of public wires:          23
+   Number of public wire bits:      29
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                129
+     sky130_fd_sc_hd__a211o_2        5
+     sky130_fd_sc_hd__a211oi_2       1
+     sky130_fd_sc_hd__a21o_2         1
+     sky130_fd_sc_hd__a221o_2        1
+     sky130_fd_sc_hd__a31oi_2        2
+     sky130_fd_sc_hd__and2_2         8
+     sky130_fd_sc_hd__and4_2         1
+     sky130_fd_sc_hd__buf_1          7
+     sky130_fd_sc_hd__dfxtp_2       18
+     sky130_fd_sc_hd__inv_2         18
+     sky130_fd_sc_hd__mux2_1        12
+     sky130_fd_sc_hd__nand2_2        8
+     sky130_fd_sc_hd__nor2_2        13
+     sky130_fd_sc_hd__o211a_2        7
+     sky130_fd_sc_hd__o21a_2         4
+     sky130_fd_sc_hd__o21ai_2        1
+     sky130_fd_sc_hd__o22a_2         3
+     sky130_fd_sc_hd__o32a_2         3
+     sky130_fd_sc_hd__or2_2          8
+     sky130_fd_sc_hd__or3_2          5
+     sky130_fd_sc_hd__or3b_2         1
+     sky130_fd_sc_hd__or4_2          1
+     sky130_fd_sc_hd__or4b_2         1
+
+   Chip area for module '\starvation_aware_arbiter': 1213.664000
+
+29. Executing Verilog backend.
+Dumping module `\starvation_aware_arbiter'.
+
+Warnings: 5 unique messages, 5 total
+End of script. Logfile hash: 5d592e0f57, CPU: user 0.60s system 0.08s, MEM: 44.48 MB peak
+Yosys 0.9+3621 (git sha1 84e9fa7, gcc 8.3.1 -fPIC -Os)
+Time spent: 36% 2x abc (0 sec), 20% 4x stat (0 sec), ...
+
+===== B. MAPPED NETLIST PORT DECLARATIONS =====
+module starvation_aware_arbiter (clk,
+    ready,
+    rst,
+    VPWR,
+    VGND,
+    grant,
+    req);
+ input clk;
+ input ready;
+ input rst;
+ input VPWR;
+ input VGND;
+ output [3:0] grant;
+ input [3:0] req;
+
+ sky130_fd_sc_hd__inv_2 _107_ (.A(net5),
+    .Y(_093_));
+ sky130_fd_sc_hd__a211oi_4 _108_ (.A1(net1),
+    .A2(net10),
+    .B1(net6),
+    .C1(_093_),
+    .Y(_094_));
+ sky130_fd_sc_hd__and2_1 _109_ (.A(\age[3][2] ),
+    .B(_094_),
+    .X(_050_));
+ sky130_fd_sc_hd__a211o_1 _110_ (.A1(\age[3][1] ),
+    .A2(\age[3][0] ),
+    .B1(\age[3][3] ),
+    .C1(\age[3][2] ),
+    .X(_095_));
+ sky130_fd_sc_hd__nor2_1 _111_ (.A(net10),
+    .B(_095_),
+    .Y(_096_));
+ sky130_fd_sc_hd__nand2_1 _112_ (.A(\age[3][0] ),
+    .B(_096_),
+    .Y(_097_));
+ sky130_fd_sc_hd__inv_2 _113_ (.A(_097_),
+    .Y(_098_));
+ sky130_fd_sc_hd__o21a_1 _114_ (.A1(\age[3][1] ),
+    .A2(_098_),
+    .B1(_094_),
+    .X(_049_));
+ sky130_fd_sc_hd__o211a_1 _115_ (.A1(\age[3][0] ),
+    .A2(_096_),
+    .B1(_094_),
+
+===== C. ALL GRANT REFERENCES IN MAPPED NETLIST =====
+6:    grant,
+13: output [3:0] grant;
+19:    .A2(net10),
+31: sky130_fd_sc_hd__nor2_1 _111_ (.A(net10),
+50: sky130_fd_sc_hd__clkbuf_2 _117_ (.A(_099_),
+52: sky130_fd_sc_hd__inv_2 _118_ (.A(net9),
+72: sky130_fd_sc_hd__nor2_1 _124_ (.A(net9),
+89: sky130_fd_sc_hd__inv_2 _129_ (.A(net8),
+91: sky130_fd_sc_hd__clkbuf_2 _130_ (.A(net3),
+109: sky130_fd_sc_hd__nor2_1 _135_ (.A(net8),
+126: sky130_fd_sc_hd__inv_2 _140_ (.A(net7),
+146: sky130_fd_sc_hd__nor2_1 _146_ (.A(net7),
+165: sky130_fd_sc_hd__clkbuf_2 _152_ (.A(_067_),
+168:    .B(net10),
+169:    .C(net7),
+179:    .B(net10),
+180:    .C(net8),
+194: sky130_fd_sc_hd__clkbuf_2 _161_ (.A(_070_),
+357:    .X(net7));
+361:    .X(net8));
+365:    .X(net9));
+369:    .X(net10));
+544: sky130_fd_sc_hd__clkbuf_2 input1 (.A(ready),
+550: sky130_fd_sc_hd__clkbuf_2 input4 (.A(req[2]),
+552: sky130_fd_sc_hd__clkbuf_2 input5 (.A(req[3]),
+556: sky130_fd_sc_hd__clkbuf_2 output7 (.A(net7),
+557:    .X(grant[0]));
+558: sky130_fd_sc_hd__clkbuf_2 output8 (.A(net8),
+559:    .X(grant[1]));
+560: sky130_fd_sc_hd__clkbuf_2 output9 (.A(net9),
+561:    .X(grant[2]));
+562: sky130_fd_sc_hd__clkbuf_2 output10 (.A(net10),
+563:    .X(grant[3]));
+
+===== D. GRANT REFERENCES IN PREROUTE NETLIST =====
+6:    grant,
+13: output [3:0] grant;
+19:    .A2(net10),
+31: sky130_fd_sc_hd__nor2_1 _111_ (.A(net10),
+50: sky130_fd_sc_hd__clkbuf_2 _117_ (.A(_099_),
+52: sky130_fd_sc_hd__inv_2 _118_ (.A(net9),
+72: sky130_fd_sc_hd__nor2_1 _124_ (.A(net9),
+89: sky130_fd_sc_hd__inv_2 _129_ (.A(net8),
+91: sky130_fd_sc_hd__clkbuf_2 _130_ (.A(net3),
+109: sky130_fd_sc_hd__nor2_1 _135_ (.A(net8),
+126: sky130_fd_sc_hd__inv_2 _140_ (.A(net7),
+146: sky130_fd_sc_hd__nor2_1 _146_ (.A(net7),
+165: sky130_fd_sc_hd__clkbuf_2 _152_ (.A(_067_),
+168:    .B(net10),
+169:    .C(net7),
+179:    .B(net10),
+180:    .C(net8),
+194: sky130_fd_sc_hd__clkbuf_2 _161_ (.A(_070_),
+357:    .X(net7));
+361:    .X(net8));
+365:    .X(net9));
+369:    .X(net10));
+544: sky130_fd_sc_hd__clkbuf_2 input1 (.A(ready),
+550: sky130_fd_sc_hd__clkbuf_2 input4 (.A(req[2]),
+552: sky130_fd_sc_hd__clkbuf_2 input5 (.A(req[3]),
+556: sky130_fd_sc_hd__clkbuf_2 output7 (.A(net7),
+557:    .X(grant[0]));
+558: sky130_fd_sc_hd__clkbuf_2 output8 (.A(net8),
+559:    .X(grant[1]));
+560: sky130_fd_sc_hd__clkbuf_2 output9 (.A(net9),
+561:    .X(grant[2]));
+562: sky130_fd_sc_hd__clkbuf_2 output10 (.A(net10),
+563:    .X(grant[3]));
+
+===== E. SYNTHESIS CHECK REPORT =====
+
+27. Executing CHECK pass (checking for obvious problems).
+checking module starvation_aware_arbiter..
+Warning: Wire starvation_aware_arbiter.\grant [3] is used but has no driver.
+Warning: Wire starvation_aware_arbiter.\grant [2] is used but has no driver.
+Warning: Wire starvation_aware_arbiter.\grant [1] is used but has no driver.
+Warning: Wire starvation_aware_arbiter.\grant [0] is used but has no driver.
+found and reported 4 problems.
+
+===== F. POST-ROUTE TIMING REPORT =====

@@ -1,0 +1,9 @@
+Shared-Select RTL Comparison
+Date: Wed Oct 21 19:50:40 IST 2026
+Reference: rtl/starvation_aware_arbiter_cond_opt.v
+Candidate: rtl/starvation_aware_arbiter_shared_select_opt.v
+Age counter width: 4 bits
+Simulation cycles: 172
+Grant mismatches: 0
+Result: PASS - simulation only
+Formal equivalence: NOT YET PROVEN

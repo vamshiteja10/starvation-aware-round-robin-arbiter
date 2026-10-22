@@ -1,0 +1,2 @@
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v:22128: syntax error
+I give up.

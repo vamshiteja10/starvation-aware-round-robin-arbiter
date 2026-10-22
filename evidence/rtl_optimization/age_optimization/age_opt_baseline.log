@@ -1,0 +1,321 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.29+23 (git sha1 cdeef5481, gcc 7.5.0-3ubuntu1~18.04 -fPIC -Os)
+
+
+-- Running command `
+read_verilog rtl/starvation_aware_arbiter_age_opt.v
+hierarchy -check -top starvation_aware_arbiter
+proc
+opt
+check
+' --
+
+1. Executing Verilog-2005 frontend: rtl/starvation_aware_arbiter_age_opt.v
+Parsing Verilog input from `rtl/starvation_aware_arbiter_age_opt.v' to AST representation.
+Generating RTLIL representation for module `\starvation_aware_arbiter'.
+Warning: Replacing memory \age with list of registers. See rtl/starvation_aware_arbiter_age_opt.v:88
+Successfully finished Verilog frontend.
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \starvation_aware_arbiter
+
+2.2. Analyzing design hierarchy..
+Top module:  \starvation_aware_arbiter
+Removed 0 unused modules.
+
+3. Executing PROC pass (convert processes to netlists).
+
+3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 5 switch rules as full_case in process $proc$rtl/starvation_aware_arbiter_age_opt.v:83$59 in module starvation_aware_arbiter.
+Removed 2 dead cases from process $proc$rtl/starvation_aware_arbiter_age_opt.v:72$15 in module starvation_aware_arbiter.
+Marked 35 switch rules as full_case in process $proc$rtl/starvation_aware_arbiter_age_opt.v:72$15 in module starvation_aware_arbiter.
+Removed a total of 2 dead cases.
+
+3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 1 redundant assignment.
+Promoted 15 assignments to connections.
+
+3.4. Executing PROC_INIT pass (extract init attributes).
+
+3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~44 debug messages>
+
+3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_age_opt.v:83$59'.
+     1/7: $0\rr_ptr[1:0] [1]
+     2/7: $0\rr_ptr[1:0] [0]
+     3/7: $2\i[31:0]
+     4/7: $0\age[3][3:0]
+     5/7: $0\age[2][3:0]
+     6/7: $0\age[1][3:0]
+     7/7: $0\age[0][3:0]
+Creating decoders for process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_age_opt.v:72$15'.
+     1/35: $1\grant[3:0]
+     2/35: $17\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:74$5.$result[3:0]$55
+     3/35: $16\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:74$5.$result[3:0]$54
+     4/35: $15\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:74$5.$result[3:0]$53
+     5/35: $14\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:74$5.$result[3:0]$52
+     6/35: $13\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:74$5.$result[3:0]$51
+     7/35: $12\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:74$5.$result[3:0]$50
+     8/35: $11\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:74$5.$result[3:0]$49
+     9/35: $10\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:74$5.$result[3:0]$48
+    10/35: $9\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:74$5.$result[3:0]$47
+    11/35: $8\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:74$5.$result[3:0]$46
+    12/35: $7\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:74$5.$result[3:0]$45
+    13/35: $6\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:74$5.$result[3:0]$44
+    14/35: $5\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:74$5.$result[3:0]$43
+    15/35: $4\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:74$5.$result[3:0]$42
+    16/35: $3\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:74$5.$result[3:0]$41
+    17/35: $2\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:74$5.$result[3:0]$40
+    18/35: $1\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:74$5.$result[3:0]$39
+    19/35: $17\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:73$4.$result[3:0]$38
+    20/35: $16\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:73$4.$result[3:0]$37
+    21/35: $15\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:73$4.$result[3:0]$36
+    22/35: $14\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:73$4.$result[3:0]$35
+    23/35: $13\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:73$4.$result[3:0]$34
+    24/35: $12\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:73$4.$result[3:0]$33
+    25/35: $11\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:73$4.$result[3:0]$32
+    26/35: $10\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:73$4.$result[3:0]$31
+    27/35: $9\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:73$4.$result[3:0]$30
+    28/35: $8\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:73$4.$result[3:0]$29
+    29/35: $7\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:73$4.$result[3:0]$28
+    30/35: $6\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:73$4.$result[3:0]$27
+    31/35: $5\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:73$4.$result[3:0]$26
+    32/35: $4\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:73$4.$result[3:0]$25
+    33/35: $3\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:73$4.$result[3:0]$24
+    34/35: $2\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:73$4.$result[3:0]$23
+    35/35: $1\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:73$4.$result[3:0]$22
+Creating decoders for process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_age_opt.v:65$6'.
+
+3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\starvation_aware_arbiter.\grant' from process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_age_opt.v:72$15'.
+No latch inferred for signal `\starvation_aware_arbiter.\aged_selected' from process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_age_opt.v:72$15'.
+No latch inferred for signal `\starvation_aware_arbiter.\rr_selected' from process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_age_opt.v:72$15'.
+No latch inferred for signal `\starvation_aware_arbiter.\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:73$4.$result' from process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_age_opt.v:72$15'.
+No latch inferred for signal `\starvation_aware_arbiter.\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:73$4.mask' from process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_age_opt.v:72$15'.
+No latch inferred for signal `\starvation_aware_arbiter.\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:73$4.ptr' from process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_age_opt.v:72$15'.
+No latch inferred for signal `\starvation_aware_arbiter.\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:74$5.$result' from process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_age_opt.v:72$15'.
+No latch inferred for signal `\starvation_aware_arbiter.\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:74$5.mask' from process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_age_opt.v:72$15'.
+No latch inferred for signal `\starvation_aware_arbiter.\rr_select$func$rtl/starvation_aware_arbiter_age_opt.v:74$5.ptr' from process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_age_opt.v:72$15'.
+No latch inferred for signal `\starvation_aware_arbiter.\aged_req' from process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_age_opt.v:65$6'.
+No latch inferred for signal `\starvation_aware_arbiter.\i' from process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_age_opt.v:65$6'.
+
+3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\starvation_aware_arbiter.\rr_ptr' using process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_age_opt.v:83$59'.
+  created $dff cell `$procdff$503' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter.\i' using process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_age_opt.v:83$59'.
+  created $dff cell `$procdff$504' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter.\age[0]' using process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_age_opt.v:83$59'.
+  created $dff cell `$procdff$505' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter.\age[1]' using process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_age_opt.v:83$59'.
+  created $dff cell `$procdff$506' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter.\age[2]' using process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_age_opt.v:83$59'.
+  created $dff cell `$procdff$507' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter.\age[3]' using process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_age_opt.v:83$59'.
+  created $dff cell `$procdff$508' with positive edge clock.
+
+3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 9 empty switches in `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_age_opt.v:83$59'.
+Removing empty process `starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_age_opt.v:83$59'.
+Found and cleaned up 35 empty switches in `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_age_opt.v:72$15'.
+Removing empty process `starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_age_opt.v:72$15'.
+Removing empty process `starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_age_opt.v:65$6'.
+Cleaned up 44 empty switches.
+
+3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module starvation_aware_arbiter.
+<suppressed ~10 debug messages>
+
+4. Executing OPT pass (performing simple optimizations).
+
+4.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module starvation_aware_arbiter.
+
+4.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\starvation_aware_arbiter'.
+<suppressed ~114 debug messages>
+Removed a total of 38 cells.
+
+4.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \starvation_aware_arbiter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $procmux$427.
+    dead port 1/2 on $mux $procmux$424.
+    dead port 2/2 on $mux $procmux$416.
+    dead port 1/2 on $mux $procmux$414.
+    dead port 1/2 on $mux $procmux$411.
+    dead port 1/2 on $mux $procmux$408.
+    dead port 2/2 on $mux $procmux$400.
+    dead port 2/2 on $mux $procmux$394.
+    dead port 1/2 on $mux $procmux$392.
+    dead port 2/2 on $mux $procmux$385.
+    dead port 1/2 on $mux $procmux$383.
+    dead port 1/2 on $mux $procmux$380.
+    dead port 2/2 on $mux $procmux$373.
+    dead port 2/2 on $mux $procmux$496.
+    dead port 1/2 on $mux $procmux$371.
+    dead port 1/2 on $mux $procmux$368.
+    dead port 1/2 on $mux $procmux$365.
+    dead port 2/2 on $mux $procmux$358.
+    dead port 2/2 on $mux $procmux$353.
+    dead port 1/2 on $mux $procmux$351.
+    dead port 2/2 on $mux $procmux$345.
+    dead port 2/2 on $mux $procmux$488.
+    dead port 1/2 on $mux $procmux$343.
+    dead port 1/2 on $mux $procmux$340.
+    dead port 2/2 on $mux $procmux$334.
+    dead port 1/2 on $mux $procmux$332.
+    dead port 1/2 on $mux $procmux$329.
+    dead port 1/2 on $mux $procmux$326.
+    dead port 1/2 on $mux $procmux$486.
+    dead port 2/2 on $mux $procmux$477.
+    dead port 2/2 on $mux $procmux$315.
+    dead port 1/2 on $mux $procmux$475.
+    dead port 2/2 on $mux $procmux$307.
+    dead port 1/2 on $mux $procmux$472.
+    dead port 1/2 on $mux $procmux$305.
+    dead port 2/2 on $mux $procmux$296.
+    dead port 1/2 on $mux $procmux$294.
+    dead port 1/2 on $mux $procmux$291.
+    dead port 2/2 on $mux $procmux$282.
+    dead port 2/2 on $mux $procmux$463.
+    dead port 1/2 on $mux $procmux$280.
+    dead port 1/2 on $mux $procmux$277.
+    dead port 1/2 on $mux $procmux$274.
+    dead port 2/2 on $mux $procmux$265.
+    dead port 2/2 on $mux $procmux$258.
+    dead port 1/2 on $mux $procmux$461.
+    dead port 1/2 on $mux $procmux$256.
+    dead port 2/2 on $mux $procmux$248.
+    dead port 1/2 on $mux $procmux$458.
+    dead port 1/2 on $mux $procmux$246.
+    dead port 1/2 on $mux $procmux$243.
+    dead port 2/2 on $mux $procmux$235.
+    dead port 1/2 on $mux $procmux$455.
+    dead port 1/2 on $mux $procmux$233.
+    dead port 1/2 on $mux $procmux$230.
+    dead port 1/2 on $mux $procmux$227.
+    dead port 2/2 on $mux $procmux$219.
+    dead port 2/2 on $mux $procmux$213.
+    dead port 2/2 on $mux $procmux$446.
+    dead port 1/2 on $mux $procmux$211.
+    dead port 2/2 on $mux $procmux$204.
+    dead port 1/2 on $mux $procmux$202.
+    dead port 1/2 on $mux $procmux$199.
+    dead port 2/2 on $mux $procmux$192.
+    dead port 1/2 on $mux $procmux$190.
+    dead port 1/2 on $mux $procmux$187.
+    dead port 1/2 on $mux $procmux$184.
+    dead port 2/2 on $mux $procmux$177.
+    dead port 2/2 on $mux $procmux$439.
+    dead port 2/2 on $mux $procmux$172.
+    dead port 1/2 on $mux $procmux$170.
+    dead port 2/2 on $mux $procmux$164.
+    dead port 1/2 on $mux $procmux$437.
+    dead port 1/2 on $mux $procmux$162.
+    dead port 1/2 on $mux $procmux$159.
+    dead port 2/2 on $mux $procmux$153.
+    dead port 1/2 on $mux $procmux$151.
+    dead port 1/2 on $mux $procmux$148.
+    dead port 1/2 on $mux $procmux$145.
+    dead port 2/2 on $mux $procmux$429.
+Removed 80 multiplexer ports.
+<suppressed ~7 debug messages>
+
+4.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \starvation_aware_arbiter.
+Performed a total of 0 changes.
+
+4.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\starvation_aware_arbiter'.
+Removed a total of 0 cells.
+
+4.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$506 ($dff) from module starvation_aware_arbiter (D = $procmux$122_Y, Q = \age[1], rval = 4'0000).
+Adding EN signal on $auto$ff.cc:266:slice$509 ($sdff) from module starvation_aware_arbiter (D = $add$rtl/starvation_aware_arbiter_age_opt.v:95$73_Y, Q = \age[1]).
+Adding SRST signal on $procdff$508 ($dff) from module starvation_aware_arbiter (D = $procmux$106_Y, Q = \age[3], rval = 4'0000).
+Adding EN signal on $auto$ff.cc:266:slice$513 ($sdff) from module starvation_aware_arbiter (D = $add$rtl/starvation_aware_arbiter_age_opt.v:95$87_Y, Q = \age[3]).
+Adding SRST signal on $procdff$503 ($dff) from module starvation_aware_arbiter (D = $or$rtl/starvation_aware_arbiter_age_opt.v:99$92_Y, Q = \rr_ptr [1], rval = 1'0).
+Adding SRST signal on $procdff$503 ($dff) from module starvation_aware_arbiter (D = $or$rtl/starvation_aware_arbiter_age_opt.v:101$97_Y, Q = \rr_ptr [0], rval = 1'0).
+Adding SRST signal on $procdff$505 ($dff) from module starvation_aware_arbiter (D = $procmux$130_Y, Q = \age[0], rval = 4'0000).
+Adding EN signal on $auto$ff.cc:266:slice$519 ($sdff) from module starvation_aware_arbiter (D = $add$rtl/starvation_aware_arbiter_age_opt.v:95$66_Y, Q = \age[0]).
+Adding SRST signal on $procdff$507 ($dff) from module starvation_aware_arbiter (D = $procmux$114_Y, Q = \age[2], rval = 4'0000).
+Adding EN signal on $auto$ff.cc:266:slice$523 ($sdff) from module starvation_aware_arbiter (D = $add$rtl/starvation_aware_arbiter_age_opt.v:95$80_Y, Q = \age[2]).
+Handling D = Q on $procdff$504 ($dff) from module starvation_aware_arbiter (removing D path).
+
+4.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \starvation_aware_arbiter..
+Removed 14 unused cells and 289 unused wires.
+<suppressed ~15 debug messages>
+
+4.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module starvation_aware_arbiter.
+
+4.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \starvation_aware_arbiter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+4.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \starvation_aware_arbiter.
+Performed a total of 0 changes.
+
+4.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\starvation_aware_arbiter'.
+Removed a total of 0 cells.
+
+4.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \starvation_aware_arbiter..
+
+4.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module starvation_aware_arbiter.
+
+4.16. Finished OPT passes. (There is nothing left to do.)
+
+5. Executing CHECK pass (checking for obvious problems).
+Checking module starvation_aware_arbiter...
+Found and reported 0 problems.
+
+Warnings: 1 unique messages, 1 total
+End of script. Logfile hash: 6cfa203837, CPU: user 0.06s system 0.01s, MEM: 12.97 MB peak
+Yosys 0.29+23 (git sha1 cdeef5481, gcc 7.5.0-3ubuntu1~18.04 -fPIC -Os)
+Time spent: 32% 4x opt_expr (0 sec), 23% 2x read_verilog (0 sec), ...

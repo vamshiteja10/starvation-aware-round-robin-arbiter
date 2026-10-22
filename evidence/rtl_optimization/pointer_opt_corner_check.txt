@@ -1,0 +1,55 @@
+===== CONFIG FILES =====
+designs/arbiter_pointer_opt/config.tcl:7:set ::env(CLOCK_PERIOD) "10"
+
+===== SDC FILES IN RUN =====
+designs/arbiter_pointer_opt/runs/21-10_07-31/tmp/synthesis/yosys.sdc
+
+===== ROUTED DATABASE AND SPEF =====
+lrwxrwxrwx 1 root root   29 Oct 21 13:01 designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/merged_unpadded.lef -> ../../tmp/merged_unpadded.lef
+-rw-r--r-- 1 root root 141K Oct 21 13:03 designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def
+-rw-r--r-- 1 root root 467K Oct 21 13:03 designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def.png
+-rw-r--r-- 1 root root  67K Oct 21 13:03 designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def.ref
+-rw-r--r-- 1 root root  91K Oct 21 13:03 designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.spef
+
+===== TIMING REPORT SUMMARY =====
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/2-opensta.timing.rpt:1:No paths found.
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/24-opensta_spef.rpt:1:No paths found.
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/2-opensta.min_max.rpt:1:Startpoint: _223_ (rising edge-triggered flip-flop clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/2-opensta.min_max.rpt:2:Endpoint: _223_ (rising edge-triggered flip-flop clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/2-opensta.min_max.rpt:29:                                  0.27   slack (MET)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/2-opensta.min_max.rpt:32:Startpoint: req[0] (input port clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/2-opensta.min_max.rpt:33:Endpoint: grant[3] (output port clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/2-opensta.min_max.rpt:80:                                  1.13   slack (MET)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/24-opensta_spef.timing.rpt:1:No paths found.
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/24-opensta_spef_wns.rpt:1:wns 0.00
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/17-opensta_post_resizer_timing.rpt:1:No paths found.
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/10-opensta_post_resizer_tns.rpt:1:tns 0.00
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/10-opensta_post_resizer_wns.rpt:1:wns 0.00
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/10-opensta_post_resizer.timing.rpt:1:No paths found.
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/2-opensta.rpt:1:No paths found.
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/10-opensta_post_resizer.min_max.rpt:1:Startpoint: _222_ (rising edge-triggered flip-flop clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/10-opensta_post_resizer.min_max.rpt:2:Endpoint: _222_ (rising edge-triggered flip-flop clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/10-opensta_post_resizer.min_max.rpt:29:                                  0.26   slack (MET)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/10-opensta_post_resizer.min_max.rpt:32:Startpoint: req[1] (input port clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/10-opensta_post_resizer.min_max.rpt:33:Endpoint: grant[0] (output port clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/10-opensta_post_resizer.min_max.rpt:86:                                  1.64   slack (MET)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/17-opensta_post_resizer_timing.min_max.rpt:1:Startpoint: _222_ (rising edge-triggered flip-flop clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/17-opensta_post_resizer_timing.min_max.rpt:2:Endpoint: _222_ (rising edge-triggered flip-flop clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/17-opensta_post_resizer_timing.min_max.rpt:29:                                  0.26   slack (MET)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/17-opensta_post_resizer_timing.min_max.rpt:32:Startpoint: req[1] (input port clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/17-opensta_post_resizer_timing.min_max.rpt:33:Endpoint: grant[0] (output port clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/17-opensta_post_resizer_timing.min_max.rpt:86:                                  1.64   slack (MET)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/17-opensta_post_resizer_timing_wns.rpt:1:wns 0.00
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/24-opensta_spef_tns.rpt:1:tns 0.00
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/2-opensta_wns.rpt:1:wns 0.00
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/2-opensta_tns.rpt:1:tns 0.00
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/24-opensta_spef.min_max.rpt:1:Startpoint: _222_ (rising edge-triggered flip-flop clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/24-opensta_spef.min_max.rpt:2:Endpoint: _222_ (rising edge-triggered flip-flop clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/24-opensta_spef.min_max.rpt:29:                                  0.24   slack (MET)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/24-opensta_spef.min_max.rpt:32:Startpoint: req[1] (input port clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/24-opensta_spef.min_max.rpt:33:Endpoint: grant[0] (output port clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/24-opensta_spef.min_max.rpt:86:                                  1.61   slack (MET)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/17-opensta_post_resizer_timing_tns.rpt:1:tns 0.00
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/17-opensta_post_resizer_timing.timing.rpt:1:No paths found.
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/10-opensta_post_resizer.rpt:1:No paths found.
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/final_summary_report.csv:1:,design,design_name,config,flow_status,total_runtime,routed_runtime,(Cell/mm^2)/Core_Util,DIEAREA_mm^2,CellPer_mm^2,OpenDP_Util,Peak_Memory_Usage_MB,cell_count,tritonRoute_violations,Short_violations,MetSpc_violations,OffGrid_violations,MinHole_violations,Other_violations,Magic_violations,antenna_violations,lvs_total_errors,cvc_total_errors,klayout_violations,wire_length,vias,wns,pl_wns,optimized_wns,fastroute_wns,spef_wns,tns,pl_tns,optimized_tns,fastroute_tns,spef_tns,HPWL,routing_layer1_pct,routing_layer2_pct,routing_layer3_pct,routing_layer4_pct,routing_layer5_pct,routing_layer6_pct,wires_count,wire_bits,public_wires_count,public_wire_bits,memories_count,memory_bits,processes_count,cells_pre_abc,AND,DFF,NAND,NOR,OR,XOR,XNOR,MUX,inputs,outputs,level,EndCaps,TapCells,Diodes,Total_Physical_Cells,suggested_clock_frequency,suggested_clock_period,CLOCK_PERIOD,SYNTH_STRATEGY,SYNTH_MAX_FANOUT,FP_CORE_UTIL,FP_ASPECT_RATIO,FP_PDN_VPITCH,FP_PDN_HPITCH,PL_TARGET_DENSITY,GLB_RT_ADJUSTMENT,STD_CELL_LIBRARY,CELL_PAD,DIODE_INSERTION_STRATEGY

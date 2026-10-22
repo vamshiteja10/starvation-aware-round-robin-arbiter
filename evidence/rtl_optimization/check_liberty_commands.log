@@ -1,0 +1,8 @@
+OpenROAD 0.9.0 1415572a73
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+report_units
+[WARNING STA-0300] no commands match 'report_liberty'.
+[WARNING STA-0300] no commands match 'get_liberty'.
+[WARNING STA-0300] no commands match 'get_liberty_cells'.
+read_liberty [-corner corner_name] [-min] [-max] [-no_latch_infer] filename

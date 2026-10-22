@@ -1,0 +1,5 @@
+help set_operating_conditions
+help report_checks
+help report_worst_slack
+help report_tns
+exit

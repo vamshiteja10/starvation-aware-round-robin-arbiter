@@ -1,0 +1,4 @@
+Corner,Process_Condition,Clock_Period_ns,Worst_Slack_ns,TNS_ns,Status
+SS,Slow 100C 1.60V,10.0,4.14,0.00,Positive reported setup slack
+TT,Typical 25C 1.80V,10.0,6.17,0.00,Positive reported setup slack
+FF,Fast -40C 1.95V,10.0,6.91,0.00,Positive reported setup slack

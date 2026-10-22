@@ -1,0 +1,9 @@
+read_liberty -lib /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog /home/vsduser/Desktop/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v
+hierarchy -check -top starvation_aware_arbiter
+synth -top starvation_aware_arbiter -flatten
+dfflibmap -liberty /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+clean
+stat -liberty /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+write_verilog -noattr /home/vsduser/Desktop/arbiter_project/evidence/rtl_optimization/feedback_optimization/cond_opt_mapped.v

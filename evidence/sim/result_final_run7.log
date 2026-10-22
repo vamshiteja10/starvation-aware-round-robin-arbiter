@@ -1,0 +1,6 @@
+---------- SUMMARY (AGE_THRESHOLD=3) ----------
+req0: max_wait=3 cycles (ready=1 phases)
+req1: max_wait=3 cycles (ready=1 phases)
+req2: max_wait=3 cycles (ready=1 phases)
+req3: max_wait=3 cycles (ready=1 phases)
+ALL TESTS PASSED (6147 checks)

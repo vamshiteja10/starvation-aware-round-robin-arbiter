@@ -1,0 +1,21 @@
+# Temporary simulation/build files
+a.out
+*.vvp
+*.o
+*.out
+*.vcd
+*.fst
+
+# Local archives and editor backups
+*.zip
+*.tar.gz
+nano.save
+*~
+
+# Old root-level implementation logs
+/openlane_run.log
+/openlane_run2.log
+/openlane_run3.log
+
+# Local-only folder
+/Desktop/

@@ -1,0 +1,10 @@
+OpenROAD 0.9.0 1415572a73
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+read_spef
+read_spef   [-min] [-max] [-path path] [-increment] [-pin_cap_included] [-keep_capacitive_coupling] [-coupling_reduction_factor factor] [-reduce_to pi_elmore|pi_pole_residue2] [-delete_after_reduce] [-quiet] [-save]
+read_spef   [-min] [-max] [-path path] [-increment] [-pin_cap_included] [-keep_capacitive_coupling] [-coupling_reduction_factor factor] [-reduce_to pi_elmore|pi_pole_residue2] [-delete_after_reduce] [-quiet] [-save]   filename
+[WARNING STA-0300] no commands match 'report_parasitics'.
+estimate_parasitics -placement|-global_routing
+set_wire_rc
+set_wire_rc   [-clock] [-signal] [-layer layer_name] [-resistance res ][-capacitance cap] [-corner corner_name]

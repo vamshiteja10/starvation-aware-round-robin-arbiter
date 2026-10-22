@@ -1,0 +1,328 @@
+===== 1. CHECK RUN DIRECTORY =====
+drwxr-xr-x 6 root root 4096 Oct 21 13:04 /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31
+
+===== 2. SYNTHESIS WARNINGS AND ERRORS =====
+164-
+165-5.4. Executing OPT_EXPR pass (perform const folding).
+166-Optimizing module starvation_aware_arbiter.
+167-<suppressed ~11 debug messages>
+168-
+169-5.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+170-Finding unused cells or wires in module \starvation_aware_arbiter..
+171-Removed 1 unused cells and 162 unused wires.
+172-<suppressed ~2 debug messages>
+173-
+174:5.6. Executing CHECK pass (checking for obvious problems).
+175:checking module starvation_aware_arbiter..
+176-found and reported 0 problems.
+177-
+178-5.7. Executing OPT pass (performing simple optimizations).
+179-
+180-5.7.1. Executing OPT_EXPR pass (perform const folding).
+181-Optimizing module starvation_aware_arbiter.
+182-
+183-5.7.2. Executing OPT_MERGE pass (detect identical cells).
+184-Finding identical cells in module `\starvation_aware_arbiter'.
+185-<suppressed ~114 debug messages>
+186-Removed a total of 38 cells.
+187-
+--
+901-     $_MUX_                         12
+902-     $_NAND_                         4
+903-     $_NOR_                          5
+904-     $_NOT_                         10
+905-     $_ORNOT_                        7
+906-     $_OR_                          40
+907-     $_SDFFE_PP0P_                  16
+908-     $_SDFF_PP0_                     2
+909-     $_XOR_                         12
+910-
+911:5.27. Executing CHECK pass (checking for obvious problems).
+912:checking module starvation_aware_arbiter..
+913-found and reported 0 problems.
+914-
+915-6. Executing SHARE pass (SAT-based resource sharing).
+916-
+917-7. Executing OPT pass (performing simple optimizations).
+918-
+919-7.1. Executing OPT_EXPR pass (perform const folding).
+920-Optimizing module starvation_aware_arbiter.
+921-
+922-7.2. Executing OPT_MERGE pass (detect identical cells).
+923-Finding identical cells in module `\starvation_aware_arbiter'.
+924-Removed a total of 0 cells.
+--
+1164-ABC: + refactor 
+1165-ABC: + balance 
+1166-ABC: + rewrite 
+1167-ABC: + rewrite -z 
+1168-ABC: + balance 
+1169-ABC: + refactor -z 
+1170-ABC: + rewrite -z 
+1171-ABC: + balance 
+1172-ABC: + retime -D -D 10000 -M 5 
+1173-ABC: + scleanup 
+1174:ABC: Error: The network is combinational.
+1175-ABC: + fraig_store 
+1176-ABC: + balance 
+1177-ABC: + fraig_store 
+1178-ABC: + balance 
+1179-ABC: + rewrite 
+1180-ABC: + refactor 
+1181-ABC: + balance 
+1182-ABC: + rewrite 
+1183-ABC: + rewrite -z 
+1184-ABC: + balance 
+1185-ABC: + refactor -z 
+1186-ABC: + rewrite -z 
+--
+1262-
+1263-24. Executing SPLITNETS pass (splitting up multi-bit signals).
+1264-
+1265-25. Executing OPT_CLEAN pass (remove unused cells and wires).
+1266-Finding unused cells or wires in module \starvation_aware_arbiter..
+1267-Removed 0 unused cells and 280 unused wires.
+1268-<suppressed ~1 debug messages>
+1269-
+1270-26. Executing INSBUF pass (insert buffer cells for connected wires).
+1271-
+1272:27. Executing CHECK pass (checking for obvious problems).
+1273:checking module starvation_aware_arbiter..
+1274:Warning: Wire starvation_aware_arbiter.\grant [3] is used but has no driver.
+1275:Warning: Wire starvation_aware_arbiter.\grant [2] is used but has no driver.
+1276:Warning: Wire starvation_aware_arbiter.\grant [1] is used but has no driver.
+1277:Warning: Wire starvation_aware_arbiter.\grant [0] is used but has no driver.
+1278-found and reported 4 problems.
+1279-
+1280-28. Printing statistics.
+1281-
+1282-=== starvation_aware_arbiter ===
+1283-
+1284-   Number of wires:                130
+1285-   Number of wire bits:            136
+1286-   Number of public wires:          23
+1287-   Number of public wire bits:      29
+1288-   Number of memories:               0
+1289-   Number of memory bits:            0
+
+===== 3. AVAILABLE SYNTHESIS NETLISTS =====
+starvation_aware_arbiter.synthesis_cts.v
+starvation_aware_arbiter.synthesis_optimized.v
+starvation_aware_arbiter.synthesis_preroute.v
+starvation_aware_arbiter.synthesis.v
+
+===== 4. GRANT SIGNAL IN GENERATED NETLISTS =====
+
+--- /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_cts.v ---
+1:module starvation_aware_arbiter (clk,
+2-    ready,
+3-    rst,
+4-    VPWR,
+5-    VGND,
+6:    grant,
+7-    req);
+8- input clk;
+9- input ready;
+10- input rst;
+11- input VPWR;
+12- input VGND;
+13: output [3:0] grant;
+14- input [3:0] req;
+15-
+16- sky130_fd_sc_hd__inv_2 _107_ (.A(net5),
+17-    .Y(_093_));
+18- sky130_fd_sc_hd__a211oi_4 _108_ (.A1(net1),
+--
+554- sky130_fd_sc_hd__buf_2 input6 (.A(rst),
+555-    .X(net6));
+556- sky130_fd_sc_hd__clkbuf_2 output7 (.A(net7),
+557:    .X(grant[0]));
+558- sky130_fd_sc_hd__clkbuf_2 output8 (.A(net8),
+559:    .X(grant[1]));
+560- sky130_fd_sc_hd__clkbuf_2 output9 (.A(net9),
+561:    .X(grant[2]));
+562- sky130_fd_sc_hd__clkbuf_2 output10 (.A(net10),
+563:    .X(grant[3]));
+564- sky130_fd_sc_hd__clkbuf_16 clkbuf_0_clk (.A(clk),
+565-    .X(clknet_0_clk));
+566- sky130_fd_sc_hd__clkbuf_1 clkbuf_1_0_0_clk (.A(clknet_0_clk),
+567-    .X(clknet_1_0_0_clk));
+568- sky130_fd_sc_hd__clkbuf_1 clkbuf_1_1_0_clk (.A(clknet_0_clk),
+
+--- /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_optimized.v ---
+1:module starvation_aware_arbiter (clk,
+2-    ready,
+3-    rst,
+4-    VPWR,
+5-    VGND,
+6:    grant,
+7-    req);
+8- input clk;
+9- input ready;
+10- input rst;
+11- input VPWR;
+12- input VGND;
+13: output [3:0] grant;
+14- input [3:0] req;
+15-
+16- sky130_fd_sc_hd__inv_2 _107_ (.A(net5),
+17-    .Y(_093_));
+18- sky130_fd_sc_hd__a211oi_4 _108_ (.A1(net1),
+--
+554- sky130_fd_sc_hd__buf_2 input6 (.A(rst),
+555-    .X(net6));
+556- sky130_fd_sc_hd__clkbuf_2 output7 (.A(net7),
+557:    .X(grant[0]));
+558- sky130_fd_sc_hd__clkbuf_2 output8 (.A(net8),
+559:    .X(grant[1]));
+560- sky130_fd_sc_hd__clkbuf_2 output9 (.A(net9),
+561:    .X(grant[2]));
+562- sky130_fd_sc_hd__clkbuf_2 output10 (.A(net10),
+563:    .X(grant[3]));
+564- sky130_fd_sc_hd__clkbuf_16 clkbuf_0_clk (.A(clk),
+565-    .X(clknet_0_clk));
+566- sky130_fd_sc_hd__clkbuf_1 clkbuf_1_0_0_clk (.A(clknet_0_clk),
+567-    .X(clknet_1_0_0_clk));
+568- sky130_fd_sc_hd__clkbuf_1 clkbuf_1_1_0_clk (.A(clknet_0_clk),
+
+--- /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_preroute.v ---
+1:module starvation_aware_arbiter (clk,
+2-    ready,
+3-    rst,
+4-    VPWR,
+5-    VGND,
+6:    grant,
+7-    req);
+8- input clk;
+9- input ready;
+10- input rst;
+11- input VPWR;
+12- input VGND;
+13: output [3:0] grant;
+14- input [3:0] req;
+15-
+16- sky130_fd_sc_hd__inv_2 _107_ (.A(net5),
+17-    .Y(_093_));
+18- sky130_fd_sc_hd__a211oi_4 _108_ (.A1(net1),
+--
+554- sky130_fd_sc_hd__buf_2 input6 (.A(rst),
+555-    .X(net6));
+556- sky130_fd_sc_hd__clkbuf_2 output7 (.A(net7),
+557:    .X(grant[0]));
+558- sky130_fd_sc_hd__clkbuf_2 output8 (.A(net8),
+559:    .X(grant[1]));
+560- sky130_fd_sc_hd__clkbuf_2 output9 (.A(net9),
+561:    .X(grant[2]));
+562- sky130_fd_sc_hd__clkbuf_2 output10 (.A(net10),
+563:    .X(grant[3]));
+564- sky130_fd_sc_hd__clkbuf_16 clkbuf_0_clk (.A(clk),
+565-    .X(clknet_0_clk));
+566- sky130_fd_sc_hd__clkbuf_1 clkbuf_1_0_0_clk (.A(clknet_0_clk),
+567-    .X(clknet_1_0_0_clk));
+568- sky130_fd_sc_hd__clkbuf_1 clkbuf_1_1_0_clk (.A(clknet_0_clk),
+
+--- /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis.v ---
+1-/* Generated by Yosys 0.9+3621 (git sha1 84e9fa7, gcc 8.3.1 -fPIC -Os) */
+2-
+3:module starvation_aware_arbiter(clk, rst, ready, req, grant);
+4-  wire _000_;
+5-  wire _001_;
+6-  wire _002_;
+7-  wire _003_;
+8-  wire _004_;
+--
+125-  wire \age[3][2] ;
+126-  wire \age[3][3] ;
+127-  input clk;
+128:  output [3:0] grant;
+129-  input ready;
+130-  input [3:0] req;
+131-  wire \rr_ptr[0] ;
+132-  wire \rr_ptr[1] ;
+133-  input rst;
+--
+137-  );
+138-  sky130_fd_sc_hd__a211oi_2 _108_ (
+139-    .A1(ready),
+140:    .A2(grant[3]),
+141-    .B1(rst),
+142-    .C1(_093_),
+143-    .Y(_094_)
+144-  );
+145-  sky130_fd_sc_hd__and2_2 _109_ (
+--
+155-    .X(_095_)
+156-  );
+157-  sky130_fd_sc_hd__nor2_2 _111_ (
+158:    .A(grant[3]),
+159-    .B(_095_),
+160-    .Y(_096_)
+161-  );
+162-  sky130_fd_sc_hd__nand2_2 _112_ (
+163-    .A(\age[3][0] ),
+--
+190-    .X(_100_)
+191-  );
+192-  sky130_fd_sc_hd__inv_2 _118_ (
+193:    .A(grant[2]),
+194-    .Y(_101_)
+195-  );
+196-  sky130_fd_sc_hd__inv_2 _119_ (
+197-    .A(rst),
+198-    .Y(_102_)
+--
+222-    .X(_104_)
+223-  );
+224-  sky130_fd_sc_hd__nor2_2 _124_ (
+225:    .A(grant[2]),
+226-    .B(_104_),
+227-    .Y(_105_)
+228-  );
+229-  sky130_fd_sc_hd__nand2_2 _125_ (
+230-    .A(\age[2][0] ),
+--
+249-    .X(_044_)
+250-  );
+251-  sky130_fd_sc_hd__inv_2 _129_ (
+252:    .A(grant[1]),
+253-    .Y(_053_)
+254-  );
+255-  sky130_fd_sc_hd__buf_1 _130_ (
+256-    .A(req[1]),
+257-    .X(_054_)
+--
+281-    .X(_056_)
+282-  );
+283-  sky130_fd_sc_hd__nor2_2 _135_ (
+284:    .A(grant[1]),
+285-    .B(_056_),
+286-    .Y(_057_)
+287-  );
+288-  sky130_fd_sc_hd__nand2_2 _136_ (
+289-    .A(\age[1][0] ),
+--
+308-    .X(_040_)
+309-  );
+310-  sky130_fd_sc_hd__inv_2 _140_ (
+311:    .A(grant[0]),
+312-    .Y(_060_)
+313-  );
+314-  sky130_fd_sc_hd__buf_1 _141_ (
+315-    .A(req[0]),
+316-    .X(_061_)
+--
+340-    .X(_063_)
+341-  );
+342-  sky130_fd_sc_hd__nor2_2 _146_ (
+343:    .A(grant[0]),
+344-    .B(_063_),
+345-    .Y(_064_)
+346-  );
+347-  sky130_fd_sc_hd__nand2_2 _147_ (
+348-    .A(\age[0][0] ),
+--
+376-  );
+
+===== 5. FINAL FLOW SUMMARY =====
+,design,design_name,config,flow_status,total_runtime,routed_runtime,(Cell/mm^2)/Core_Util,DIEAREA_mm^2,CellPer_mm^2,OpenDP_Util,Peak_Memory_Usage_MB,cell_count,tritonRoute_violations,Short_violations,MetSpc_violations,OffGrid_violations,MinHole_violations,Other_violations,Magic_violations,antenna_violations,lvs_total_errors,cvc_total_errors,klayout_violations,wire_length,vias,wns,pl_wns,optimized_wns,fastroute_wns,spef_wns,tns,pl_tns,optimized_tns,fastroute_tns,spef_tns,HPWL,routing_layer1_pct,routing_layer2_pct,routing_layer3_pct,routing_layer4_pct,routing_layer5_pct,routing_layer6_pct,wires_count,wire_bits,public_wires_count,public_wire_bits,memories_count,memory_bits,processes_count,cells_pre_abc,AND,DFF,NAND,NOR,OR,XOR,XNOR,MUX,inputs,outputs,level,EndCaps,TapCells,Diodes,Total_Physical_Cells,suggested_clock_frequency,suggested_clock_period,CLOCK_PERIOD,SYNTH_STRATEGY,SYNTH_MAX_FANOUT,FP_CORE_UTIL,FP_ASPECT_RATIO,FP_PDN_VPITCH,FP_PDN_HPITCH,PL_TARGET_DENSITY,GLB_RT_ADJUSTMENT,STD_CELL_LIBRARY,CELL_PAD,DIODE_INSERTION_STRATEGY
+0,/openLANE_flow/designs/arbiter_pointer_opt,starvation_aware_arbiter,21-10_07-31,Flow_completed,0h2m21s,0h1m47s,66770.18633540373,0.005520000000000001,23369.565217391304,37,417.42,129,0,0,0,0,0,0,0,0,0,0,-1,2478,890,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1809151,0.0,10.07,10.93,0.0,0.0,0.0,130,136,23,29,0,0,0,129,10,0,4,5,40,12,0,34,36,44,6,42,46,0,88,100.0,10.0,10,AREA 0,5,35,1,153.6,153.18,0.55,0,sky130_fd_sc_hd,1,3

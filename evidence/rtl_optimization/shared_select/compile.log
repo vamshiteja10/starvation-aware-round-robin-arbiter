@@ -1,0 +1,12 @@
+tb/shared_select_compare_tb.v:1: warning: Some modules have no timescale. This may cause
+tb/shared_select_compare_tb.v:1:        : confusing timing results.  Affected modules are:
+tb/shared_select_compare_tb.v:1:        :   -- module starvation_aware_arbiter declared here: rtl/starvation_aware_arbiter_cond_opt.v:1
+tb/shared_select_compare_tb.v:1:        :   -- module starvation_aware_arbiter_shared_select_opt declared here: rtl/starvation_aware_arbiter_shared_select_opt.v:1
+rtl/starvation_aware_arbiter_cond_opt.v:6: warning: Port declaration of clk inherits dimensions from var/net.
+rtl/starvation_aware_arbiter_cond_opt.v:8: warning: Port declaration of ready inherits dimensions from var/net.
+rtl/starvation_aware_arbiter_cond_opt.v:7: warning: Port declaration of rst inherits dimensions from var/net.
+rtl/starvation_aware_arbiter_shared_select_opt.v:6: warning: Port declaration of clk inherits dimensions from var/net.
+rtl/starvation_aware_arbiter_shared_select_opt.v:8: warning: Port declaration of ready inherits dimensions from var/net.
+rtl/starvation_aware_arbiter_shared_select_opt.v:7: warning: Port declaration of rst inherits dimensions from var/net.
+rtl/starvation_aware_arbiter_cond_opt.v:68: warning: @* is sensitive to all 4 words in array 'age'.
+rtl/starvation_aware_arbiter_shared_select_opt.v:68: warning: @* is sensitive to all 4 words in array 'age'.

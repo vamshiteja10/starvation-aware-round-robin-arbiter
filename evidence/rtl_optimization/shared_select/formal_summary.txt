@@ -1,0 +1,10 @@
+Shared-Selection Optimization — Formal SAT Check
+Reference: starvation_aware_arbiter_cond_opt
+Candidate: starvation_aware_arbiter_shared_select_opt
+Age counter width: 4 bits
+Initial state: zero
+Bounded depth: 10 time steps
+Result: PASS
+SAT proof finished - no model found: SUCCESS!
+Exit code: 0
+Scope: bounded sequential equivalence; not an unbounded proof

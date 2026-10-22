@@ -1,0 +1,91 @@
+OpenSTA 2.4.0 ac3479bc24 Copyright (c) 2021, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+Warning: /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v40.lib line 24, default_fanout_load is 0.0.
+Warning: /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/results/synthesis/starvation_aware_arbiter_run7.synthesis_cts.v line 486, module sky130_fd_sc_hd__tapvpwrvgnd_1 not found. Creating black box for PHY_42.
+Startpoint: _220_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _212_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+    Delay      Time   Description
+-------------------------------------------------------------
+   0.0000    0.0000   clock clk (rise edge)
+   0.0000    0.0000   clock source latency
+   0.0000    0.0000 ^ clk (in)
+   0.2311    0.2311 ^ clkbuf_0_clk/X (sky130_fd_sc_hd__clkbuf_16)
+   0.4532    0.6843 ^ clkbuf_1_0_0_clk/X (sky130_fd_sc_hd__clkbuf_1)
+   0.0000    0.6843 ^ _220_/CLK (sky130_fd_sc_hd__dfxtp_1)
+   1.0115    1.6958 v _220_/Q (sky130_fd_sc_hd__dfxtp_1)
+   0.3131    2.0089 ^ _134_/Y (sky130_fd_sc_hd__nor2_1)
+   0.5161    2.5251 ^ _135_/Y (sky130_fd_sc_hd__a21boi_1)
+   0.3751    2.9002 ^ _167_/X (sky130_fd_sc_hd__or2_1)
+   0.1340    3.0342 v _168_/Y (sky130_fd_sc_hd__inv_2)
+   0.4773    3.5115 v _171_/X (sky130_fd_sc_hd__o21a_1)
+   0.4696    3.9811 v _172_/X (sky130_fd_sc_hd__o21a_1)
+   1.5054    5.4865 v _173_/X (sky130_fd_sc_hd__or3_2)
+   1.7195    7.2060 v _209_/X (sky130_fd_sc_hd__mux4_1)
+   1.0868    8.2928 v _141_/X (sky130_fd_sc_hd__or2_2)
+   0.2656    8.5584 ^ _142_/Y (sky130_fd_sc_hd__inv_2)
+   0.3468    8.9052 ^ _193_/X (sky130_fd_sc_hd__or4_4)
+   0.0775    8.9827 v _194_/Y (sky130_fd_sc_hd__inv_2)
+   0.4672    9.4499 v _195_/X (sky130_fd_sc_hd__a31o_1)
+   1.2923   10.7421 v _197_/X (sky130_fd_sc_hd__or3b_1)
+   0.5438   11.2860 v _203_/X (sky130_fd_sc_hd__o32a_1)
+   0.1298   11.4158 ^ _204_/Y (sky130_fd_sc_hd__inv_2)
+   0.0000   11.4158 ^ _212_/D (sky130_fd_sc_hd__dfxtp_1)
+            11.4158   data arrival time
+
+  10.0000   10.0000   clock clk (rise edge)
+   0.0000   10.0000   clock source latency
+   0.0000   10.0000 ^ clk (in)
+   0.2311   10.2311 ^ clkbuf_0_clk/X (sky130_fd_sc_hd__clkbuf_16)
+   0.4532   10.6843 ^ clkbuf_1_0_0_clk/X (sky130_fd_sc_hd__clkbuf_1)
+   0.0000   10.6843 ^ _212_/CLK (sky130_fd_sc_hd__dfxtp_1)
+   0.0000   10.6843   clock reconvergence pessimism
+  -0.1075   10.5768   library setup time
+            10.5768   data required time
+-------------------------------------------------------------
+            10.5768   data required time
+           -11.4158   data arrival time
+-------------------------------------------------------------
+            -0.8390   slack (VIOLATED)
+
+
+Startpoint: rst (input port clocked by clk)
+Endpoint: _214_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+    Delay      Time   Description
+-------------------------------------------------------------
+   0.0000    0.0000   clock clk (rise edge)
+   0.0000    0.0000   clock network delay (propagated)
+   1.0000    1.0000 ^ input external delay
+   0.0000    1.0000 ^ rst (in)
+   0.2834    1.2834 ^ input6/X (sky130_fd_sc_hd__clkbuf_2)
+   0.1423    1.4257 v _143_/Y (sky130_fd_sc_hd__nor3_4)
+   0.2392    1.6649 v _150_/X (sky130_fd_sc_hd__o21a_1)
+   0.0000    1.6649 v _214_/D (sky130_fd_sc_hd__dfxtp_1)
+             1.6649   data arrival time
+
+   0.0000    0.0000   clock clk (rise edge)
+   0.0000    0.0000   clock source latency
+   0.0000    0.0000 ^ clk (in)
+   0.2311    0.2311 ^ clkbuf_0_clk/X (sky130_fd_sc_hd__clkbuf_16)
+   0.4532    0.6843 ^ clkbuf_1_0_0_clk/X (sky130_fd_sc_hd__clkbuf_1)
+   0.0000    0.6843 ^ _214_/CLK (sky130_fd_sc_hd__dfxtp_1)
+   0.0000    0.6843   clock reconvergence pessimism
+  -0.0307    0.6536   library hold time
+             0.6536   data required time
+-------------------------------------------------------------
+             0.6536   data required time
+            -1.6649   data arrival time
+-------------------------------------------------------------
+             1.0113   slack (MET)
+
+
+SUMMARY setup_wns=-0.8390230969694352 hold_wns=1.0112659884610078

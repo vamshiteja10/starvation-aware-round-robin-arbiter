@@ -1,0 +1,56 @@
+===== SPEF FILES =====
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/24-opensta_spef.slew.rpt (0 bytes)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/24-opensta_spef.rpt (16 bytes)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/24-opensta_spef.timing.rpt (16 bytes)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/24-opensta_spef_wns.rpt (9 bytes)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/24-opensta_spef_tns.rpt (9 bytes)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/24-opensta_spef.min_max.rpt (5080 bytes)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/23-spef_extraction.log (228 bytes)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/23-spef_extraction_runtime.txt (12 bytes)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/synthesis/24-opensta_spef (2801 bytes)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/synthesis/24-opensta_spef_runtime.txt (11 bytes)
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.spef (92879 bytes)
+
+===== ROUTING LOG TIMING / EXTRACTION MESSAGES =====
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/18-fastroute.log:4:Warning: /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib line 31, default_operating_condition tt_025C_1v80 not found.
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/18-fastroute.log:179:[WARNING GRT-0025] No OR_DEFAULT vias defined
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/18-fastroute.log:217:Warning: /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib line 32, default_operating_condition ss_100C_1v60 not found.
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/18-fastroute.log:218:Warning: /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_n40C_1v95.lib line 31, default_operating_condition ff_n40C_1v95 not found.
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/18-fastroute.log:242:No paths found.
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/18-fastroute.log:271:                                  0.30   slack (MET)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/18-fastroute.log:328:                                  1.33   slack (MET)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/18-fastroute.log:331:No paths found.
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/fastroute.log:4:Warning: /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib line 31, default_operating_condition tt_025C_1v80 not found.
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/fastroute.log:179:[WARNING GRT-0025] No OR_DEFAULT vias defined
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/fastroute.log:217:Warning: /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib line 32, default_operating_condition ss_100C_1v60 not found.
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/fastroute.log:218:Warning: /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_n40C_1v95.lib line 31, default_operating_condition ff_n40C_1v95 not found.
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/fastroute.log:242:No paths found.
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/fastroute.log:271:                                  0.30   slack (MET)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/fastroute.log:328:                                  1.33   slack (MET)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/fastroute.log:331:No paths found.
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/synthesis/24-opensta_spef:7:Warning: /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_n40C_1v95.lib line 31, default_operating_condition ff_n40C_1v95 not found.
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/synthesis/24-opensta_spef:8:Warning: /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib line 32, default_operating_condition ss_100C_1v60 not found.
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/synthesis/24-opensta_spef:9:Warning: /openLANE_flow/designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_preroute.v line 498, module sky130_fd_sc_hd__tapvpwrvgnd_1 not found.  Creating black box for PHY_42.
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/synthesis/24-opensta_spef:10:Warning: /openLANE_flow/designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_preroute.v line 570, module sky130_fd_sc_hd__fill_1 not found.  Creating black box for FILLER_0_3.
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/synthesis/24-opensta_spef:11:Warning: /openLANE_flow/designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_preroute.v line 594, module sky130_fd_sc_hd__fill_2 not found.  Creating black box for FILLER_1_62.
+
+===== ROUTING REPORT FILES =====
+18-fastroute.min_max.rpt (0 bytes)
+18-fastroute.rpt (0 bytes)
+18-fastroute.timing.rpt (0 bytes)
+18-fastroute_tns.rpt (0 bytes)
+18-fastroute_wns.rpt (0 bytes)
+21-tritonRoute.drc (0 bytes)
+21-tritonRoute.klayout.xml (197 bytes)
+41-antenna.rpt (266166 bytes)
+
+===== FINAL DATABASE FILES =====
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/lvs/starvation_aware_arbiter.lvs.powered.v (61321 bytes)
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/floorplan/starvation_aware_arbiter.floorplan.def (23775 bytes)
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/routing/starvation_aware_arbiter.def (143629 bytes)
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/placement/starvation_aware_arbiter.placement.def (43795 bytes)
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis.v (14152 bytes)
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_optimized.v (15681 bytes)
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_preroute.v (29121 bytes)
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/synthesis/starvation_aware_arbiter.synthesis_cts.v (15681 bytes)
+designs/arbiter_pointer_opt/runs/21-10_07-31/results/cts/starvation_aware_arbiter.cts.def (44267 bytes)

@@ -1,0 +1,371 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Wolf <claire@symbioticeda.com>          |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9+3621 (git sha1 84e9fa7, gcc 8.3.1 -fPIC -Os)
+
+
+-- Running command `
+    read_verilog /arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v
+    read_verilog /arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v
+    proc
+    memory
+    equiv_make starvation_aware_arbiter starvation_aware_arbiter_age_enable_opt equiv
+    hierarchy -top equiv
+    equiv_simple
+    equiv_induct
+    equiv_status -assert
+  ' --
+
+1. Executing Verilog-2005 frontend: /arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v
+Parsing Verilog input from `/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v' to AST representation.
+Generating RTLIL representation for module `\starvation_aware_arbiter'.
+Warning: Replacing memory \age with list of registers. See /arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:88
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v
+Parsing Verilog input from `/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v' to AST representation.
+Generating RTLIL representation for module `\starvation_aware_arbiter_age_enable_opt'.
+Warning: Replacing memory \age with list of registers. See /arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:88
+Successfully finished Verilog frontend.
+
+3. Executing PROC pass (convert processes to netlists).
+
+3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 5 switch rules as full_case in process $proc$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:83$174 in module starvation_aware_arbiter_age_enable_opt.
+Removed 2 dead cases from process $proc$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:72$130 in module starvation_aware_arbiter_age_enable_opt.
+Marked 35 switch rules as full_case in process $proc$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:72$130 in module starvation_aware_arbiter_age_enable_opt.
+Marked 5 switch rules as full_case in process $proc$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:83$68 in module starvation_aware_arbiter.
+Removed 2 dead cases from process $proc$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:72$24 in module starvation_aware_arbiter.
+Marked 35 switch rules as full_case in process $proc$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:72$24 in module starvation_aware_arbiter.
+Removed a total of 4 dead cases.
+
+3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 2 redundant assignments.
+Promoted 30 assignments to connections.
+
+3.4. Executing PROC_INIT pass (extract init attributes).
+
+3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+3.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\starvation_aware_arbiter_age_enable_opt.$proc$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:83$174'.
+     1/7: $0\rr_ptr[1:0] [1]
+     2/7: $0\rr_ptr[1:0] [0]
+     3/7: $2\i[31:0]
+     4/7: $0\age[3][3:0]
+     5/7: $0\age[2][3:0]
+     6/7: $0\age[1][3:0]
+     7/7: $0\age[0][3:0]
+Creating decoders for process `\starvation_aware_arbiter_age_enable_opt.$proc$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:72$130'.
+     1/35: $1\grant[3:0]
+     2/35: $17$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:74$112$\rr_select[3:0]$170
+     3/35: $16$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:74$112$\rr_select[3:0]$169
+     4/35: $15$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:74$112$\rr_select[3:0]$168
+     5/35: $14$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:74$112$\rr_select[3:0]$167
+     6/35: $13$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:74$112$\rr_select[3:0]$166
+     7/35: $12$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:74$112$\rr_select[3:0]$165
+     8/35: $11$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:74$112$\rr_select[3:0]$164
+     9/35: $10$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:74$112$\rr_select[3:0]$163
+    10/35: $9$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:74$112$\rr_select[3:0]$162
+    11/35: $8$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:74$112$\rr_select[3:0]$161
+    12/35: $7$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:74$112$\rr_select[3:0]$160
+    13/35: $6$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:74$112$\rr_select[3:0]$159
+    14/35: $5$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:74$112$\rr_select[3:0]$158
+    15/35: $4$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:74$112$\rr_select[3:0]$157
+    16/35: $3$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:74$112$\rr_select[3:0]$156
+    17/35: $2$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:74$112$\rr_select[3:0]$155
+    18/35: $1$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:74$112$\rr_select[3:0]$154
+    19/35: $17$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:73$111$\rr_select[3:0]$153
+    20/35: $16$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:73$111$\rr_select[3:0]$152
+    21/35: $15$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:73$111$\rr_select[3:0]$151
+    22/35: $14$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:73$111$\rr_select[3:0]$150
+    23/35: $13$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:73$111$\rr_select[3:0]$149
+    24/35: $12$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:73$111$\rr_select[3:0]$148
+    25/35: $11$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:73$111$\rr_select[3:0]$147
+    26/35: $10$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:73$111$\rr_select[3:0]$146
+    27/35: $9$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:73$111$\rr_select[3:0]$145
+    28/35: $8$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:73$111$\rr_select[3:0]$144
+    29/35: $7$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:73$111$\rr_select[3:0]$143
+    30/35: $6$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:73$111$\rr_select[3:0]$142
+    31/35: $5$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:73$111$\rr_select[3:0]$141
+    32/35: $4$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:73$111$\rr_select[3:0]$140
+    33/35: $3$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:73$111$\rr_select[3:0]$139
+    34/35: $2$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:73$111$\rr_select[3:0]$138
+    35/35: $1$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:73$111$\rr_select[3:0]$137
+Creating decoders for process `\starvation_aware_arbiter_age_enable_opt.$proc$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:65$121'.
+Creating decoders for process `\starvation_aware_arbiter.$proc$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:83$68'.
+     1/7: $0\rr_ptr[1:0] [1]
+     2/7: $0\rr_ptr[1:0] [0]
+     3/7: $2\i[31:0]
+     4/7: $0\age[3][3:0]
+     5/7: $0\age[2][3:0]
+     6/7: $0\age[1][3:0]
+     7/7: $0\age[0][3:0]
+Creating decoders for process `\starvation_aware_arbiter.$proc$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:72$24'.
+     1/35: $1\grant[3:0]
+     2/35: $17$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:74$6$\rr_select[3:0]$64
+     3/35: $16$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:74$6$\rr_select[3:0]$63
+     4/35: $15$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:74$6$\rr_select[3:0]$62
+     5/35: $14$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:74$6$\rr_select[3:0]$61
+     6/35: $13$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:74$6$\rr_select[3:0]$60
+     7/35: $12$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:74$6$\rr_select[3:0]$59
+     8/35: $11$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:74$6$\rr_select[3:0]$58
+     9/35: $10$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:74$6$\rr_select[3:0]$57
+    10/35: $9$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:74$6$\rr_select[3:0]$56
+    11/35: $8$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:74$6$\rr_select[3:0]$55
+    12/35: $7$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:74$6$\rr_select[3:0]$54
+    13/35: $6$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:74$6$\rr_select[3:0]$53
+    14/35: $5$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:74$6$\rr_select[3:0]$52
+    15/35: $4$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:74$6$\rr_select[3:0]$51
+    16/35: $3$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:74$6$\rr_select[3:0]$50
+    17/35: $2$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:74$6$\rr_select[3:0]$49
+    18/35: $1$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:74$6$\rr_select[3:0]$48
+    19/35: $17$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:73$5$\rr_select[3:0]$47
+    20/35: $16$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:73$5$\rr_select[3:0]$46
+    21/35: $15$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:73$5$\rr_select[3:0]$45
+    22/35: $14$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:73$5$\rr_select[3:0]$44
+    23/35: $13$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:73$5$\rr_select[3:0]$43
+    24/35: $12$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:73$5$\rr_select[3:0]$42
+    25/35: $11$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:73$5$\rr_select[3:0]$41
+    26/35: $10$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:73$5$\rr_select[3:0]$40
+    27/35: $9$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:73$5$\rr_select[3:0]$39
+    28/35: $8$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:73$5$\rr_select[3:0]$38
+    29/35: $7$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:73$5$\rr_select[3:0]$37
+    30/35: $6$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:73$5$\rr_select[3:0]$36
+    31/35: $5$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:73$5$\rr_select[3:0]$35
+    32/35: $4$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:73$5$\rr_select[3:0]$34
+    33/35: $3$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:73$5$\rr_select[3:0]$33
+    34/35: $2$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:73$5$\rr_select[3:0]$32
+    35/35: $1$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:73$5$\rr_select[3:0]$31
+Creating decoders for process `\starvation_aware_arbiter.$proc$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:65$15'.
+
+3.7. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\starvation_aware_arbiter_age_enable_opt.\grant' from process `\starvation_aware_arbiter_age_enable_opt.$proc$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:72$130'.
+No latch inferred for signal `\starvation_aware_arbiter_age_enable_opt.\aged_selected' from process `\starvation_aware_arbiter_age_enable_opt.$proc$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:72$130'.
+No latch inferred for signal `\starvation_aware_arbiter_age_enable_opt.\rr_selected' from process `\starvation_aware_arbiter_age_enable_opt.$proc$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:72$130'.
+No latch inferred for signal `\starvation_aware_arbiter_age_enable_opt.$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:73$111$\rr_select' from process `\starvation_aware_arbiter_age_enable_opt.$proc$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:72$130'.
+No latch inferred for signal `\starvation_aware_arbiter_age_enable_opt.$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:73$111$\mask' from process `\starvation_aware_arbiter_age_enable_opt.$proc$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:72$130'.
+No latch inferred for signal `\starvation_aware_arbiter_age_enable_opt.$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:73$111$\ptr' from process `\starvation_aware_arbiter_age_enable_opt.$proc$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:72$130'.
+No latch inferred for signal `\starvation_aware_arbiter_age_enable_opt.$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:74$112$\rr_select' from process `\starvation_aware_arbiter_age_enable_opt.$proc$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:72$130'.
+No latch inferred for signal `\starvation_aware_arbiter_age_enable_opt.$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:74$112$\mask' from process `\starvation_aware_arbiter_age_enable_opt.$proc$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:72$130'.
+No latch inferred for signal `\starvation_aware_arbiter_age_enable_opt.$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:74$112$\ptr' from process `\starvation_aware_arbiter_age_enable_opt.$proc$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:72$130'.
+No latch inferred for signal `\starvation_aware_arbiter_age_enable_opt.\aged_req' from process `\starvation_aware_arbiter_age_enable_opt.$proc$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:65$121'.
+No latch inferred for signal `\starvation_aware_arbiter_age_enable_opt.\i' from process `\starvation_aware_arbiter_age_enable_opt.$proc$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:65$121'.
+No latch inferred for signal `\starvation_aware_arbiter.\grant' from process `\starvation_aware_arbiter.$proc$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:72$24'.
+No latch inferred for signal `\starvation_aware_arbiter.\aged_selected' from process `\starvation_aware_arbiter.$proc$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:72$24'.
+No latch inferred for signal `\starvation_aware_arbiter.\rr_selected' from process `\starvation_aware_arbiter.$proc$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:72$24'.
+No latch inferred for signal `\starvation_aware_arbiter.$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:73$5$\rr_select' from process `\starvation_aware_arbiter.$proc$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:72$24'.
+No latch inferred for signal `\starvation_aware_arbiter.$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:73$5$\mask' from process `\starvation_aware_arbiter.$proc$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:72$24'.
+No latch inferred for signal `\starvation_aware_arbiter.$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:73$5$\ptr' from process `\starvation_aware_arbiter.$proc$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:72$24'.
+No latch inferred for signal `\starvation_aware_arbiter.$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:74$6$\rr_select' from process `\starvation_aware_arbiter.$proc$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:72$24'.
+No latch inferred for signal `\starvation_aware_arbiter.$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:74$6$\mask' from process `\starvation_aware_arbiter.$proc$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:72$24'.
+No latch inferred for signal `\starvation_aware_arbiter.$func$\rr_select$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:74$6$\ptr' from process `\starvation_aware_arbiter.$proc$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:72$24'.
+No latch inferred for signal `\starvation_aware_arbiter.\aged_req' from process `\starvation_aware_arbiter.$proc$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:65$15'.
+No latch inferred for signal `\starvation_aware_arbiter.\i' from process `\starvation_aware_arbiter.$proc$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:65$15'.
+
+3.8. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\starvation_aware_arbiter_age_enable_opt.\rr_ptr' using process `\starvation_aware_arbiter_age_enable_opt.$proc$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:83$174'.
+  created $dff cell `$procdff$1015' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter_age_enable_opt.\i' using process `\starvation_aware_arbiter_age_enable_opt.$proc$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:83$174'.
+  created $dff cell `$procdff$1016' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter_age_enable_opt.\age[0]' using process `\starvation_aware_arbiter_age_enable_opt.$proc$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:83$174'.
+  created $dff cell `$procdff$1017' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter_age_enable_opt.\age[1]' using process `\starvation_aware_arbiter_age_enable_opt.$proc$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:83$174'.
+  created $dff cell `$procdff$1018' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter_age_enable_opt.\age[2]' using process `\starvation_aware_arbiter_age_enable_opt.$proc$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:83$174'.
+  created $dff cell `$procdff$1019' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter_age_enable_opt.\age[3]' using process `\starvation_aware_arbiter_age_enable_opt.$proc$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:83$174'.
+  created $dff cell `$procdff$1020' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter.\rr_ptr' using process `\starvation_aware_arbiter.$proc$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:83$68'.
+  created $dff cell `$procdff$1021' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter.\i' using process `\starvation_aware_arbiter.$proc$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:83$68'.
+  created $dff cell `$procdff$1022' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter.\age[0]' using process `\starvation_aware_arbiter.$proc$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:83$68'.
+  created $dff cell `$procdff$1023' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter.\age[1]' using process `\starvation_aware_arbiter.$proc$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:83$68'.
+  created $dff cell `$procdff$1024' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter.\age[2]' using process `\starvation_aware_arbiter.$proc$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:83$68'.
+  created $dff cell `$procdff$1025' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter.\age[3]' using process `\starvation_aware_arbiter.$proc$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:83$68'.
+  created $dff cell `$procdff$1026' with positive edge clock.
+
+3.9. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 9 empty switches in `\starvation_aware_arbiter_age_enable_opt.$proc$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:83$174'.
+Removing empty process `starvation_aware_arbiter_age_enable_opt.$proc$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:83$174'.
+Found and cleaned up 35 empty switches in `\starvation_aware_arbiter_age_enable_opt.$proc$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:72$130'.
+Removing empty process `starvation_aware_arbiter_age_enable_opt.$proc$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:72$130'.
+Removing empty process `starvation_aware_arbiter_age_enable_opt.$proc$/arbiter_project/rtl/starvation_aware_arbiter_age_enable_opt.v:65$121'.
+Found and cleaned up 9 empty switches in `\starvation_aware_arbiter.$proc$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:83$68'.
+Removing empty process `starvation_aware_arbiter.$proc$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:83$68'.
+Found and cleaned up 35 empty switches in `\starvation_aware_arbiter.$proc$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:72$24'.
+Removing empty process `starvation_aware_arbiter.$proc$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:72$24'.
+Removing empty process `starvation_aware_arbiter.$proc$/arbiter_project/rtl/starvation_aware_arbiter_cond_opt.v:65$15'.
+Cleaned up 88 empty switches.
+
+4. Executing MEMORY pass.
+
+4.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+4.2. Executing MEMORY_DFF pass (merging $dff cells to $memrd and $memwr).
+
+4.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \starvation_aware_arbiter_age_enable_opt..
+Finding unused cells or wires in module \starvation_aware_arbiter..
+Removed 2 unused cells and 324 unused wires.
+<suppressed ~4 debug messages>
+
+4.4. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+4.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \starvation_aware_arbiter..
+Finding unused cells or wires in module \starvation_aware_arbiter_age_enable_opt..
+
+4.6. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+4.7. Executing MEMORY_MAP pass (converting $mem cells to logic and flip-flops).
+
+5. Executing EQUIV_MAKE pass (creating equiv checking module).
+Presumably equivalent wires: age[0]_gold (\age[0]_gold), age[0]_gate (\age[0]_gate) -> age[0]
+Presumably equivalent wires: age[1]_gold (\age[1]_gold), age[1]_gate (\age[1]_gate) -> age[1]
+Presumably equivalent wires: age[2]_gold (\age[2]_gold), age[2]_gate (\age[2]_gate) -> age[2]
+Presumably equivalent wires: age[3]_gold (\age[3]_gold), age[3]_gate (\age[3]_gate) -> age[3]
+Presumably equivalent wires: aged_req_gold (\aged_req_gold), aged_req_gate (\aged_req_gate) -> aged_req
+Presumably equivalent wires: aged_selected_gold (\aged_selected_gold), aged_selected_gate (\aged_selected_gate) -> aged_selected
+Presumably equivalent wires: clk_gold (\clk_gold), clk_gate (\clk_gate) -> clk
+Presumably equivalent wires: grant_gold (\grant_gold), grant_gate (\grant_gate) -> grant
+Presumably equivalent wires: i_gold (4), i_gate (4) -> i
+Presumably equivalent wires: ready_gold (\ready_gold), ready_gate (\ready_gate) -> ready
+Presumably equivalent wires: req_gold (\req_gold), req_gate (\req_gate) -> req
+Presumably equivalent wires: rr_ptr_gold (\rr_ptr_gold), rr_ptr_gate (\rr_ptr_gate) -> rr_ptr
+Presumably equivalent wires: rr_selected_gold (\rr_selected_gold), rr_selected_gate (\rr_selected_gate) -> rr_selected
+Presumably equivalent wires: rst_gold (\rst_gold), rst_gate (\rst_gate) -> rst
+
+6. Executing HIERARCHY pass (managing design hierarchy).
+
+6.1. Analyzing design hierarchy..
+Top module:  \equiv
+
+6.2. Analyzing design hierarchy..
+Top module:  \equiv
+Removing unused module `\starvation_aware_arbiter'.
+Removing unused module `\starvation_aware_arbiter_age_enable_opt'.
+Removed 2 unused modules.
+
+7. Executing EQUIV_SIMPLE pass.
+Found 66 unproven $equiv cells (10 groups) in equiv:
+ Grouping SAT models for \grant:
+  Trying to prove $equiv for \grant [0]: failed.
+  Trying to prove $equiv for \grant [1]: failed.
+  Trying to prove $equiv for \grant [2]: failed.
+  Trying to prove $equiv for \grant [3]: failed.
+ Grouping SAT models for \rr_ptr:
+  Trying to prove $equiv for \rr_ptr [0]: failed.
+  Trying to prove $equiv for \rr_ptr [1]: failed.
+ Grouping SAT models for \aged_req:
+  Trying to prove $equiv for \aged_req [0]: failed.
+  Trying to prove $equiv for \aged_req [1]: failed.
+  Trying to prove $equiv for \aged_req [2]: failed.
+  Trying to prove $equiv for \aged_req [3]: failed.
+ Grouping SAT models for \aged_selected:
+  Trying to prove $equiv for \aged_selected [0]: failed.
+  Trying to prove $equiv for \aged_selected [1]: failed.
+  Trying to prove $equiv for \aged_selected [2]: failed.
+  Trying to prove $equiv for \aged_selected [3]: failed.
+ Grouping SAT models for \rr_selected:
+  Trying to prove $equiv for \rr_selected [0]: failed.
+  Trying to prove $equiv for \rr_selected [1]: failed.
+  Trying to prove $equiv for \rr_selected [2]: failed.
+  Trying to prove $equiv for \rr_selected [3]: failed.
+ Grouping SAT models for \i:
+  Trying to prove $equiv for \i [0]: success!
+  Trying to prove $equiv for \i [1]: success!
+  Trying to prove $equiv for \i [2]: success!
+  Trying to prove $equiv for \i [3]: success!
+  Trying to prove $equiv for \i [4]: success!
+  Trying to prove $equiv for \i [5]: success!
+  Trying to prove $equiv for \i [6]: success!
+  Trying to prove $equiv for \i [7]: success!
+  Trying to prove $equiv for \i [8]: success!
+  Trying to prove $equiv for \i [9]: success!
+  Trying to prove $equiv for \i [10]: success!
+  Trying to prove $equiv for \i [11]: success!
+  Trying to prove $equiv for \i [12]: success!
+  Trying to prove $equiv for \i [13]: success!
+  Trying to prove $equiv for \i [14]: success!
+  Trying to prove $equiv for \i [15]: success!
+  Trying to prove $equiv for \i [16]: success!
+  Trying to prove $equiv for \i [17]: success!
+  Trying to prove $equiv for \i [18]: success!
+  Trying to prove $equiv for \i [19]: success!
+  Trying to prove $equiv for \i [20]: success!
+  Trying to prove $equiv for \i [21]: success!
+  Trying to prove $equiv for \i [22]: success!
+  Trying to prove $equiv for \i [23]: success!
+  Trying to prove $equiv for \i [24]: success!
+  Trying to prove $equiv for \i [25]: success!
+  Trying to prove $equiv for \i [26]: success!
+  Trying to prove $equiv for \i [27]: success!
+  Trying to prove $equiv for \i [28]: success!
+  Trying to prove $equiv for \i [29]: success!
+  Trying to prove $equiv for \i [30]: success!
+  Trying to prove $equiv for \i [31]: success!
+ Grouping SAT models for \age[0]:
+  Trying to prove $equiv for \age[0] [0]: failed.
+  Trying to prove $equiv for \age[0] [1]: failed.
+  Trying to prove $equiv for \age[0] [2]: failed.
+  Trying to prove $equiv for \age[0] [3]: failed.
+ Grouping SAT models for \age[1]:
+  Trying to prove $equiv for \age[1] [0]: failed.
+  Trying to prove $equiv for \age[1] [1]: failed.
+  Trying to prove $equiv for \age[1] [2]: failed.
+  Trying to prove $equiv for \age[1] [3]: failed.
+ Grouping SAT models for \age[2]:
+  Trying to prove $equiv for \age[2] [0]: failed.
+  Trying to prove $equiv for \age[2] [1]: failed.
+  Trying to prove $equiv for \age[2] [2]: failed.
+  Trying to prove $equiv for \age[2] [3]: failed.
+ Grouping SAT models for \age[3]:
+  Trying to prove $equiv for \age[3] [0]: failed.
+  Trying to prove $equiv for \age[3] [1]: failed.
+  Trying to prove $equiv for \age[3] [2]: failed.
+  Trying to prove $equiv for \age[3] [3]: failed.
+Proved 32 previously unproven $equiv cells.
+
+8. Executing EQUIV_INDUCT pass.
+Found 34 unproven $equiv cells in module equiv:
+  Proving existence of base case for step 1. (20740 clauses over 7804 variables)
+  Proving induction step 1. (41839 clauses over 15715 variables)
+  Proof for induction step holds. Entire workset of 34 cells proven!
+Proved 34 previously unproven $equiv cells.
+
+9. Executing EQUIV_STATUS pass.
+Found 66 $equiv cells in equiv:
+  Of those cells 66 are proven and 0 are unproven.
+  Equivalence successfully proven!
+
+Warnings: 2 unique messages, 2 total
+End of script. Logfile hash: 9a3043bc92, CPU: user 0.31s system 0.01s, MEM: 22.20 MB peak
+Yosys 0.9+3621 (git sha1 84e9fa7, gcc 8.3.1 -fPIC -Os)
+Time spent: 35% 1x equiv_induct (0 sec), 28% 1x equiv_simple (0 sec), ...

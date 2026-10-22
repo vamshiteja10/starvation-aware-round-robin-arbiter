@@ -1,0 +1,89 @@
+[INFO]: 
+	___   ____   ___  ____   _       ____  ____     ___
+	/   \ |    \ /  _]|    \ | |     /    ||    \   /  _]
+	|     ||  o  )  [_ |  _  || |    |  o  ||  _  | /  [_
+	|  O  ||   _/    _]|  |  || |___ |     ||  |  ||    _]
+	|     ||  | |   [_ |  |  ||     ||  _  ||  |  ||   [_
+	\___/ |__| |_____||__|__||_____||__|__||__|__||_____|
+
+
+[INFO]: Version: v0.21
+[INFO]: Running non-interactively
+[INFO]: Using design configuration at /openLANE_flow/designs/arbiter_age_enable_opt/config.tcl
+[INFO]: Sourcing Configurations from /openLANE_flow/designs/arbiter_age_enable_opt/config.tcl
+[INFO]: PDKs root directory: /pdks
+[INFO]: PDK: sky130A
+[INFO]: Setting PDKPATH to /pdks/sky130A
+[INFO]: Standard Cell Library: sky130_fd_sc_hd
+[INFO]: Sourcing Configurations from /openLANE_flow/designs/arbiter_age_enable_opt/config.tcl
+[INFO]: Current run directory is /openLANE_flow/designs/arbiter_age_enable_opt/runs/21-10_11-00
+[INFO]: Preparing LEF Files
+[INFO]: Extracting the number of available metal layers from /pdks/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd.tlef
+[INFO]: The number of available metal layers is 6
+[INFO]: The available metal layers are li1 met1 met2 met3 met4 met5
+[INFO]: Merging LEF Files...
+mergeLef.py : Merging LEFs
+sky130_fd_sc_hd.lef: SITEs matched found: 0
+sky130_fd_sc_hd.lef: MACROs matched found: 437
+sky130_ef_sc_hd__fill_12.lef: SITEs matched found: 0
+sky130_ef_sc_hd__fill_12.lef: MACROs matched found: 1
+sky130_ef_sc_hd__decap_12.lef: SITEs matched found: 0
+sky130_ef_sc_hd__decap_12.lef: MACROs matched found: 1
+sky130_ef_sc_hd__fakediode_2.lef: SITEs matched found: 0
+sky130_ef_sc_hd__fakediode_2.lef: MACROs matched found: 1
+mergeLef.py : Merging LEFs complete
+[INFO]: Trimming Liberty...
+[INFO]: Generating Exclude List...
+[ERROR]: during executing: "/openLANE_flow/scripts/libtrim.pl /pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib /openLANE_flow/designs/arbiter_age_enable_opt/runs/21-10_11-00/tmp/trimmed.lib.exclude.list > /openLANE_flow/designs/arbiter_age_enable_opt/runs/21-10_11-00/tmp/trimmed.lib"
+[ERROR]: Exit code: 1
+[ERROR]: Last 10 lines:
+Can't locate experimental.pm in @INC (@INC contains: /usr/local/lib64/perl5 /usr/local/share/perl5 /usr/lib64/perl5/vendor_perl /usr/share/perl5/vendor_perl /usr/lib64/perl5 /usr/share/perl5 .) at /openLANE_flow/scripts/libtrim.pl line 22.
+BEGIN failed--compilation aborted at /openLANE_flow/scripts/libtrim.pl line 22.
+
+[ERROR]: Please check /openLANE_flow/scripts/libtrim.pl  log file
+[ERROR]: Dumping to /openLANE_flow/designs/arbiter_age_enable_opt/runs/21-10_11-00/error.log
+[INFO]: Calculating Runtime From the Start...
+[INFO]: Flow failed for starvation_aware_arbiter_age_enable_opt/21-10_11-00 in 0h0m0s
+[INFO]: Generating Final Summary Report...
+[ERROR]: during executing: "python3 /openLANE_flow/report_generation_wrapper.py -d /openLANE_flow/designs/arbiter_age_enable_opt -dn starvation_aware_arbiter_age_enable_opt -t 21-10_11-00 -o /openLANE_flow/designs/arbiter_age_enable_opt/runs/21-10_11-00/reports/final_summary_report.csv -m /openLANE_flow/designs/arbiter_age_enable_opt/runs/21-10_11-00/reports/manufacturability_report.rpt -rs /openLANE_flow/designs/arbiter_age_enable_opt/runs/21-10_11-00/reports/runtime_summary_report.rpt -r /openLANE_flow/designs/arbiter_age_enable_opt/runs/21-10_11-00"
+[ERROR]: Exit code: 1
+[ERROR]: Last 10 lines:
+grep: /openLANE_flow/designs/arbiter_age_enable_opt/runs/21-10_11-00/config.tcl: No such file or directory
+grep: /openLANE_flow/designs/arbiter_age_enable_opt/runs/21-10_11-00/config.tcl: No such file or directory
+grep: /openLANE_flow/designs/arbiter_age_enable_opt/runs/21-10_11-00/config.tcl: No such file or directory
+grep: /openLANE_flow/designs/arbiter_age_enable_opt/runs/21-10_11-00/config.tcl: No such file or directory
+grep: /openLANE_flow/designs/arbiter_age_enable_opt/runs/21-10_11-00/config.tcl: No such file or directory
+grep: /openLANE_flow/designs/arbiter_age_enable_opt/runs/21-10_11-00/config.tcl: No such file or directory
+grep: /openLANE_flow/designs/arbiter_age_enable_opt/runs/21-10_11-00/config.tcl: No such file or directory
+grep: /openLANE_flow/designs/arbiter_age_enable_opt/runs/21-10_11-00/config.tcl: No such file or directory
+grep: /openLANE_flow/designs/arbiter_age_enable_opt/runs/21-10_11-00/config.tcl: No such file or directory
+grep: /openLANE_flow/designs/arbiter_age_enable_opt/runs/21-10_11-00/config.tcl: No such file or directory
+
+[ERROR]: Please check python3  log file
+[ERROR]: Dumping to /openLANE_flow/designs/arbiter_age_enable_opt/runs/21-10_11-00/error.log
+
+    while executing
+"try_catch python3 $::env(OPENLANE_ROOT)/report_generation_wrapper.py -d $::env(DESIGN_DIR)  -dn $::env(DESIGN_NAME)  -t $::env(RUN_TAG)  -o $arg_value..."
+    (procedure "generate_final_summary_report" line 16)
+    invoked from within
+"generate_final_summary_report"
+    (procedure "flow_fail" line 5)
+    invoked from within
+"flow_fail"
+    (procedure "try_catch" line 25)
+    invoked from within
+"try_catch $::env(SCRIPTS_DIR)/libtrim.pl $arg_values(-input) $arg_values(-output).exclude.list > $arg_values(-output)"
+    (procedure "trim_lib" line 25)
+    invoked from within
+"trim_lib"
+    (procedure "prep" line 186)
+    invoked from within
+"prep {*}$args"
+    (procedure "run_non_interactive_mode" line 12)
+    invoked from within
+"run_non_interactive_mode {*}$argv"
+    invoked from within
+"if { [info exists flags_map(-interactive)] || [info exists flags_map(-it)] } {
+	puts_info "Running interactively"
+	if { [info exists arg_values(-file)..."
+    (file "/openLANE_flow/flow.tcl" line 223)

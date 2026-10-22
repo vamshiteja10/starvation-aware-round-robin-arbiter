@@ -1,0 +1,11 @@
+Shared-Selection Optimization: Simulation Results
+===============================================
+Reference: starvation_aware_arbiter_cond_opt.v
+Candidate: starvation_aware_arbiter_shared_select_opt.v
+Age counter width: 4 bits
+Compile exit code: 0
+Simulation result: PASS
+Cycles tested: 172
+Grant mismatches: 0
+
+PASS: No grant mismatches in 172 cycles.

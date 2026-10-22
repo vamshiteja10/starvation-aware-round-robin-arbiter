@@ -1,0 +1,90 @@
+OpenSTA 2.4.0 ac3479bc24 Copyright (c) 2021, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+Warning: /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_n40C_1v28.lib line 24, default_fanout_load is 0.0.
+Warning: /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/results/synthesis/starvation_aware_arbiter_run7.synthesis_cts.v line 486, module sky130_fd_sc_hd__tapvpwrvgnd_1 not found. Creating black box for PHY_42.
+SETUP:
+Startpoint: _220_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _212_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+   Delay     Time   Description
+-----------------------------------------------------------
+   0.000    0.000   clock clk (rise edge)
+   0.000    0.000   clock source latency
+   0.000    0.000 ^ clk (in)
+   0.391    0.391 ^ clkbuf_0_clk/X (sky130_fd_sc_hd__clkbuf_16)
+   1.037    1.428 ^ clkbuf_1_0_0_clk/X (sky130_fd_sc_hd__clkbuf_1)
+   0.000    1.428 ^ _220_/CLK (sky130_fd_sc_hd__dfxtp_1)
+   2.144    3.572 v _220_/Q (sky130_fd_sc_hd__dfxtp_1)
+   0.797    4.368 ^ _134_/Y (sky130_fd_sc_hd__nor2_1)
+   1.358    5.726 ^ _135_/Y (sky130_fd_sc_hd__a21boi_1)
+   0.891    6.617 ^ _167_/X (sky130_fd_sc_hd__or2_1)
+   0.261    6.878 v _168_/Y (sky130_fd_sc_hd__inv_2)
+   1.271    8.149 v _171_/X (sky130_fd_sc_hd__o21a_1)
+   1.289    9.438 v _172_/X (sky130_fd_sc_hd__o21a_1)
+   4.405   13.843 v _173_/X (sky130_fd_sc_hd__or3_2)
+   4.511   18.353 v _209_/X (sky130_fd_sc_hd__mux4_1)
+   2.789   21.142 v _141_/X (sky130_fd_sc_hd__or2_2)
+   5.584   26.726 v _196_/X (sky130_fd_sc_hd__or4b_4)
+   1.255   27.981 ^ _197_/X (sky130_fd_sc_hd__or3b_1)
+   0.714   28.695 ^ _203_/X (sky130_fd_sc_hd__o32a_1)
+   0.248   28.943 v _204_/Y (sky130_fd_sc_hd__inv_2)
+   0.000   28.943 v _212_/D (sky130_fd_sc_hd__dfxtp_1)
+           28.943   data arrival time
+
+  10.000   10.000   clock clk (rise edge)
+   0.000   10.000   clock source latency
+   0.000   10.000 ^ clk (in)
+   0.391   10.391 ^ clkbuf_0_clk/X (sky130_fd_sc_hd__clkbuf_16)
+   1.037   11.428 ^ clkbuf_1_0_0_clk/X (sky130_fd_sc_hd__clkbuf_1)
+   0.000   11.428 ^ _212_/CLK (sky130_fd_sc_hd__dfxtp_1)
+   0.000   11.428   clock reconvergence pessimism
+  -0.919   10.509   library setup time
+           10.509   data required time
+-----------------------------------------------------------
+           10.509   data required time
+          -28.943   data arrival time
+-----------------------------------------------------------
+          -18.434   slack (VIOLATED)
+
+
+HOLD:
+Startpoint: rst (input port clocked by clk)
+Endpoint: _214_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+   Delay     Time   Description
+-----------------------------------------------------------
+   0.000    0.000   clock clk (rise edge)
+   0.000    0.000   clock network delay (propagated)
+   2.000    2.000 ^ input external delay
+   0.000    2.000 ^ rst (in)
+   0.532    2.532 ^ input6/X (sky130_fd_sc_hd__clkbuf_2)
+   0.292    2.824 v _143_/Y (sky130_fd_sc_hd__nor3_4)
+   0.562    3.386 v _150_/X (sky130_fd_sc_hd__o21a_1)
+   0.000    3.386 v _214_/D (sky130_fd_sc_hd__dfxtp_1)
+            3.386   data arrival time
+
+   0.000    0.000   clock clk (rise edge)
+   0.000    0.000   clock source latency
+   0.000    0.000 ^ clk (in)
+   0.391    0.391 ^ clkbuf_0_clk/X (sky130_fd_sc_hd__clkbuf_16)
+   1.037    1.428 ^ clkbuf_1_0_0_clk/X (sky130_fd_sc_hd__clkbuf_1)
+   0.000    1.428 ^ _214_/CLK (sky130_fd_sc_hd__dfxtp_1)
+   0.000    1.428   clock reconvergence pessimism
+   0.091    1.518   library hold time
+            1.518   data required time
+-----------------------------------------------------------
+            1.518   data required time
+           -3.386   data arrival time
+-----------------------------------------------------------
+            1.868   slack (MET)
+
+
+SUMMARY setup_wns=-18.433656900441523 hold_wns=1.8677655506445456

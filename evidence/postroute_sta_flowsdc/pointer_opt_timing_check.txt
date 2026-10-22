@@ -1,0 +1,8 @@
+===== ROUTED TIMING REPORT =====
+
+===== CTS TIMING REPORT =====
+
+===== SPEF TIMING REPORT =====
+No paths found.
+
+===== SDC CLOCK CONSTRAINT =====

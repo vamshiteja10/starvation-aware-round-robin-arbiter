@@ -1,0 +1,3 @@
+read_liberty /pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+set_operating_conditions -analysis_type single tt_025C_1v80
+exit

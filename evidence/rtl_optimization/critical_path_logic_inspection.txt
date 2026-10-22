@@ -1,0 +1,235 @@
+===== SYNTHESIZED LOGIC FEEDING POINTER =====
+    .X(_089_));
+ sky130_fd_sc_hd__inv_2 _191_ (.A(net4),
+    .Y(_090_));
+ sky130_fd_sc_hd__o21ai_1 _192_ (.A1(\rr_ptr[0] ),
+    .A2(_090_),
+    .B1(_025_),
+    .Y(_091_));
+ sky130_fd_sc_hd__o22a_1 _193_ (.A1(_073_),
+    .A2(_072_),
+    .B1(_089_),
+    .B2(_091_),
+    .X(_092_));
+ sky130_fd_sc_hd__or2_1 _194_ (.A(_088_),
+    .B(_092_),
+    .X(_011_));
+ sky130_fd_sc_hd__nor2_1 _195_ (.A(_076_),
+    .B(_012_),
+    .Y(_013_));
+ sky130_fd_sc_hd__nor2_1 _196_ (.A(_076_),
+    .B(_001_),
+    .Y(_014_));
+ sky130_fd_sc_hd__or3_1 _197_ (.A(_061_),
+    .B(_090_),
+    .C(_054_),
+    .X(_015_));
+ sky130_fd_sc_hd__o32a_1 _198_ (.A1(_073_),
+    .A2(_089_),
+    .A3(_015_),
+    .B1(_090_),
+    .B2(_074_),
+    .X(_016_));
+ sky130_fd_sc_hd__nor2_1 _199_ (.A(_076_),
+    .B(_017_),
+    .Y(_018_));
+ sky130_fd_sc_hd__nor2_1 _200_ (.A(_100_),
+    .B(_004_),
+    .Y(_019_));
+ sky130_fd_sc_hd__or4_1 _201_ (.A(_061_),
+    .B(_093_),
+    .C(net4),
+    .D(_054_),
+    .X(_020_));
+ sky130_fd_sc_hd__or2_1 _202_ (.A(_093_),
+    .B(_075_),
+    .X(_021_));
+ sky130_fd_sc_hd__nor2_1 _203_ (.A(_100_),
+    .B(_022_),
+    .Y(_023_));
+ sky130_fd_sc_hd__nor2_1 _204_ (.A(_100_),
+    .B(_007_),
+    .Y(_024_));
+ sky130_fd_sc_hd__and2_1 _205_ (.A(\age[3][3] ),
+    .B(_094_),
+    .X(_051_));
+ sky130_fd_sc_hd__mux2_2 _206_ (.A0(_009_),
+    .A1(_029_),
+    .S(_008_),
+    .X(net7));
+ sky130_fd_sc_hd__mux2_2 _207_ (.A0(_014_),
+    .A1(_013_),
+    .S(_008_),
+    .X(net8));
+ sky130_fd_sc_hd__mux2_2 _208_ (.A0(_019_),
+    .A1(_018_),
+    .S(_008_),
+    .X(net9));
+ sky130_fd_sc_hd__mux2_4 _209_ (.A0(_024_),
+    .A1(_023_),
+    .S(_008_),
+    .X(net10));
+ sky130_fd_sc_hd__mux2_1 _210_ (.A0(_016_),
+    .A1(_015_),
+    .S(_026_),
+    .X(_017_));
+ sky130_fd_sc_hd__mux2_1 _211_ (.A0(_011_),
+    .A1(_010_),
+    .S(_026_),
+    .X(_012_));
+ sky130_fd_sc_hd__mux2_1 _212_ (.A0(_006_),
+    .A1(_005_),
+    .S(_026_),
+    .X(_007_));
+ sky130_fd_sc_hd__mux2_1 _213_ (.A0(_003_),
+    .A1(_002_),
+    .S(_026_),
+    .X(_004_));
+ sky130_fd_sc_hd__mux2_1 _214_ (.A0(_031_),
+    .A1(_030_),
+    .S(_026_),
+    .X(_032_));
+ sky130_fd_sc_hd__mux2_1 _215_ (.A0(_000_),
+    .A1(_033_),
+    .S(_026_),
+    .X(_001_));
+ sky130_fd_sc_hd__mux2_1 _216_ (.A0(_027_),
+    .A1(_025_),
+    .S(_026_),
+    .X(_028_));
+ sky130_fd_sc_hd__mux2_1 _217_ (.A0(_021_),
+    .A1(_020_),
+    .S(_026_),
+    .X(_022_));
+ sky130_fd_sc_hd__dfxtp_2 _218_ (.D(_034_),
+    .Q(\rr_ptr[0] ),
+    .CLK(clknet_1_1_0_clk));
+ sky130_fd_sc_hd__dfxtp_1 _219_ (.D(_035_),
+    .Q(\rr_ptr[1] ),
+    .CLK(clknet_1_0_0_clk));
+ sky130_fd_sc_hd__dfxtp_1 _220_ (.D(_036_),
+    .Q(\age[0][0] ),
+    .CLK(clknet_1_0_0_clk));
+ sky130_fd_sc_hd__dfxtp_1 _221_ (.D(_037_),
+    .Q(\age[0][1] ),
+    .CLK(clknet_1_0_0_clk));
+ sky130_fd_sc_hd__dfxtp_1 _222_ (.D(_038_),
+    .Q(\age[0][2] ),
+    .CLK(clknet_1_0_0_clk));
+ sky130_fd_sc_hd__dfxtp_1 _223_ (.D(_039_),
+    .Q(\age[0][3] ),
+    .CLK(clknet_1_0_0_clk));
+ sky130_fd_sc_hd__dfxtp_1 _224_ (.D(_040_),
+    .Q(\age[1][0] ),
+    .CLK(clknet_1_0_0_clk));
+ sky130_fd_sc_hd__dfxtp_1 _225_ (.D(_041_),
+    .Q(\age[1][1] ),
+    .CLK(clknet_1_0_0_clk));
+
+===== COMPLETE ARBITER RTL =====
+     1	module starvation_aware_arbiter #(
+     2	    parameter N = 4,
+     3	    parameter AGE_WIDTH = 4,
+     4	    parameter AGE_THRESHOLD = 3
+     5	)(
+     6	    input  wire         clk,
+     7	    input  wire         rst,
+     8	    input  wire         ready,
+     9	    input  wire [N-1:0] req,
+    10	    output reg  [N-1:0] grant
+    11	);
+    12	
+    13	    reg [1:0] rr_ptr;
+    14	    reg [AGE_WIDTH-1:0] age [0:N-1];
+    15	
+    16	    reg [N-1:0] aged_req;
+    17	    reg [N-1:0] aged_selected;
+    18	    reg [N-1:0] rr_selected;
+    19	
+    20	    integer i;
+    21	
+    22	    // Select the first asserted request in round-robin order.
+    23	    // This implementation is intended for the 4-requester design.
+    24	    function [N-1:0] rr_select;
+    25	        input [N-1:0] mask;
+    26	        input [1:0] ptr;
+    27	        begin
+    28	            rr_select = {N{1'b0}};
+    29	
+    30	            case (ptr)
+    31	                2'd0: begin
+    32	                    if      (mask[0]) rr_select = 4'b0001;
+    33	                    else if (mask[1]) rr_select = 4'b0010;
+    34	                    else if (mask[2]) rr_select = 4'b0100;
+    35	                    else if (mask[3]) rr_select = 4'b1000;
+    36	                end
+    37	
+    38	                2'd1: begin
+    39	                    if      (mask[1]) rr_select = 4'b0010;
+    40	                    else if (mask[2]) rr_select = 4'b0100;
+    41	                    else if (mask[3]) rr_select = 4'b1000;
+    42	                    else if (mask[0]) rr_select = 4'b0001;
+    43	                end
+    44	
+    45	                2'd2: begin
+    46	                    if      (mask[2]) rr_select = 4'b0100;
+    47	                    else if (mask[3]) rr_select = 4'b1000;
+    48	                    else if (mask[0]) rr_select = 4'b0001;
+    49	                    else if (mask[1]) rr_select = 4'b0010;
+    50	                end
+    51	
+    52	                2'd3: begin
+    53	                    if      (mask[3]) rr_select = 4'b1000;
+    54	                    else if (mask[0]) rr_select = 4'b0001;
+    55	                    else if (mask[1]) rr_select = 4'b0010;
+    56	                    else if (mask[2]) rr_select = 4'b0100;
+    57	                end
+    58	
+    59	                default: rr_select = {N{1'b0}};
+    60	            endcase
+    61	        end
+    62	    endfunction
+    63	
+    64	    // Identify requests that have reached the age threshold.
+    65	    always @(*) begin
+    66	        for (i = 0; i < N; i = i + 1)
+    67	            aged_req[i] = req[i] &&
+    68	                          (age[i] >= AGE_THRESHOLD);
+    69	    end
+    70	
+    71	    // Prefer aged requests. If none are aged, use all requests.
+    72	    always @(*) begin
+    73	        aged_selected = rr_select(aged_req, rr_ptr);
+    74	        rr_selected   = rr_select(req, rr_ptr);
+    75	
+    76	        if (aged_selected != {N{1'b0}})
+    77	            grant = ready ? aged_selected : {N{1'b0}};
+    78	        else
+    79	            grant = ready ? rr_selected : {N{1'b0}};
+    80	    end
+    81	
+    82	    // Update ages and advance the round-robin pointer after a grant.
+    83	    always @(posedge clk) begin
+    84	        if (rst) begin
+    85	            rr_ptr <= 2'd0;
+    86	
+    87	            for (i = 0; i < N; i = i + 1)
+    88	                age[i] <= {AGE_WIDTH{1'b0}};
+    89	        end else begin
+    90	            for (i = 0; i < N; i = i + 1) begin
+    91	                if (!req[i] || (ready && grant[i]))
+    92	                    age[i] <= {AGE_WIDTH{1'b0}};
+    93	                else if (!grant[i] &&
+    94	                         age[i] < AGE_THRESHOLD)
+    95	                    age[i] <= age[i] + 1'b1;
+    96	            end
+    97	
+    98	            // Boolean next-state equations for one-hot-or-zero grants.
+    99	            rr_ptr[1] <= grant[1] | grant[2] |
+   100	                         (rr_ptr[1] & ~(|grant));
+   101	            rr_ptr[0] <= grant[0] | grant[2] |
+   102	                         (rr_ptr[0] & ~(|grant));
+   103	        end
+   104	    end
+   105	
+   106	endmodule

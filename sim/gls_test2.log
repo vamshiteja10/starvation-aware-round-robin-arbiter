@@ -1,0 +1,30 @@
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v:209: warning: macro UNIT_DELAY undefined (and assumed null) at this point.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v:883: warning: macro UNIT_DELAY undefined (and assumed null) at this point.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v:2625: warning: macro UNIT_DELAY undefined (and assumed null) at this point.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v:5352: warning: macro UNIT_DELAY undefined (and assumed null) at this point.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v:9730: warning: macro UNIT_DELAY undefined (and assumed null) at this point.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v:10351: warning: macro UNIT_DELAY undefined (and assumed null) at this point.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v:17631: warning: macro UNIT_DELAY undefined (and assumed null) at this point.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v:37134: warning: macro UNIT_DELAY undefined (and assumed null) at this point.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v:39640: warning: macro UNIT_DELAY undefined (and assumed null) at this point.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v:42414: warning: macro UNIT_DELAY undefined (and assumed null) at this point.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v:47222: warning: macro UNIT_DELAY undefined (and assumed null) at this point.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v:49753: warning: macro UNIT_DELAY undefined (and assumed null) at this point.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v:60696: warning: macro UNIT_DELAY undefined (and assumed null) at this point.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v:61198: warning: macro UNIT_DELAY undefined (and assumed null) at this point.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v:63087: warning: macro UNIT_DELAY undefined (and assumed null) at this point.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v:63434: warning: macro UNIT_DELAY undefined (and assumed null) at this point.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v:65384: warning: macro UNIT_DELAY undefined (and assumed null) at this point.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v:69362: warning: macro UNIT_DELAY undefined (and assumed null) at this point.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v:70719: warning: macro UNIT_DELAY undefined (and assumed null) at this point.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v:72211: warning: macro UNIT_DELAY undefined (and assumed null) at this point.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v:74828: warning: macro UNIT_DELAY undefined (and assumed null) at this point.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v:77247: warning: macro UNIT_DELAY undefined (and assumed null) at this point.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v:85261: warning: macro UNIT_DELAY undefined (and assumed null) at this point.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v:87266: warning: macro UNIT_DELAY undefined (and assumed null) at this point.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v:89426: warning: macro UNIT_DELAY undefined (and assumed null) at this point.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v:96599: warning: macro UNIT_DELAY undefined (and assumed null) at this point.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v:97184: warning: macro UNIT_DELAY undefined (and assumed null) at this point.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v:99400: warning: macro UNIT_DELAY undefined (and assumed null) at this point.
+tb/tb_final.v:11: warning: parameter AGE_THRESHOLD not found in tb_final.dut.
+tb/tb_final.v:11: warning: parameter N not found in tb_final.dut.

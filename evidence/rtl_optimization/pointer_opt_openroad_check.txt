@@ -1,0 +1,63 @@
+===== HOST OPENROAD =====
+openroad: command not found
+
+===== OPENROAD IN OPENLANE DOCKER IMAGE =====
+/build//bin/openroad
+0.9.0 1415572a73d43dfc91ba4501170fe6a245729e87
+/build//bin/sta
+
+===== ROUTED LEF FILES =====
+ls: cannot access '/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.tlef': No such file or directory
+ls: cannot access '/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd_merged.lef': No such file or directory
+-rw-r--r-- 1 root root 2.2M Oct 21 13:01 designs/arbiter_pointer_opt/runs/21-10_07-31/tmp/merged_unpadded.lef
+
+===== AVAILABLE PDK LEF FILES =====
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/openlane/custom_cells/lef/sky130_fd_io_core.lef
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/openlane/custom_cells/lef/sky130_ef_io_core.lef
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hvl/lef/sky130_fd_sc_hvl.lef
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd__fill_12.lef
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd__decap_12.lef
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd__fakediode_2.lef
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_io/lef/sky130_ef_io.lef
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_fd_io/lef/sky130_fd_io.lef
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_sram_macros/lef/sky130_sram_1kbyte_1rw1r_32x256_8.lef
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_sram_macros/lef/sky130_sram_2kbyte_1rw1r_32x512_8.lef
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_sram_macros/lef/sky130_sram_8kbyte_1rw1r_32x2048_8.lef
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_sram_macros/lef/sky130_sram_1kbyte_1rw1r_8x1024_8.lef
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_sram_macros/lef/sram_1rw1r_32_256_8_sky130.lef
+/home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.ref/sky130_sram_macros/lef/sky130_sram_4kbyte_1rw1r_32x1024_8.lef
+
+===== TOP-LEVEL PORT DECLARATIONS =====
+module starvation_aware_arbiter (clk,
+    ready,
+    rst,
+    VPWR,
+    VGND,
+    grant,
+    req);
+ input clk;
+ input ready;
+ input rst;
+ input VPWR;
+ input VGND;
+ output [3:0] grant;
+ input [3:0] req;
+
+ sky130_fd_sc_hd__inv_2 _107_ (.A(net5),
+    .Y(_093_));
+ sky130_fd_sc_hd__a211oi_4 _108_ (.A1(net1),
+    .A2(net10),
+    .B1(net6),
+    .C1(_093_),
+    .Y(_094_));
+ sky130_fd_sc_hd__and2_1 _109_ (.A(\age[3][2] ),
+    .B(_094_),
+    .X(_050_));
+ sky130_fd_sc_hd__a211o_1 _110_ (.A1(\age[3][1] ),
+    .A2(\age[3][0] ),
+    .B1(\age[3][3] ),
+    .C1(\age[3][2] ),
+    .X(_095_));
+ sky130_fd_sc_hd__nor2_1 _111_ (.A(net10),
+    .B(_095_),

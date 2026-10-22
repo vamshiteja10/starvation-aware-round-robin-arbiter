@@ -1,0 +1,42 @@
+--- rtl/starvation_aware_arbiter_cond_opt.v	2026-10-21 14:23:58.488267538 +0530
++++ rtl/starvation_aware_arbiter_shared_select_opt.v	2026-10-21 19:38:16.766972989 +0530
+@@ -1,4 +1,4 @@
+-module starvation_aware_arbiter #(
++module starvation_aware_arbiter_shared_select_opt #(
+     parameter N = 4,
+     parameter AGE_WIDTH = 4,
+     parameter AGE_THRESHOLD = 3
+@@ -14,8 +14,8 @@
+     reg [AGE_WIDTH-1:0] age [0:N-1];
+ 
+     reg [N-1:0] aged_req;
+-    reg [N-1:0] aged_selected;
+-    reg [N-1:0] rr_selected;
++    reg [N-1:0] selected_req;
++    reg [N-1:0] selected_grant;
+ 
+     integer i;
+ 
+@@ -68,15 +68,16 @@
+                           (age[i] >= AGE_THRESHOLD);
+     end
+ 
+-    // Prefer aged requests. If none are aged, use all requests.
++    // Choose the request mask before round-robin selection.
++    // This shares one priority-selection network.
+     always @(*) begin
+-        aged_selected = rr_select(aged_req, rr_ptr);
+-        rr_selected   = rr_select(req, rr_ptr);
+-
+         if (|aged_req)
+-            grant = ready ? aged_selected : {N{1'b0}};
++            selected_req = aged_req;
+         else
+-            grant = ready ? rr_selected : {N{1'b0}};
++            selected_req = req;
++
++        selected_grant = rr_select(selected_req, rr_ptr);
++        grant = ready ? selected_grant : {N{1'b0}};
+     end
+ 
+     // Update ages and advance the round-robin pointer after a grant.

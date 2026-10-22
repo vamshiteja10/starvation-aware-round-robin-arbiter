@@ -1,0 +1,28 @@
+[*]
+[*] GTKWave Analyzer v3.3.86 (w)1999-2017 BSI
+[*] Fri Oct  9 08:13:11 2026
+[*]
+[dumpfile] "/home/vsduser/Desktop/arbiter_project/sim/arbiter.vcd"
+[dumpfile_mtime] "Fri Oct  9 08:12:03 2026"
+[dumpfile_size] 1297
+[savefile] "/home/vsduser/Desktop/arbiter_project/sim/arbiter.gtkw"
+[timestart] 0
+[size] 888 600
+[pos] -1 -1
+*-14.972228 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] arbiter_tb.
+[sst_width] 223
+[signals_width] 110
+[sst_expanded] 1
+[sst_vpaned_height] 152
+@28
+arbiter_tb.clk
+arbiter_tb.rst
+@22
+arbiter_tb.req[3:0]
+@28
+arbiter_tb.ready
+@23
+arbiter_tb.grant[3:0]
+[pattern_trace] 1
+[pattern_trace] 0

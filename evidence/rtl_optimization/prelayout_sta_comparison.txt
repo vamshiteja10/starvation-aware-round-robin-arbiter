@@ -1,0 +1,20 @@
+PROJECT: Starvation-Aware Round-Robin Arbiter
+ANALYSIS: Pre-layout STA
+CORNER: Sky130 HD SS, -40 C, 1.28 V
+CLOCK PERIOD: 10 ns
+
+Metric                         Original       Pointer-Optimized
+Mapped standard cells          119            117
+Mapped cell area               930.8928       884.5984
+Worst setup slack (WNS)        -9.84 ns       -6.09 ns
+Total negative slack (TNS)     -133.78 ns     -101.12 ns
+
+Mapped area reduction: approximately 4.97%
+WNS improvement: approximately 3.75 ns
+TNS improvement: approximately 32.66 ns
+
+Conclusion:
+The pointer-optimized candidate improves mapped area and pre-layout
+setup timing relative to the original candidate. Both candidates violate
+the 10 ns setup target. Post-route multi-corner STA is required before
+selecting the final implementation.

@@ -1,0 +1,9 @@
+OpenROAD 0.9.0 1415572a73
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+set_operating_conditions
+set_operating_conditions   [-analysis_type single|bc_wc|on_chip_variation] [-library lib] [condition] [-min min_condition] [-max max_condition] [-min_library min_lib] [-max_library max_lib]
+report_checks
+report_checks   [-from from_list|-rise_from from_list|-fall_from from_list] [-through through_list|-rise_through through_list|-fall_through through_list] [-to to_list|-rise_to to_list|-fall_to to_list] [-unconstrained] [-path_delay min|min_rise|min_fall|max|max_rise|max_fall|min_max] [-corner corner_name] [-group_count path_count]  [-endpoint_count path_count] [-unique_paths_to_endpoint] [-slack_max slack_max] [-slack_min slack_min] [-sort_by_slack] [-path_group group_name] [-format full|full_clock|full_clock_expanded|short|end|summary] [-fields [capacitance|slew|input_pin|net]] [-digits digits] [-no_line_splits] [> filename] [>> filename]
+report_worst_slack [-digits digits]
+report_tns [-digits digits]

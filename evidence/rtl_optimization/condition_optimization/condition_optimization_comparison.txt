@@ -1,0 +1,26 @@
+Starvation-Aware Round-Robin Arbiter
+RTL Condition Optimization Comparison
+Technology: Sky130 HD
+STA corner: ss_n40C_1v28 (slow)
+Clock period: 10 ns
+Analysis: Pre-layout, ideal clock
+
+Metric                         Pointer-opt       Condition-opt
+Mapped standard cells          117               114
+Mapped area                    884.5984           869.5840
+Worst negative slack (WNS)     -6.09 ns          -2.29 ns
+Total negative slack (TNS)     -101.12 ns        -24.35 ns
+
+Mapped area reduction: 1.70%
+WNS improvement: 3.80 ns
+TNS magnitude reduction: approximately 75.9%
+
+Formal equivalence: Passed
+Equivalence points proven: 66
+Unproven points: 0
+
+Conclusion:
+The condition-optimized RTL reduces mapped cell count and area,
+and improves pre-layout setup timing. Setup timing still violates
+the 10 ns target, so post-route multi-corner STA is required before
+claiming timing closure.

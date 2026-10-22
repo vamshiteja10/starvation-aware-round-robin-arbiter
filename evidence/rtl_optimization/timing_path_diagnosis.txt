@@ -1,0 +1,198 @@
+===== ORIGINAL RUN TIMING REPORTS =====
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/runtime_summary_report.rpt
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/runtime_summary_report.rpt.parsable
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/routing/18-fastroute.timing.rpt
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/routing/59-fastroute.timing.rpt
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/placement/49-replace.timing.rpt
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/placement/8-replace.timing.rpt
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/65-opensta_spef_wns.rpt
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/43-opensta.min_max.rpt
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/24-opensta_spef.slew.rpt
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/2-opensta.timing.rpt
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/1-yosys_pre.stat
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/24-opensta_spef.rpt
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/2-opensta.min_max.rpt
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/24-opensta_spef.timing.rpt
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/65-opensta_spef.timing.rpt
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/24-opensta_spef_wns.rpt
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/1-yosys_4.stat.rpt
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/43-opensta_tns.rpt
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/17-opensta_post_resizer_timing.rpt
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/43-opensta.rpt
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/10-opensta_post_resizer_tns.rpt
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/10-opensta_post_resizer_wns.rpt
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/10-opensta_post_resizer.timing.rpt
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/43-opensta_wns.rpt
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/43-opensta.slew.rpt
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/51-opensta_post_resizer.timing.rpt
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/2-opensta.rpt
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/51-opensta_post_resizer_tns.rpt
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/10-opensta_post_resizer.min_max.rpt
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/17-opensta_post_resizer_timing.min_max.rpt
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/58-opensta_post_resizer_timing_wns.rpt
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/17-opensta_post_resizer_timing_wns.rpt
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/51-opensta_post_resizer.min_max.rpt
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/65-opensta_spef.min_max.rpt
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/65-opensta_spef_tns.rpt
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/10-opensta_post_resizer.slew.rpt
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/24-opensta_spef_tns.rpt
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/51-opensta_post_resizer_wns.rpt
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/2-opensta_wns.rpt
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/58-opensta_post_resizer_timing.slew.rpt
+
+===== ORIGINAL RUN TIMING RESULTS =====
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/65-opensta_spef_wns.rpt:1:wns 0.00
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/43-opensta.min_max.rpt:1:Startpoint: _228_ (rising edge-triggered flip-flop clocked by clk)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/43-opensta.min_max.rpt:2:Endpoint: _228_ (rising edge-triggered flip-flop clocked by clk)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/43-opensta.min_max.rpt:29:                                  0.27   slack (MET)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/43-opensta.min_max.rpt:32:Startpoint: req[0] (input port clocked by clk)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/43-opensta.min_max.rpt:33:Endpoint: _212_ (rising edge-triggered flip-flop clocked by clk)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/43-opensta.min_max.rpt:105:                                  0.84   slack (MET)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/2-opensta.timing.rpt:1:No paths found.
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/24-opensta_spef.rpt:1:No paths found.
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/2-opensta.min_max.rpt:1:Startpoint: _228_ (rising edge-triggered flip-flop clocked by clk)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/2-opensta.min_max.rpt:2:Endpoint: _228_ (rising edge-triggered flip-flop clocked by clk)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/2-opensta.min_max.rpt:29:                                  0.27   slack (MET)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/2-opensta.min_max.rpt:32:Startpoint: req[0] (input port clocked by clk)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/2-opensta.min_max.rpt:33:Endpoint: _212_ (rising edge-triggered flip-flop clocked by clk)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/2-opensta.min_max.rpt:105:                                  0.84   slack (MET)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/24-opensta_spef.timing.rpt:1:No paths found.
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/65-opensta_spef.timing.rpt:1:No paths found.
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/24-opensta_spef_wns.rpt:1:wns 0.00
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/17-opensta_post_resizer_timing.rpt:1:No paths found.
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/43-opensta.rpt:1:No paths found.
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/10-opensta_post_resizer_wns.rpt:1:wns 0.00
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/10-opensta_post_resizer.timing.rpt:1:No paths found.
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/43-opensta_wns.rpt:1:wns 0.00
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/51-opensta_post_resizer.timing.rpt:1:No paths found.
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/2-opensta.rpt:1:No paths found.
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/10-opensta_post_resizer.min_max.rpt:1:Startpoint: _216_ (rising edge-triggered flip-flop clocked by clk)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/10-opensta_post_resizer.min_max.rpt:2:Endpoint: _216_ (rising edge-triggered flip-flop clocked by clk)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/10-opensta_post_resizer.min_max.rpt:29:                                  0.26   slack (MET)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/10-opensta_post_resizer.min_max.rpt:32:Startpoint: req[1] (input port clocked by clk)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/10-opensta_post_resizer.min_max.rpt:33:Endpoint: grant[0] (output port clocked by clk)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/10-opensta_post_resizer.min_max.rpt:89:                                  1.57   slack (MET)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/17-opensta_post_resizer_timing.min_max.rpt:1:Startpoint: _216_ (rising edge-triggered flip-flop clocked by clk)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/17-opensta_post_resizer_timing.min_max.rpt:2:Endpoint: _216_ (rising edge-triggered flip-flop clocked by clk)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/17-opensta_post_resizer_timing.min_max.rpt:29:                                  0.26   slack (MET)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/17-opensta_post_resizer_timing.min_max.rpt:32:Startpoint: req[1] (input port clocked by clk)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/17-opensta_post_resizer_timing.min_max.rpt:33:Endpoint: grant[0] (output port clocked by clk)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/17-opensta_post_resizer_timing.min_max.rpt:89:                                  1.57   slack (MET)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/58-opensta_post_resizer_timing_wns.rpt:1:wns 0.00
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/17-opensta_post_resizer_timing_wns.rpt:1:wns 0.00
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/51-opensta_post_resizer.min_max.rpt:1:Startpoint: _216_ (rising edge-triggered flip-flop clocked by clk)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/51-opensta_post_resizer.min_max.rpt:2:Endpoint: _216_ (rising edge-triggered flip-flop clocked by clk)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/51-opensta_post_resizer.min_max.rpt:29:                                  0.26   slack (MET)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/51-opensta_post_resizer.min_max.rpt:32:Startpoint: req[1] (input port clocked by clk)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/51-opensta_post_resizer.min_max.rpt:33:Endpoint: grant[0] (output port clocked by clk)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/51-opensta_post_resizer.min_max.rpt:89:                                  1.57   slack (MET)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/65-opensta_spef.min_max.rpt:1:Startpoint: _223_ (rising edge-triggered flip-flop clocked by clk)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/65-opensta_spef.min_max.rpt:2:Endpoint: _223_ (rising edge-triggered flip-flop clocked by clk)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/65-opensta_spef.min_max.rpt:29:                                  0.25   slack (MET)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/65-opensta_spef.min_max.rpt:32:Startpoint: req[0] (input port clocked by clk)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/65-opensta_spef.min_max.rpt:33:Endpoint: grant[0] (output port clocked by clk)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/65-opensta_spef.min_max.rpt:83:                                  1.55   slack (MET)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/51-opensta_post_resizer_wns.rpt:1:wns 0.00
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/2-opensta_wns.rpt:1:wns 0.00
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/58-opensta_post_resizer_timing.rpt:1:No paths found.
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/58-opensta_post_resizer_timing.timing.rpt:1:No paths found.
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/24-opensta_spef.min_max.rpt:1:Startpoint: _223_ (rising edge-triggered flip-flop clocked by clk)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/24-opensta_spef.min_max.rpt:2:Endpoint: _223_ (rising edge-triggered flip-flop clocked by clk)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/24-opensta_spef.min_max.rpt:29:                                  0.25   slack (MET)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/24-opensta_spef.min_max.rpt:32:Startpoint: req[0] (input port clocked by clk)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/24-opensta_spef.min_max.rpt:33:Endpoint: grant[0] (output port clocked by clk)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/24-opensta_spef.min_max.rpt:83:                                  1.55   slack (MET)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/43-opensta.timing.rpt:1:No paths found.
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/17-opensta_post_resizer_timing.timing.rpt:1:No paths found.
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/65-opensta_spef.rpt:1:No paths found.
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/58-opensta_post_resizer_timing.min_max.rpt:1:Startpoint: _216_ (rising edge-triggered flip-flop clocked by clk)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/58-opensta_post_resizer_timing.min_max.rpt:2:Endpoint: _216_ (rising edge-triggered flip-flop clocked by clk)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/58-opensta_post_resizer_timing.min_max.rpt:29:                                  0.26   slack (MET)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/58-opensta_post_resizer_timing.min_max.rpt:32:Startpoint: req[1] (input port clocked by clk)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/58-opensta_post_resizer_timing.min_max.rpt:33:Endpoint: grant[0] (output port clocked by clk)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/58-opensta_post_resizer_timing.min_max.rpt:89:                                  1.57   slack (MET)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/51-opensta_post_resizer.rpt:1:No paths found.
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/synthesis/10-opensta_post_resizer.rpt:1:No paths found.
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/reports/final_summary_report.csv:1:,design,design_name,config,flow_status,total_runtime,routed_runtime,(Cell/mm^2)/Core_Util,DIEAREA_mm^2,CellPer_mm^2,OpenDP_Util,Peak_Memory_Usage_MB,cell_count,tritonRoute_violations,Short_violations,MetSpc_violations,OffGrid_violations,MinHole_violations,Other_violations,Magic_violations,antenna_violations,lvs_total_errors,cvc_total_errors,klayout_violations,wire_length,vias,wns,pl_wns,optimized_wns,fastroute_wns,spef_wns,tns,pl_tns,optimized_tns,fastroute_tns,spef_tns,HPWL,routing_layer1_pct,routing_layer2_pct,routing_layer3_pct,routing_layer4_pct,routing_layer5_pct,routing_layer6_pct,wires_count,wire_bits,public_wires_count,public_wire_bits,memories_count,memory_bits,processes_count,cells_pre_abc,AND,DFF,NAND,NOR,OR,XOR,XNOR,MUX,inputs,outputs,level,EndCaps,TapCells,Diodes,Total_Physical_Cells,suggested_clock_frequency,suggested_clock_period,CLOCK_PERIOD,SYNTH_STRATEGY,SYNTH_MAX_FANOUT,FP_CORE_UTIL,FP_ASPECT_RATIO,FP_PDN_VPITCH,FP_PDN_HPITCH,PL_TARGET_DENSITY,GLB_RT_ADJUSTMENT,STD_CELL_LIBRARY,CELL_PAD,DIODE_INSERTION_STRATEGY
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/logs/routing/fastroute.log:241:No paths found.
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/logs/routing/fastroute.log:242:Startpoint: _220_ (rising edge-triggered flip-flop clocked by clk)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/logs/routing/fastroute.log:243:Endpoint: _220_ (rising edge-triggered flip-flop clocked by clk)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/logs/routing/fastroute.log:270:                                  0.30   slack (MET)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/logs/routing/fastroute.log:273:Startpoint: req[0] (input port clocked by clk)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/logs/routing/fastroute.log:274:Endpoint: grant[2] (output port clocked by clk)
+designs/starvation_aware_arbiter_run7/runs/arbiter_run7_fix1/logs/routing/fastroute.log:333:                                  1.20   slack (MET)
+
+===== POINTER-OPT CLOCK AND TIMING DIAGNOSTICS =====
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/2-opensta.timing.rpt:1:No paths found.
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/24-opensta_spef.rpt:1:No paths found.
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/2-opensta.min_max.rpt:1:Startpoint: _223_ (rising edge-triggered flip-flop clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/2-opensta.min_max.rpt:2:Endpoint: _223_ (rising edge-triggered flip-flop clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/2-opensta.min_max.rpt:29:                                  0.27   slack (MET)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/2-opensta.min_max.rpt:32:Startpoint: req[0] (input port clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/2-opensta.min_max.rpt:33:Endpoint: grant[3] (output port clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/2-opensta.min_max.rpt:80:                                  1.13   slack (MET)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/24-opensta_spef.timing.rpt:1:No paths found.
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/17-opensta_post_resizer_timing.rpt:1:No paths found.
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/10-opensta_post_resizer.timing.rpt:1:No paths found.
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/2-opensta.rpt:1:No paths found.
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/10-opensta_post_resizer.min_max.rpt:1:Startpoint: _222_ (rising edge-triggered flip-flop clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/10-opensta_post_resizer.min_max.rpt:2:Endpoint: _222_ (rising edge-triggered flip-flop clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/10-opensta_post_resizer.min_max.rpt:29:                                  0.26   slack (MET)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/10-opensta_post_resizer.min_max.rpt:32:Startpoint: req[1] (input port clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/10-opensta_post_resizer.min_max.rpt:33:Endpoint: grant[0] (output port clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/10-opensta_post_resizer.min_max.rpt:86:                                  1.64   slack (MET)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/17-opensta_post_resizer_timing.min_max.rpt:1:Startpoint: _222_ (rising edge-triggered flip-flop clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/17-opensta_post_resizer_timing.min_max.rpt:2:Endpoint: _222_ (rising edge-triggered flip-flop clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/17-opensta_post_resizer_timing.min_max.rpt:29:                                  0.26   slack (MET)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/17-opensta_post_resizer_timing.min_max.rpt:32:Startpoint: req[1] (input port clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/17-opensta_post_resizer_timing.min_max.rpt:33:Endpoint: grant[0] (output port clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/17-opensta_post_resizer_timing.min_max.rpt:86:                                  1.64   slack (MET)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/24-opensta_spef.min_max.rpt:1:Startpoint: _222_ (rising edge-triggered flip-flop clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/24-opensta_spef.min_max.rpt:2:Endpoint: _222_ (rising edge-triggered flip-flop clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/24-opensta_spef.min_max.rpt:29:                                  0.24   slack (MET)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/24-opensta_spef.min_max.rpt:32:Startpoint: req[1] (input port clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/24-opensta_spef.min_max.rpt:33:Endpoint: grant[0] (output port clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/24-opensta_spef.min_max.rpt:86:                                  1.61   slack (MET)
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/17-opensta_post_resizer_timing.timing.rpt:1:No paths found.
+designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/10-opensta_post_resizer.rpt:1:No paths found.
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/fastroute.log:219:create_clock [get_ports $::env(CLOCK_PORT)]  -name $::env(CLOCK_PORT)  -period $::env(CLOCK_PERIOD)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/fastroute.log:242:No paths found.
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/fastroute.log:243:Startpoint: _223_ (rising edge-triggered flip-flop clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/fastroute.log:244:Endpoint: _223_ (rising edge-triggered flip-flop clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/fastroute.log:271:                                  0.30   slack (MET)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/fastroute.log:274:Startpoint: req[1] (input port clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/fastroute.log:275:Endpoint: grant[1] (output port clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/fastroute.log:328:                                  1.33   slack (MET)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/fastroute.log:331:No paths found.
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/18-fastroute.log:219:create_clock [get_ports $::env(CLOCK_PORT)]  -name $::env(CLOCK_PORT)  -period $::env(CLOCK_PERIOD)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/18-fastroute.log:242:No paths found.
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/18-fastroute.log:243:Startpoint: _223_ (rising edge-triggered flip-flop clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/18-fastroute.log:244:Endpoint: _223_ (rising edge-triggered flip-flop clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/18-fastroute.log:271:                                  0.30   slack (MET)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/18-fastroute.log:274:Startpoint: req[1] (input port clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/18-fastroute.log:275:Endpoint: grant[1] (output port clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/18-fastroute.log:328:                                  1.33   slack (MET)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/18-fastroute.log:331:No paths found.
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/placement/8-replace.log:96:create_clock [get_ports $::env(CLOCK_PORT)]  -name $::env(CLOCK_PORT)  -period $::env(CLOCK_PERIOD)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/placement/8-replace.log:119:No paths found.
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/placement/8-replace.log:120:Startpoint: _222_ (rising edge-triggered flip-flop clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/placement/8-replace.log:121:Endpoint: _222_ (rising edge-triggered flip-flop clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/placement/8-replace.log:148:                                  0.27   slack (MET)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/placement/8-replace.log:151:Startpoint: req[0] (input port clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/placement/8-replace.log:152:Endpoint: grant[3] (output port clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/placement/8-replace.log:199:                                  0.99   slack (MET)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/placement/8-replace.log:202:No paths found.
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/placement/8-resizer.log:18:create_clock [get_ports $::env(CLOCK_PORT)]  -name $::env(CLOCK_PORT)  -period $::env(CLOCK_PERIOD)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/placement/15-resizer_timing.log:18:create_clock [get_ports $::env(CLOCK_PORT)]  -name $::env(CLOCK_PORT)  -period $::env(CLOCK_PERIOD)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/synthesis/17-opensta_post_resizer_timing:10:create_clock [get_ports $::env(CLOCK_PORT)]  -name $::env(CLOCK_PORT)  -period $::env(CLOCK_PERIOD)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/synthesis/24-opensta_spef:12:create_clock [get_ports $::env(CLOCK_PORT)]  -name $::env(CLOCK_PORT)  -period $::env(CLOCK_PERIOD)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/synthesis/2-opensta:9:create_clock [get_ports $::env(CLOCK_PORT)]  -name $::env(CLOCK_PORT)  -period $::env(CLOCK_PERIOD)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/synthesis/10-opensta_post_resizer:10:create_clock [get_ports $::env(CLOCK_PORT)]  -name $::env(CLOCK_PORT)  -period $::env(CLOCK_PERIOD)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/cts/13-cts.log:133:No paths found.
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/cts/13-cts.log:134:Startpoint: _234_ (rising edge-triggered flip-flop clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/cts/13-cts.log:135:Endpoint: _234_ (rising edge-triggered flip-flop clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/cts/13-cts.log:162:                                  0.27   slack (MET)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/cts/13-cts.log:165:Startpoint: req[1] (input port clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/cts/13-cts.log:166:Endpoint: grant[1] (output port clocked by clk)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/cts/13-cts.log:219:                                  1.54   slack (MET)
+designs/arbiter_pointer_opt/runs/21-10_07-31/logs/cts/13-cts.log:222:No paths found.

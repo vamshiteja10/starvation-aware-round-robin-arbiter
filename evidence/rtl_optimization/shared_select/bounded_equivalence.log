@@ -1,0 +1,724 @@
+
+-- Running command `
+read_verilog rtl/starvation_aware_arbiter_cond_opt.v
+read_verilog rtl/starvation_aware_arbiter_shared_select_opt.v
+
+chparam -set N 4 -set AGE_WIDTH 4 -set AGE_THRESHOLD 3 starvation_aware_arbiter
+chparam -set N 4 -set AGE_WIDTH 4 -set AGE_THRESHOLD 3 starvation_aware_arbiter_shared_select_opt
+
+hierarchy -check
+proc
+memory
+opt
+
+miter -equiv starvation_aware_arbiter starvation_aware_arbiter_shared_select_opt shared_select_miter
+
+prep -top shared_select_miter -flatten
+
+sat -seq 40 \
+    -set-init-zero \
+    -set-at 1 in_rst 1 \
+    -set-at 2 in_rst 0 \
+    -prove trigger 0 \
+    -verify \
+    -dump_vcd evidence/rtl_optimization/shared_select/shared_select_counterexample.vcd \
+    -show-ports
+' --
+
+1. Executing Verilog-2005 frontend: rtl/starvation_aware_arbiter_cond_opt.v
+Parsing Verilog input from `rtl/starvation_aware_arbiter_cond_opt.v' to AST representation.
+Generating RTLIL representation for module `\starvation_aware_arbiter'.
+Warning: Replacing memory \age with list of registers. See rtl/starvation_aware_arbiter_cond_opt.v:88
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: rtl/starvation_aware_arbiter_shared_select_opt.v
+Parsing Verilog input from `rtl/starvation_aware_arbiter_shared_select_opt.v' to AST representation.
+Generating RTLIL representation for module `\starvation_aware_arbiter_shared_select_opt'.
+Warning: Replacing memory \age with list of registers. See rtl/starvation_aware_arbiter_shared_select_opt.v:89
+Successfully finished Verilog frontend.
+Parameter \N = 4
+Parameter \AGE_WIDTH = 4
+Parameter \AGE_THRESHOLD = 3
+
+3. Executing AST frontend in derive mode using pre-parsed AST for module `\starvation_aware_arbiter'.
+Parameter \N = 4
+Parameter \AGE_WIDTH = 4
+Parameter \AGE_THRESHOLD = 3
+Generating RTLIL representation for module `$paramod$0521a8e699fa12a823346d32bdd527b3d5d6274c\starvation_aware_arbiter'.
+Warning: Replacing memory \age with list of registers. See rtl/starvation_aware_arbiter_cond_opt.v:88
+Parameter \N = 4
+Parameter \AGE_WIDTH = 4
+Parameter \AGE_THRESHOLD = 3
+
+4. Executing AST frontend in derive mode using pre-parsed AST for module `\starvation_aware_arbiter_shared_select_opt'.
+Parameter \N = 4
+Parameter \AGE_WIDTH = 4
+Parameter \AGE_THRESHOLD = 3
+Generating RTLIL representation for module `$paramod$0521a8e699fa12a823346d32bdd527b3d5d6274c\starvation_aware_arbiter_shared_select_opt'.
+Warning: Replacing memory \age with list of registers. See rtl/starvation_aware_arbiter_shared_select_opt.v:89
+
+5. Executing HIERARCHY pass (managing design hierarchy).
+
+6. Executing PROC pass (convert processes to netlists).
+
+6.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+6.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed 1 dead cases from process $proc$rtl/starvation_aware_arbiter_shared_select_opt.v:73$277 in module starvation_aware_arbiter_shared_select_opt.
+Marked 18 switch rules as full_case in process $proc$rtl/starvation_aware_arbiter_shared_select_opt.v:73$277 in module starvation_aware_arbiter_shared_select_opt.
+Marked 5 switch rules as full_case in process $proc$rtl/starvation_aware_arbiter_shared_select_opt.v:84$300 in module starvation_aware_arbiter_shared_select_opt.
+Removed 2 dead cases from process $proc$rtl/starvation_aware_arbiter_cond_opt.v:72$184 in module starvation_aware_arbiter.
+Marked 35 switch rules as full_case in process $proc$rtl/starvation_aware_arbiter_cond_opt.v:72$184 in module starvation_aware_arbiter.
+Marked 5 switch rules as full_case in process $proc$rtl/starvation_aware_arbiter_cond_opt.v:83$228 in module starvation_aware_arbiter.
+Removed a total of 3 dead cases.
+
+6.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 2 redundant assignments.
+Promoted 27 assignments to connections.
+
+6.4. Executing PROC_INIT pass (extract init attributes).
+
+6.5. Executing PROC_ARST pass (detect async resets in processes).
+
+6.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~71 debug messages>
+
+6.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:65$268'.
+Creating decoders for process `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:73$277'.
+     1/18: $17\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$267.$result[3:0]$298
+     2/18: $16\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$267.$result[3:0]$297
+     3/18: $15\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$267.$result[3:0]$296
+     4/18: $14\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$267.$result[3:0]$295
+     5/18: $13\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$267.$result[3:0]$294
+     6/18: $12\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$267.$result[3:0]$293
+     7/18: $11\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$267.$result[3:0]$292
+     8/18: $10\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$267.$result[3:0]$291
+     9/18: $9\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$267.$result[3:0]$290
+    10/18: $8\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$267.$result[3:0]$289
+    11/18: $7\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$267.$result[3:0]$288
+    12/18: $6\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$267.$result[3:0]$287
+    13/18: $5\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$267.$result[3:0]$286
+    14/18: $4\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$267.$result[3:0]$285
+    15/18: $3\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$267.$result[3:0]$284
+    16/18: $2\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$267.$result[3:0]$283
+    17/18: $1\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$267.$result[3:0]$282
+    18/18: $1\selected_req[3:0]
+Creating decoders for process `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:84$300'.
+     1/7: $0\rr_ptr[1:0] [1]
+     2/7: $0\rr_ptr[1:0] [0]
+     3/7: $2\i[31:0]
+     4/7: $0\age[3][3:0]
+     5/7: $0\age[2][3:0]
+     6/7: $0\age[1][3:0]
+     7/7: $0\age[0][3:0]
+Creating decoders for process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:65$175'.
+Creating decoders for process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:72$184'.
+     1/35: $1\grant[3:0]
+     2/35: $17\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$174.$result[3:0]$224
+     3/35: $16\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$174.$result[3:0]$223
+     4/35: $15\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$174.$result[3:0]$222
+     5/35: $14\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$174.$result[3:0]$221
+     6/35: $13\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$174.$result[3:0]$220
+     7/35: $12\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$174.$result[3:0]$219
+     8/35: $11\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$174.$result[3:0]$218
+     9/35: $10\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$174.$result[3:0]$217
+    10/35: $9\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$174.$result[3:0]$216
+    11/35: $8\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$174.$result[3:0]$215
+    12/35: $7\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$174.$result[3:0]$214
+    13/35: $6\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$174.$result[3:0]$213
+    14/35: $5\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$174.$result[3:0]$212
+    15/35: $4\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$174.$result[3:0]$211
+    16/35: $3\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$174.$result[3:0]$210
+    17/35: $2\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$174.$result[3:0]$209
+    18/35: $1\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$174.$result[3:0]$208
+    19/35: $17\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$173.$result[3:0]$207
+    20/35: $16\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$173.$result[3:0]$206
+    21/35: $15\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$173.$result[3:0]$205
+    22/35: $14\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$173.$result[3:0]$204
+    23/35: $13\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$173.$result[3:0]$203
+    24/35: $12\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$173.$result[3:0]$202
+    25/35: $11\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$173.$result[3:0]$201
+    26/35: $10\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$173.$result[3:0]$200
+    27/35: $9\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$173.$result[3:0]$199
+    28/35: $8\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$173.$result[3:0]$198
+    29/35: $7\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$173.$result[3:0]$197
+    30/35: $6\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$173.$result[3:0]$196
+    31/35: $5\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$173.$result[3:0]$195
+    32/35: $4\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$173.$result[3:0]$194
+    33/35: $3\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$173.$result[3:0]$193
+    34/35: $2\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$173.$result[3:0]$192
+    35/35: $1\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$173.$result[3:0]$191
+Creating decoders for process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:83$228'.
+     1/7: $0\rr_ptr[1:0] [1]
+     2/7: $0\rr_ptr[1:0] [0]
+     3/7: $2\i[31:0]
+     4/7: $0\age[3][3:0]
+     5/7: $0\age[2][3:0]
+     6/7: $0\age[1][3:0]
+     7/7: $0\age[0][3:0]
+
+6.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\starvation_aware_arbiter_shared_select_opt.\aged_req' from process `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:65$268'.
+No latch inferred for signal `\starvation_aware_arbiter_shared_select_opt.\i' from process `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:65$268'.
+No latch inferred for signal `\starvation_aware_arbiter_shared_select_opt.\grant' from process `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:73$277'.
+No latch inferred for signal `\starvation_aware_arbiter_shared_select_opt.\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$267.ptr' from process `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:73$277'.
+No latch inferred for signal `\starvation_aware_arbiter_shared_select_opt.\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$267.mask' from process `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:73$277'.
+No latch inferred for signal `\starvation_aware_arbiter_shared_select_opt.\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$267.$result' from process `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:73$277'.
+No latch inferred for signal `\starvation_aware_arbiter_shared_select_opt.\selected_req' from process `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:73$277'.
+No latch inferred for signal `\starvation_aware_arbiter_shared_select_opt.\selected_grant' from process `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:73$277'.
+No latch inferred for signal `\starvation_aware_arbiter.\aged_req' from process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:65$175'.
+No latch inferred for signal `\starvation_aware_arbiter.\i' from process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:65$175'.
+No latch inferred for signal `\starvation_aware_arbiter.\grant' from process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:72$184'.
+No latch inferred for signal `\starvation_aware_arbiter.\aged_selected' from process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:72$184'.
+No latch inferred for signal `\starvation_aware_arbiter.\rr_selected' from process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:72$184'.
+No latch inferred for signal `\starvation_aware_arbiter.\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$173.$result' from process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:72$184'.
+No latch inferred for signal `\starvation_aware_arbiter.\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$173.mask' from process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:72$184'.
+No latch inferred for signal `\starvation_aware_arbiter.\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$173.ptr' from process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:72$184'.
+No latch inferred for signal `\starvation_aware_arbiter.\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$174.$result' from process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:72$184'.
+No latch inferred for signal `\starvation_aware_arbiter.\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$174.mask' from process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:72$184'.
+No latch inferred for signal `\starvation_aware_arbiter.\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$174.ptr' from process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:72$184'.
+
+6.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\starvation_aware_arbiter_shared_select_opt.\rr_ptr' using process `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:84$300'.
+  created $dff cell `$procdff$968' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter_shared_select_opt.\i' using process `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:84$300'.
+  created $dff cell `$procdff$969' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter_shared_select_opt.\age[0]' using process `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:84$300'.
+  created $dff cell `$procdff$970' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter_shared_select_opt.\age[1]' using process `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:84$300'.
+  created $dff cell `$procdff$971' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter_shared_select_opt.\age[2]' using process `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:84$300'.
+  created $dff cell `$procdff$972' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter_shared_select_opt.\age[3]' using process `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:84$300'.
+  created $dff cell `$procdff$973' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter.\rr_ptr' using process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:83$228'.
+  created $dff cell `$procdff$974' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter.\i' using process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:83$228'.
+  created $dff cell `$procdff$975' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter.\age[0]' using process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:83$228'.
+  created $dff cell `$procdff$976' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter.\age[1]' using process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:83$228'.
+  created $dff cell `$procdff$977' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter.\age[2]' using process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:83$228'.
+  created $dff cell `$procdff$978' with positive edge clock.
+Creating register for signal `\starvation_aware_arbiter.\age[3]' using process `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:83$228'.
+  created $dff cell `$procdff$979' with positive edge clock.
+
+6.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+6.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:65$268'.
+Found and cleaned up 18 empty switches in `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:73$277'.
+Removing empty process `starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:73$277'.
+Found and cleaned up 9 empty switches in `\starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:84$300'.
+Removing empty process `starvation_aware_arbiter_shared_select_opt.$proc$rtl/starvation_aware_arbiter_shared_select_opt.v:84$300'.
+Removing empty process `starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:65$175'.
+Found and cleaned up 35 empty switches in `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:72$184'.
+Removing empty process `starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:72$184'.
+Found and cleaned up 9 empty switches in `\starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:83$228'.
+Removing empty process `starvation_aware_arbiter.$proc$rtl/starvation_aware_arbiter_cond_opt.v:83$228'.
+Cleaned up 71 empty switches.
+
+6.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module starvation_aware_arbiter_shared_select_opt.
+<suppressed ~5 debug messages>
+Optimizing module starvation_aware_arbiter.
+<suppressed ~10 debug messages>
+
+7. Executing MEMORY pass.
+
+7.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+7.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+7.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+7.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+7.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \starvation_aware_arbiter_shared_select_opt..
+Finding unused cells or wires in module \starvation_aware_arbiter..
+Removed 2 unused cells and 255 unused wires.
+<suppressed ~4 debug messages>
+
+7.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+7.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+7.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \starvation_aware_arbiter..
+Finding unused cells or wires in module \starvation_aware_arbiter_shared_select_opt..
+
+7.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+7.11. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+8. Executing OPT pass (performing simple optimizations).
+
+8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module starvation_aware_arbiter.
+Optimizing module starvation_aware_arbiter_shared_select_opt.
+
+8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\starvation_aware_arbiter'.
+<suppressed ~114 debug messages>
+Finding identical cells in module `\starvation_aware_arbiter_shared_select_opt'.
+<suppressed ~54 debug messages>
+Removed a total of 56 cells.
+
+8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \starvation_aware_arbiter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $procmux$570.
+    dead port 1/2 on $mux $procmux$573.
+    dead port 1/2 on $mux $procmux$576.
+    dead port 2/2 on $mux $procmux$578.
+    dead port 1/2 on $mux $procmux$584.
+    dead port 1/2 on $mux $procmux$587.
+    dead port 2/2 on $mux $procmux$589.
+    dead port 1/2 on $mux $procmux$595.
+    dead port 2/2 on $mux $procmux$597.
+    dead port 2/2 on $mux $procmux$602.
+    dead port 1/2 on $mux $procmux$609.
+    dead port 1/2 on $mux $procmux$612.
+    dead port 1/2 on $mux $procmux$615.
+    dead port 2/2 on $mux $procmux$617.
+    dead port 1/2 on $mux $procmux$624.
+    dead port 1/2 on $mux $procmux$627.
+    dead port 2/2 on $mux $procmux$629.
+    dead port 1/2 on $mux $procmux$636.
+    dead port 2/2 on $mux $procmux$638.
+    dead port 2/2 on $mux $procmux$644.
+    dead port 1/2 on $mux $procmux$652.
+    dead port 1/2 on $mux $procmux$655.
+    dead port 1/2 on $mux $procmux$658.
+    dead port 2/2 on $mux $procmux$660.
+    dead port 1/2 on $mux $procmux$668.
+    dead port 1/2 on $mux $procmux$671.
+    dead port 2/2 on $mux $procmux$673.
+    dead port 1/2 on $mux $procmux$681.
+    dead port 2/2 on $mux $procmux$683.
+    dead port 2/2 on $mux $procmux$690.
+    dead port 1/2 on $mux $procmux$699.
+    dead port 1/2 on $mux $procmux$702.
+    dead port 1/2 on $mux $procmux$705.
+    dead port 2/2 on $mux $procmux$707.
+    dead port 1/2 on $mux $procmux$716.
+    dead port 1/2 on $mux $procmux$719.
+    dead port 2/2 on $mux $procmux$721.
+    dead port 1/2 on $mux $procmux$730.
+    dead port 2/2 on $mux $procmux$732.
+    dead port 2/2 on $mux $procmux$740.
+    dead port 1/2 on $mux $procmux$751.
+    dead port 1/2 on $mux $procmux$754.
+    dead port 1/2 on $mux $procmux$757.
+    dead port 2/2 on $mux $procmux$759.
+    dead port 1/2 on $mux $procmux$765.
+    dead port 1/2 on $mux $procmux$768.
+    dead port 2/2 on $mux $procmux$770.
+    dead port 1/2 on $mux $procmux$776.
+    dead port 2/2 on $mux $procmux$778.
+    dead port 2/2 on $mux $procmux$783.
+    dead port 1/2 on $mux $procmux$790.
+    dead port 1/2 on $mux $procmux$793.
+    dead port 1/2 on $mux $procmux$796.
+    dead port 2/2 on $mux $procmux$798.
+    dead port 1/2 on $mux $procmux$805.
+    dead port 1/2 on $mux $procmux$808.
+    dead port 2/2 on $mux $procmux$810.
+    dead port 1/2 on $mux $procmux$817.
+    dead port 2/2 on $mux $procmux$819.
+    dead port 2/2 on $mux $procmux$825.
+    dead port 1/2 on $mux $procmux$833.
+    dead port 1/2 on $mux $procmux$836.
+    dead port 1/2 on $mux $procmux$839.
+    dead port 2/2 on $mux $procmux$841.
+    dead port 1/2 on $mux $procmux$849.
+    dead port 1/2 on $mux $procmux$852.
+    dead port 2/2 on $mux $procmux$854.
+    dead port 1/2 on $mux $procmux$862.
+    dead port 2/2 on $mux $procmux$864.
+    dead port 2/2 on $mux $procmux$871.
+    dead port 1/2 on $mux $procmux$880.
+    dead port 1/2 on $mux $procmux$883.
+    dead port 1/2 on $mux $procmux$886.
+    dead port 2/2 on $mux $procmux$888.
+    dead port 1/2 on $mux $procmux$897.
+    dead port 1/2 on $mux $procmux$900.
+    dead port 2/2 on $mux $procmux$902.
+    dead port 1/2 on $mux $procmux$911.
+    dead port 2/2 on $mux $procmux$913.
+    dead port 2/2 on $mux $procmux$921.
+Running muxtree optimizer on module \starvation_aware_arbiter_shared_select_opt..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $procmux$343.
+    dead port 1/2 on $mux $procmux$346.
+    dead port 1/2 on $mux $procmux$349.
+    dead port 2/2 on $mux $procmux$351.
+    dead port 1/2 on $mux $procmux$357.
+    dead port 1/2 on $mux $procmux$360.
+    dead port 2/2 on $mux $procmux$362.
+    dead port 1/2 on $mux $procmux$368.
+    dead port 2/2 on $mux $procmux$370.
+    dead port 2/2 on $mux $procmux$375.
+    dead port 1/2 on $mux $procmux$382.
+    dead port 1/2 on $mux $procmux$385.
+    dead port 1/2 on $mux $procmux$388.
+    dead port 2/2 on $mux $procmux$390.
+    dead port 1/2 on $mux $procmux$397.
+    dead port 1/2 on $mux $procmux$400.
+    dead port 2/2 on $mux $procmux$402.
+    dead port 1/2 on $mux $procmux$409.
+    dead port 2/2 on $mux $procmux$411.
+    dead port 2/2 on $mux $procmux$417.
+    dead port 1/2 on $mux $procmux$425.
+    dead port 1/2 on $mux $procmux$428.
+    dead port 1/2 on $mux $procmux$431.
+    dead port 2/2 on $mux $procmux$433.
+    dead port 1/2 on $mux $procmux$441.
+    dead port 1/2 on $mux $procmux$444.
+    dead port 2/2 on $mux $procmux$446.
+    dead port 1/2 on $mux $procmux$454.
+    dead port 2/2 on $mux $procmux$456.
+    dead port 2/2 on $mux $procmux$463.
+    dead port 1/2 on $mux $procmux$472.
+    dead port 1/2 on $mux $procmux$475.
+    dead port 1/2 on $mux $procmux$478.
+    dead port 2/2 on $mux $procmux$480.
+    dead port 1/2 on $mux $procmux$489.
+    dead port 1/2 on $mux $procmux$492.
+    dead port 2/2 on $mux $procmux$494.
+    dead port 1/2 on $mux $procmux$503.
+    dead port 2/2 on $mux $procmux$505.
+    dead port 2/2 on $mux $procmux$513.
+Removed 120 multiplexer ports.
+<suppressed ~15 debug messages>
+
+8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \starvation_aware_arbiter.
+  Optimizing cells in module \starvation_aware_arbiter_shared_select_opt.
+Performed a total of 0 changes.
+
+8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\starvation_aware_arbiter'.
+Finding identical cells in module `\starvation_aware_arbiter_shared_select_opt'.
+Removed a total of 0 cells.
+
+8.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$979 ($dff) from module starvation_aware_arbiter (D = $procmux$936_Y, Q = \age[3], rval = 4'0000).
+Adding EN signal on $auto$ff.cc:266:slice$980 ($sdff) from module starvation_aware_arbiter (D = $add$rtl/starvation_aware_arbiter_cond_opt.v:95$256_Y, Q = \age[3]).
+Adding SRST signal on $procdff$978 ($dff) from module starvation_aware_arbiter (D = $procmux$944_Y, Q = \age[2], rval = 4'0000).
+Adding EN signal on $auto$ff.cc:266:slice$984 ($sdff) from module starvation_aware_arbiter (D = $add$rtl/starvation_aware_arbiter_cond_opt.v:95$249_Y, Q = \age[2]).
+Adding SRST signal on $procdff$977 ($dff) from module starvation_aware_arbiter (D = $procmux$952_Y, Q = \age[1], rval = 4'0000).
+Adding EN signal on $auto$ff.cc:266:slice$988 ($sdff) from module starvation_aware_arbiter (D = $add$rtl/starvation_aware_arbiter_cond_opt.v:95$242_Y, Q = \age[1]).
+Adding SRST signal on $procdff$976 ($dff) from module starvation_aware_arbiter (D = $procmux$960_Y, Q = \age[0], rval = 4'0000).
+Adding EN signal on $auto$ff.cc:266:slice$992 ($sdff) from module starvation_aware_arbiter (D = $add$rtl/starvation_aware_arbiter_cond_opt.v:95$235_Y, Q = \age[0]).
+Adding SRST signal on $procdff$974 ($dff) from module starvation_aware_arbiter (D = { $or$rtl/starvation_aware_arbiter_cond_opt.v:99$261_Y $or$rtl/starvation_aware_arbiter_cond_opt.v:101$266_Y }, Q = \rr_ptr, rval = 2'00).
+Adding SRST signal on $procdff$973 ($dff) from module starvation_aware_arbiter_shared_select_opt (D = $procmux$531_Y, Q = \age[3], rval = 4'0000).
+Adding EN signal on $auto$ff.cc:266:slice$997 ($sdff) from module starvation_aware_arbiter_shared_select_opt (D = $add$rtl/starvation_aware_arbiter_shared_select_opt.v:96$328_Y, Q = \age[3]).
+Adding SRST signal on $procdff$972 ($dff) from module starvation_aware_arbiter_shared_select_opt (D = $procmux$539_Y, Q = \age[2], rval = 4'0000).
+Adding EN signal on $auto$ff.cc:266:slice$1001 ($sdff) from module starvation_aware_arbiter_shared_select_opt (D = $add$rtl/starvation_aware_arbiter_shared_select_opt.v:96$321_Y, Q = \age[2]).
+Adding SRST signal on $procdff$971 ($dff) from module starvation_aware_arbiter_shared_select_opt (D = $procmux$547_Y, Q = \age[1], rval = 4'0000).
+Adding EN signal on $auto$ff.cc:266:slice$1005 ($sdff) from module starvation_aware_arbiter_shared_select_opt (D = $add$rtl/starvation_aware_arbiter_shared_select_opt.v:96$314_Y, Q = \age[1]).
+Adding SRST signal on $procdff$970 ($dff) from module starvation_aware_arbiter_shared_select_opt (D = $procmux$555_Y, Q = \age[0], rval = 4'0000).
+Adding EN signal on $auto$ff.cc:266:slice$1009 ($sdff) from module starvation_aware_arbiter_shared_select_opt (D = $add$rtl/starvation_aware_arbiter_shared_select_opt.v:96$307_Y, Q = \age[0]).
+Adding SRST signal on $procdff$968 ($dff) from module starvation_aware_arbiter_shared_select_opt (D = { $or$rtl/starvation_aware_arbiter_shared_select_opt.v:100$333_Y $or$rtl/starvation_aware_arbiter_shared_select_opt.v:102$338_Y }, Q = \rr_ptr, rval = 2'00).
+
+8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \starvation_aware_arbiter..
+Finding unused cells or wires in module \starvation_aware_arbiter_shared_select_opt..
+Removed 28 unused cells and 202 unused wires.
+<suppressed ~30 debug messages>
+
+8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module starvation_aware_arbiter.
+Optimizing module starvation_aware_arbiter_shared_select_opt.
+
+8.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+8.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \starvation_aware_arbiter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \starvation_aware_arbiter_shared_select_opt..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+8.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \starvation_aware_arbiter.
+  Optimizing cells in module \starvation_aware_arbiter_shared_select_opt.
+Performed a total of 0 changes.
+
+8.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\starvation_aware_arbiter'.
+Finding identical cells in module `\starvation_aware_arbiter_shared_select_opt'.
+Removed a total of 0 cells.
+
+8.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+8.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \starvation_aware_arbiter..
+Finding unused cells or wires in module \starvation_aware_arbiter_shared_select_opt..
+
+8.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module starvation_aware_arbiter.
+Optimizing module starvation_aware_arbiter_shared_select_opt.
+
+8.16. Finished OPT passes. (There is nothing left to do.)
+
+9. Executing MITER pass (creating miter circuit).
+Creating miter cell "shared_select_miter" with gold cell "starvation_aware_arbiter" and gate cell "starvation_aware_arbiter_shared_select_opt".
+
+10. Executing PREP pass.
+
+10.1. Executing HIERARCHY pass (managing design hierarchy).
+
+10.1.1. Analyzing design hierarchy..
+Top module:  \shared_select_miter
+Used module:     \starvation_aware_arbiter_shared_select_opt
+Used module:     \starvation_aware_arbiter
+
+10.1.2. Analyzing design hierarchy..
+Top module:  \shared_select_miter
+Used module:     \starvation_aware_arbiter_shared_select_opt
+Used module:     \starvation_aware_arbiter
+Removed 0 unused modules.
+
+10.2. Executing PROC pass (convert processes to netlists).
+
+10.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+10.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+10.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+10.2.4. Executing PROC_INIT pass (extract init attributes).
+
+10.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+10.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+10.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+10.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+10.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+10.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+10.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+10.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module shared_select_miter.
+Optimizing module starvation_aware_arbiter.
+Optimizing module starvation_aware_arbiter_shared_select_opt.
+
+10.3. Executing FLATTEN pass (flatten design).
+Deleting now unused module starvation_aware_arbiter.
+Deleting now unused module starvation_aware_arbiter_shared_select_opt.
+<suppressed ~2 debug messages>
+
+10.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module shared_select_miter.
+
+10.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \shared_select_miter..
+
+10.6. Executing CHECK pass (checking for obvious problems).
+Checking module shared_select_miter...
+Found and reported 0 problems.
+
+10.7. Executing OPT pass (performing simple optimizations).
+
+10.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module shared_select_miter.
+
+10.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\shared_select_miter'.
+<suppressed ~12 debug messages>
+Removed a total of 4 cells.
+
+10.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \shared_select_miter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+10.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \shared_select_miter.
+Performed a total of 0 changes.
+
+10.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\shared_select_miter'.
+Removed a total of 0 cells.
+
+10.7.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \shared_select_miter..
+Removed 0 unused cells and 4 unused wires.
+<suppressed ~1 debug messages>
+
+10.7.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module shared_select_miter.
+
+10.7.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+10.7.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \shared_select_miter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+10.7.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \shared_select_miter.
+Performed a total of 0 changes.
+
+10.7.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\shared_select_miter'.
+Removed a total of 0 cells.
+
+10.7.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \shared_select_miter..
+
+10.7.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module shared_select_miter.
+
+10.7.14. Finished OPT passes. (There is nothing left to do.)
+
+10.8. Executing WREDUCE pass (reducing word size of cells).
+Removed top 30 bits (of 32) from port B of cell shared_select_miter.$flatten\gate.$lt$rtl/starvation_aware_arbiter_shared_select_opt.v:95$305 ($lt).
+Removed top 30 bits (of 32) from port B of cell shared_select_miter.$flatten\gate.$lt$rtl/starvation_aware_arbiter_shared_select_opt.v:95$312 ($lt).
+Removed top 30 bits (of 32) from port B of cell shared_select_miter.$flatten\gate.$lt$rtl/starvation_aware_arbiter_shared_select_opt.v:95$319 ($lt).
+Removed top 30 bits (of 32) from port B of cell shared_select_miter.$flatten\gate.$lt$rtl/starvation_aware_arbiter_shared_select_opt.v:95$326 ($lt).
+Removed top 1 bits (of 4) from mux cell shared_select_miter.$flatten\gate.$procmux$340 ($mux).
+Removed top 30 bits (of 32) from port B of cell shared_select_miter.$flatten\gate.$ge$rtl/starvation_aware_arbiter_shared_select_opt.v:68$275 ($ge).
+Removed top 30 bits (of 32) from port B of cell shared_select_miter.$flatten\gate.$ge$rtl/starvation_aware_arbiter_shared_select_opt.v:68$273 ($ge).
+Removed top 30 bits (of 32) from port B of cell shared_select_miter.$flatten\gate.$ge$rtl/starvation_aware_arbiter_shared_select_opt.v:68$271 ($ge).
+Removed top 30 bits (of 32) from port B of cell shared_select_miter.$flatten\gate.$ge$rtl/starvation_aware_arbiter_shared_select_opt.v:68$269 ($ge).
+Removed top 30 bits (of 32) from port B of cell shared_select_miter.$flatten\gold.$ge$rtl/starvation_aware_arbiter_cond_opt.v:68$176 ($ge).
+Removed top 30 bits (of 32) from port B of cell shared_select_miter.$flatten\gold.$ge$rtl/starvation_aware_arbiter_cond_opt.v:68$178 ($ge).
+Removed top 30 bits (of 32) from port B of cell shared_select_miter.$flatten\gold.$ge$rtl/starvation_aware_arbiter_cond_opt.v:68$180 ($ge).
+Removed top 30 bits (of 32) from port B of cell shared_select_miter.$flatten\gold.$ge$rtl/starvation_aware_arbiter_cond_opt.v:68$182 ($ge).
+Removed top 30 bits (of 32) from port B of cell shared_select_miter.$flatten\gold.$lt$rtl/starvation_aware_arbiter_cond_opt.v:94$233 ($lt).
+Removed top 30 bits (of 32) from port B of cell shared_select_miter.$flatten\gold.$lt$rtl/starvation_aware_arbiter_cond_opt.v:94$240 ($lt).
+Removed top 30 bits (of 32) from port B of cell shared_select_miter.$flatten\gold.$lt$rtl/starvation_aware_arbiter_cond_opt.v:94$247 ($lt).
+Removed top 30 bits (of 32) from port B of cell shared_select_miter.$flatten\gold.$lt$rtl/starvation_aware_arbiter_cond_opt.v:94$254 ($lt).
+Removed top 1 bits (of 4) from mux cell shared_select_miter.$flatten\gold.$procmux$567 ($mux).
+Removed top 1 bits (of 4) from mux cell shared_select_miter.$flatten\gold.$procmux$581 ($mux).
+Removed top 1 bits (of 4) from mux cell shared_select_miter.$flatten\gold.$procmux$592 ($mux).
+Removed top 2 bits (of 4) from mux cell shared_select_miter.$flatten\gold.$procmux$606 ($mux).
+Removed top 2 bits (of 4) from mux cell shared_select_miter.$flatten\gold.$procmux$621 ($mux).
+Removed top 1 bits (of 2) from port B of cell shared_select_miter.$flatten\gate.$procmux$434_CMP0 ($eq).
+Removed top 3 bits (of 4) from mux cell shared_select_miter.$flatten\gold.$procmux$649 ($mux).
+Removed top 1 bits (of 2) from port B of cell shared_select_miter.$flatten\gold.$procmux$661_CMP0 ($eq).
+Removed top 3 bits (of 4) from mux cell shared_select_miter.$flatten\gate.$procmux$422 ($mux).
+Removed top 1 bits (of 4) from mux cell shared_select_miter.$flatten\gold.$procmux$748 ($mux).
+Removed top 1 bits (of 4) from mux cell shared_select_miter.$flatten\gold.$procmux$762 ($mux).
+Removed top 1 bits (of 4) from mux cell shared_select_miter.$flatten\gold.$procmux$773 ($mux).
+Removed top 2 bits (of 4) from mux cell shared_select_miter.$flatten\gold.$procmux$787 ($mux).
+Removed top 2 bits (of 4) from mux cell shared_select_miter.$flatten\gold.$procmux$802 ($mux).
+Removed top 2 bits (of 4) from mux cell shared_select_miter.$flatten\gate.$procmux$379 ($mux).
+Removed top 3 bits (of 4) from mux cell shared_select_miter.$flatten\gold.$procmux$830 ($mux).
+Removed top 1 bits (of 4) from mux cell shared_select_miter.$flatten\gate.$procmux$354 ($mux).
+Removed top 2 bits (of 4) from wire shared_select_miter.$flatten\gate.$13\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$267.$result[3:0]$294.
+Removed top 1 bits (of 4) from wire shared_select_miter.$flatten\gate.$16\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$267.$result[3:0]$297.
+Removed top 2 bits (of 4) from wire shared_select_miter.$flatten\gate.$17\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$267.$result[3:0]$298.
+Removed top 3 bits (of 4) from wire shared_select_miter.$flatten\gate.$9\rr_select$func$rtl/starvation_aware_arbiter_shared_select_opt.v:79$267.$result[3:0]$290.
+Removed top 2 bits (of 4) from wire shared_select_miter.$flatten\gold.$12\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$173.$result[3:0]$202.
+Removed top 2 bits (of 4) from wire shared_select_miter.$flatten\gold.$12\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$174.$result[3:0]$219.
+Removed top 2 bits (of 4) from wire shared_select_miter.$flatten\gold.$13\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$173.$result[3:0]$203.
+Removed top 2 bits (of 4) from wire shared_select_miter.$flatten\gold.$13\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$174.$result[3:0]$220.
+Removed top 1 bits (of 4) from wire shared_select_miter.$flatten\gold.$15\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$173.$result[3:0]$205.
+Removed top 1 bits (of 4) from wire shared_select_miter.$flatten\gold.$15\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$174.$result[3:0]$222.
+Removed top 1 bits (of 4) from wire shared_select_miter.$flatten\gold.$16\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$173.$result[3:0]$206.
+Removed top 1 bits (of 4) from wire shared_select_miter.$flatten\gold.$16\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$174.$result[3:0]$223.
+Removed top 1 bits (of 4) from wire shared_select_miter.$flatten\gold.$17\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$173.$result[3:0]$207.
+Removed top 2 bits (of 4) from wire shared_select_miter.$flatten\gold.$17\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$174.$result[3:0]$224.
+Removed top 1 bits (of 4) from wire shared_select_miter.$flatten\gold.$6\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$174.$result[3:0]$213.
+Removed top 3 bits (of 4) from wire shared_select_miter.$flatten\gold.$7\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$173.$result[3:0]$197.
+Removed top 1 bits (of 4) from wire shared_select_miter.$flatten\gold.$8\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$173.$result[3:0]$198.
+Removed top 3 bits (of 4) from wire shared_select_miter.$flatten\gold.$9\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:73$173.$result[3:0]$199.
+Removed top 3 bits (of 4) from wire shared_select_miter.$flatten\gold.$9\rr_select$func$rtl/starvation_aware_arbiter_cond_opt.v:74$174.$result[3:0]$216.
+
+10.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \shared_select_miter..
+Removed 0 unused cells and 19 unused wires.
+<suppressed ~1 debug messages>
+
+10.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+10.11. Executing OPT pass (performing simple optimizations).
+
+10.11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module shared_select_miter.
+
+10.11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\shared_select_miter'.
+Removed a total of 0 cells.
+
+10.11.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \shared_select_miter..
+
+10.11.4. Finished fast OPT passes.
+
+10.12. Printing statistics.
+
+=== shared_select_miter ===
+
+   Number of wires:                186
+   Number of wire bits:            499
+   Number of public wires:          41
+   Number of public wire bits:     180
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                170
+     $add                            8
+     $and                            4
+     $eq                             6
+     $eqx                            1
+     $ge                             8
+     $logic_and                     24
+     $logic_not                     14
+     $logic_or                       8
+     $lt                             8
+     $mux                           53
+     $not                            3
+     $or                             8
+     $pmux                           3
+     $reduce_or                     12
+     $sdff                           2
+     $sdffe                          8
+
+10.13. Executing CHECK pass (checking for obvious problems).
+Checking module shared_select_miter...
+Found and reported 0 problems.
+
+11. Executing SAT pass (solving SAT problems in the circuit).
+Warning: Selection "\" did not match any module.
+ERROR: Can't perform SAT on an empty selection!

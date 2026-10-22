@@ -1,0 +1,147 @@
+===== 1. SYNTHESIS FILE TIMESTAMPS =====
+total 80K
+lrwxrwxrwx 1 root root  29 2026-10-21 13:01 merged_unpadded.lef -> ../../tmp/merged_unpadded.lef
+-rw-r--r-- 1 root root 16K 2026-10-21 13:03 starvation_aware_arbiter.synthesis_cts.v
+-rw-r--r-- 1 root root 16K 2026-10-21 13:03 starvation_aware_arbiter.synthesis_optimized.v
+-rw-r--r-- 1 root root 29K 2026-10-21 13:03 starvation_aware_arbiter.synthesis_preroute.v
+-rw-r--r-- 1 root root 14K 2026-10-21 13:01 starvation_aware_arbiter.synthesis.v
+
+===== 2. ALL GRANT DRIVER WARNINGS IN FLOW LOGS =====
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/fastroute.log:242:No paths found.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/fastroute.log:331:No paths found.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/18-fastroute.log:242:No paths found.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/logs/routing/18-fastroute.log:331:No paths found.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/logs/placement/8-replace.log:119:No paths found.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/logs/placement/8-replace.log:202:No paths found.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/logs/synthesis/1-yosys.log:1274:Warning: Wire starvation_aware_arbiter.\grant [3] is used but has no driver.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/logs/synthesis/1-yosys.log:1275:Warning: Wire starvation_aware_arbiter.\grant [2] is used but has no driver.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/logs/synthesis/1-yosys.log:1276:Warning: Wire starvation_aware_arbiter.\grant [1] is used but has no driver.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/logs/synthesis/1-yosys.log:1277:Warning: Wire starvation_aware_arbiter.\grant [0] is used but has no driver.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/logs/cts/13-cts.log:133:No paths found.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/logs/cts/13-cts.log:222:No paths found.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/2-opensta.timing.rpt:1:No paths found.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/24-opensta_spef.rpt:1:No paths found.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/24-opensta_spef.timing.rpt:1:No paths found.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/17-opensta_post_resizer_timing.rpt:1:No paths found.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/10-opensta_post_resizer.timing.rpt:1:No paths found.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/2-opensta.rpt:1:No paths found.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/1-yosys_4.chk.rpt:4:Warning: Wire starvation_aware_arbiter.\grant [3] is used but has no driver.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/1-yosys_4.chk.rpt:5:Warning: Wire starvation_aware_arbiter.\grant [2] is used but has no driver.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/1-yosys_4.chk.rpt:6:Warning: Wire starvation_aware_arbiter.\grant [1] is used but has no driver.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/1-yosys_4.chk.rpt:7:Warning: Wire starvation_aware_arbiter.\grant [0] is used but has no driver.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/17-opensta_post_resizer_timing.timing.rpt:1:No paths found.
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/10-opensta_post_resizer.rpt:1:No paths found.
+
+===== 3. POST-ROUTE TIMING REPORT FILES =====
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/cts/13-cts.timing.rpt
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/final_summary_report.csv
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/placement/8-replace.timing.rpt
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/routed_runtime.txt
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/routing/18-fastroute.timing.rpt
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/runtime_summary_report.rpt
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/runtime_summary_report.rpt.parsable
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/10-opensta_post_resizer.min_max.rpt
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/10-opensta_post_resizer.rpt
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/10-opensta_post_resizer.slew.rpt
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/10-opensta_post_resizer.timing.rpt
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/10-opensta_post_resizer_tns.rpt
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/10-opensta_post_resizer_wns.rpt
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/17-opensta_post_resizer_timing.min_max.rpt
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/17-opensta_post_resizer_timing.rpt
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/17-opensta_post_resizer_timing.slew.rpt
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/17-opensta_post_resizer_timing.timing.rpt
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/17-opensta_post_resizer_timing_tns.rpt
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/17-opensta_post_resizer_timing_wns.rpt
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/1-yosys_4.stat.rpt
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/1-yosys_dff.stat
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/1-yosys_pre.stat
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/24-opensta_spef.min_max.rpt
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/24-opensta_spef.rpt
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/24-opensta_spef.slew.rpt
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/24-opensta_spef.timing.rpt
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/24-opensta_spef_tns.rpt
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/24-opensta_spef_wns.rpt
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/2-opensta.min_max.rpt
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/2-opensta.rpt
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/2-opensta.slew.rpt
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/2-opensta.timing.rpt
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/2-opensta_tns.rpt
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/synthesis/2-opensta_wns.rpt
+/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/arbiter_pointer_opt/runs/21-10_07-31/reports/total_runtime.txt
+
+===== 4. NETLIST PORT AND DRIVER COUNTS =====
+--- starvation_aware_arbiter.synthesis_cts.v ---
+8
+--- starvation_aware_arbiter.synthesis_optimized.v ---
+8
+--- starvation_aware_arbiter.synthesis_preroute.v ---
+8
+--- starvation_aware_arbiter.synthesis.v ---
+4
+
+===== 5. FINAL SYNTHESIS LOG END =====
+
+23. Executing HILOMAP pass (mapping to constant drivers).
+
+24. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+25. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \starvation_aware_arbiter..
+Removed 0 unused cells and 280 unused wires.
+<suppressed ~1 debug messages>
+
+26. Executing INSBUF pass (insert buffer cells for connected wires).
+
+27. Executing CHECK pass (checking for obvious problems).
+checking module starvation_aware_arbiter..
+Warning: Wire starvation_aware_arbiter.\grant [3] is used but has no driver.
+Warning: Wire starvation_aware_arbiter.\grant [2] is used but has no driver.
+Warning: Wire starvation_aware_arbiter.\grant [1] is used but has no driver.
+Warning: Wire starvation_aware_arbiter.\grant [0] is used but has no driver.
+found and reported 4 problems.
+
+28. Printing statistics.
+
+=== starvation_aware_arbiter ===
+
+   Number of wires:                130
+   Number of wire bits:            136
+   Number of public wires:          23
+   Number of public wire bits:      29
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                129
+     sky130_fd_sc_hd__a211o_2        5
+     sky130_fd_sc_hd__a211oi_2       1
+     sky130_fd_sc_hd__a21o_2         1
+     sky130_fd_sc_hd__a221o_2        1
+     sky130_fd_sc_hd__a31oi_2        2
+     sky130_fd_sc_hd__and2_2         8
+     sky130_fd_sc_hd__and4_2         1
+     sky130_fd_sc_hd__buf_1          7
+     sky130_fd_sc_hd__dfxtp_2       18
+     sky130_fd_sc_hd__inv_2         18
+     sky130_fd_sc_hd__mux2_1        12
+     sky130_fd_sc_hd__nand2_2        8
+     sky130_fd_sc_hd__nor2_2        13
+     sky130_fd_sc_hd__o211a_2        7
+     sky130_fd_sc_hd__o21a_2         4
+     sky130_fd_sc_hd__o21ai_2        1
+     sky130_fd_sc_hd__o22a_2         3
+     sky130_fd_sc_hd__o32a_2         3
+     sky130_fd_sc_hd__or2_2          8
+     sky130_fd_sc_hd__or3_2          5
+     sky130_fd_sc_hd__or3b_2         1
+     sky130_fd_sc_hd__or4_2          1
+     sky130_fd_sc_hd__or4b_2         1
+
+   Chip area for module '\starvation_aware_arbiter': 1213.664000
+
+29. Executing Verilog backend.
+Dumping module `\starvation_aware_arbiter'.
+
+Warnings: 5 unique messages, 5 total
+End of script. Logfile hash: 5d592e0f57, CPU: user 0.60s system 0.08s, MEM: 44.48 MB peak
+Yosys 0.9+3621 (git sha1 84e9fa7, gcc 8.3.1 -fPIC -Os)
+Time spent: 36% 2x abc (0 sec), 20% 4x stat (0 sec), ...

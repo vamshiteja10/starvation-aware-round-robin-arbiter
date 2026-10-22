@@ -1,0 +1,10 @@
+OpenROAD 0.9.0 1415572a73
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+Warning: /pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_n40C_1v28.lib line 32, default_operating_condition ss_n40C_1v28 not found.
+===== ALL MATCHING LIBRARIES =====
+_30cc4c0300000000_p_LibertyLibrary
+===== SKY130 HD MATCH =====
+_30cc4c0300000000_p_LibertyLibrary
+===== SELECT OPERATING CONDITION =====
+===== DIAGNOSTIC COMPLETE =====

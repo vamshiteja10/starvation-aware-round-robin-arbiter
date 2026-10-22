@@ -1,0 +1,19 @@
+
+-- Running command `
+read_verilog rtl/starvation_aware_arbiter_cond_opt.v
+read_verilog rtl/starvation_aware_arbiter_shared_select_opt.v
+
+equiv_make starvation_aware_arbiter starvation_aware_arbiter_shared_select_opt equiv
+' --
+
+1. Executing Verilog-2005 frontend: rtl/starvation_aware_arbiter_cond_opt.v
+Parsing Verilog input from `rtl/starvation_aware_arbiter_cond_opt.v' to AST representation.
+Generating RTLIL representation for module `\starvation_aware_arbiter'.
+Warning: Replacing memory \age with list of registers. See rtl/starvation_aware_arbiter_cond_opt.v:88
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: rtl/starvation_aware_arbiter_shared_select_opt.v
+Parsing Verilog input from `rtl/starvation_aware_arbiter_shared_select_opt.v' to AST representation.
+Generating RTLIL representation for module `\starvation_aware_arbiter_shared_select_opt'.
+Warning: Replacing memory \age with list of registers. See rtl/starvation_aware_arbiter_shared_select_opt.v:89
+ERROR: Gold module contains memories or processes. Run 'memory' or 'proc' respectively.

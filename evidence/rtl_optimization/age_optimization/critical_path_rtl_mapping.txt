@@ -1,0 +1,225 @@
+===== CONDITION-OPTIMIZED RTL =====
+     1	module starvation_aware_arbiter #(
+     2	    parameter N = 4,
+     3	    parameter AGE_WIDTH = 4,
+     4	    parameter AGE_THRESHOLD = 3
+     5	)(
+     6	    input  wire         clk,
+     7	    input  wire         rst,
+     8	    input  wire         ready,
+     9	    input  wire [N-1:0] req,
+    10	    output reg  [N-1:0] grant
+    11	);
+    12	
+    13	    reg [1:0] rr_ptr;
+    14	    reg [AGE_WIDTH-1:0] age [0:N-1];
+    15	
+    16	    reg [N-1:0] aged_req;
+    17	    reg [N-1:0] aged_selected;
+    18	    reg [N-1:0] rr_selected;
+    19	
+    20	    integer i;
+    21	
+    22	    // Select the first asserted request in round-robin order.
+    23	    // This implementation is intended for the 4-requester design.
+    24	    function [N-1:0] rr_select;
+    25	        input [N-1:0] mask;
+    26	        input [1:0] ptr;
+    27	        begin
+    28	            rr_select = {N{1'b0}};
+    29	
+    30	            case (ptr)
+    31	                2'd0: begin
+    32	                    if      (mask[0]) rr_select = 4'b0001;
+    33	                    else if (mask[1]) rr_select = 4'b0010;
+    34	                    else if (mask[2]) rr_select = 4'b0100;
+    35	                    else if (mask[3]) rr_select = 4'b1000;
+    36	                end
+    37	
+    38	                2'd1: begin
+    39	                    if      (mask[1]) rr_select = 4'b0010;
+    40	                    else if (mask[2]) rr_select = 4'b0100;
+    41	                    else if (mask[3]) rr_select = 4'b1000;
+    42	                    else if (mask[0]) rr_select = 4'b0001;
+    43	                end
+    44	
+    45	                2'd2: begin
+    46	                    if      (mask[2]) rr_select = 4'b0100;
+    47	                    else if (mask[3]) rr_select = 4'b1000;
+    48	                    else if (mask[0]) rr_select = 4'b0001;
+    49	                    else if (mask[1]) rr_select = 4'b0010;
+    50	                end
+    51	
+    52	                2'd3: begin
+    53	                    if      (mask[3]) rr_select = 4'b1000;
+    54	                    else if (mask[0]) rr_select = 4'b0001;
+    55	                    else if (mask[1]) rr_select = 4'b0010;
+    56	                    else if (mask[2]) rr_select = 4'b0100;
+    57	                end
+    58	
+    59	                default: rr_select = {N{1'b0}};
+    60	            endcase
+    61	        end
+    62	    endfunction
+    63	
+    64	    // Identify requests that have reached the age threshold.
+    65	    always @(*) begin
+    66	        for (i = 0; i < N; i = i + 1)
+    67	            aged_req[i] = req[i] &&
+    68	                          (age[i] >= AGE_THRESHOLD);
+    69	    end
+    70	
+    71	    // Prefer aged requests. If none are aged, use all requests.
+    72	    always @(*) begin
+    73	        aged_selected = rr_select(aged_req, rr_ptr);
+    74	        rr_selected   = rr_select(req, rr_ptr);
+    75	
+    76	        if (|aged_req)
+    77	            grant = ready ? aged_selected : {N{1'b0}};
+    78	        else
+    79	            grant = ready ? rr_selected : {N{1'b0}};
+    80	    end
+    81	
+    82	    // Update ages and advance the round-robin pointer after a grant.
+    83	    always @(posedge clk) begin
+    84	        if (rst) begin
+    85	            rr_ptr <= 2'd0;
+    86	
+    87	            for (i = 0; i < N; i = i + 1)
+    88	                age[i] <= {AGE_WIDTH{1'b0}};
+    89	        end else begin
+    90	            for (i = 0; i < N; i = i + 1) begin
+    91	                if (!req[i] || (ready && grant[i]))
+    92	                    age[i] <= {AGE_WIDTH{1'b0}};
+    93	                else if (!grant[i] &&
+    94	                         age[i] < AGE_THRESHOLD)
+    95	                    age[i] <= age[i] + 1'b1;
+    96	            end
+    97	
+    98	            // Boolean next-state equations for one-hot-or-zero grants.
+    99	            rr_ptr[1] <= grant[1] | grant[2] |
+   100	                         (rr_ptr[1] & ~(|grant));
+   101	            rr_ptr[0] <= grant[0] | grant[2] |
+   102	                         (rr_ptr[0] & ~(|grant));
+   103	        end
+   104	    end
+   105	
+   106	endmodule
+
+===== CRITICAL CELL CONNECTIONS =====
+277-    .X(_042_)
+278-  );
+279:  sky130_fd_sc_hd__a211o_2 _137_ (
+280-    .A1(\age[1][1] ),
+281-    .A2(\age[1][0] ),
+282-    .B1(\age[1][3] ),
+283-    .C1(\age[1][2] ),
+284-    .X(_056_)
+--
+311-    .X(_040_)
+312-  );
+313:  sky130_fd_sc_hd__inv_2 _143_ (
+314-    .A(grant[0]),
+315-    .Y(_060_)
+316-  );
+317-  sky130_fd_sc_hd__buf_1 _144_ (
+318-    .A(req[0]),
+319-    .X(_061_)
+320-  );
+321:  sky130_fd_sc_hd__o211a_2 _145_ (
+322-    .A1(_102_),
+323-    .A2(_060_),
+324-    .B1(_105_),
+325-    .C1(_061_),
+326-    .X(_062_)
+--
+331-    .X(_039_)
+332-  );
+333:  sky130_fd_sc_hd__and2_2 _147_ (
+334-    .A(\age[0][2] ),
+335-    .B(_062_),
+336-    .X(_038_)
+337-  );
+338-  sky130_fd_sc_hd__a211o_2 _148_ (
+--
+482-    .Y(_081_)
+483-  );
+484:  sky130_fd_sc_hd__nand2_2 _176_ (
+485-    .A(req[1]),
+486-    .B(_056_),
+487-    .Y(_082_)
+488-  );
+489:  sky130_fd_sc_hd__inv_2 _177_ (
+490-    .A(_082_),
+491-    .Y(_083_)
+492-  );
+493-  sky130_fd_sc_hd__or2_2 _178_ (
+494-    .A(_081_),
+--
+506-    .Y(_033_)
+507-  );
+508:  sky130_fd_sc_hd__o32a_2 _181_ (
+509-    .A1(_070_),
+510-    .A2(_072_),
+511-    .A3(_083_),
+512-    .B1(\rr_ptr[0] ),
+513-    .B2(_067_),
+514-    .X(_086_)
+515-  );
+516:  sky130_fd_sc_hd__o22a_2 _182_ (
+517-    .A1(_073_),
+518-    .A2(_068_),
+519-    .B1(_080_),
+520-    .B2(_086_),
+521-    .X(_087_)
+522-  );
+523:  sky130_fd_sc_hd__or3_2 _183_ (
+524-    .A(_032_),
+525-    .B(_078_),
+526-    .C(_087_),
+527-    .X(_000_)
+528-  );
+529:  sky130_fd_sc_hd__nor2_2 _184_ (
+530-    .A(_076_),
+531-    .B(_001_),
+532-    .Y(_002_)
+533-  );
+534-  sky130_fd_sc_hd__inv_2 _185_ (
+--
+680-    .X(_051_)
+681-  );
+682:  sky130_fd_sc_hd__mux2_1 _212_ (
+683-    .A0(_002_),
+684-    .A1(_031_),
+685-    .S(_033_),
+686-    .X(grant[0])
+687-  );
+--
+740-    .X(_005_)
+741-  );
+742:  sky130_fd_sc_hd__mux2_1 _222_ (
+743-    .A0(_000_),
+744-    .A1(_032_),
+745-    .S(_028_),
+746-    .X(_001_)
+747-  );
+
+===== CRITICAL REGISTER MAPPING =====
+771-    .D(_037_),
+772-    .Q(\age[0][1] )
+773-  );
+774:  sky130_fd_sc_hd__dfxtp_2 _228_ (
+775-    .CLK(clk),
+776-    .D(_038_),
+777-    .Q(\age[0][2] )
+778-  );
+779:  sky130_fd_sc_hd__dfxtp_2 _229_ (
+780-    .CLK(clk),
+781-    .D(_039_),
+782-    .Q(\age[0][3] )
+783-  );
+784:  sky130_fd_sc_hd__dfxtp_2 _230_ (
+785-    .CLK(clk),
+786-    .D(_040_),
+787-    .Q(\age[1][0] )
+788-  );

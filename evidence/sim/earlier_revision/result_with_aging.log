@@ -1,0 +1,7 @@
+VCD info: dumpfile sim/arbiter.vcd opened for output.
+---------- SUMMARY (AGING_EN=1) ----------
+req0: grants=857  max_wait=3 cycles
+req1: grants=739  max_wait=4 cycles
+req2: grants=247  max_wait=8 cycles
+req3: grants=164  max_wait=9 cycles
+PASS: all checks passed

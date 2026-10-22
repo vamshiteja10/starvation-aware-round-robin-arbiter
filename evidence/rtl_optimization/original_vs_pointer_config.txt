@@ -1,0 +1,72 @@
+===== ORIGINAL DESIGN CONFIG =====
+# Starvation-aware round-robin arbiter
+set ::env(DESIGN_NAME) "starvation_aware_arbiter_run7"
+
+set ::env(VERILOG_FILES) [glob $::env(DESIGN_DIR)/src/*.v]
+set ::env(SDC_FILE) "$::env(DESIGN_DIR)/src/arbiter.sdc"
+
+set ::env(CLOCK_PORT) "clk"
+set ::env(CLOCK_PERIOD) "10"
+
+# Use the installed SKY130 High-Density standard-cell library
+set ::env(CLOCK_NET) $::env(CLOCK_PORT)
+
+# Placement troubleshooting overrides
+set ::env(FP_CORE_UTIL) 35
+set ::env(CELL_PAD) 1
+set ::env(PL_TARGET_DENSITY) 0.55
+
+===== POINTER-OPT CONFIG =====
+# Pointer-optimized starvation-aware round-robin arbiter
+set ::env(DESIGN_NAME) "starvation_aware_arbiter"
+set ::env(VERILOG_FILES) [glob $::env(DESIGN_DIR)/src/*.v]
+set ::env(SDC_FILE) "$::env(DESIGN_DIR)/src/arbiter.sdc"
+
+set ::env(CLOCK_PORT) "clk"
+set ::env(CLOCK_PERIOD) "10"
+set ::env(CLOCK_NET) $::env(CLOCK_PORT)
+
+set ::env(FP_CORE_UTIL) 35
+set ::env(CELL_PAD) 1
+set ::env(PL_TARGET_DENSITY) 0.55
+
+===== ORIGINAL DESIGN RTL HEADER AND GRANT LOGIC =====
+1:module starvation_aware_arbiter_run7 #(
+6:    input  wire         clk,
+7:    input  wire         rst,
+8:    input  wire         ready,
+9:    input  wire [N-1:0] req,
+10:    output reg  [N-1:0] grant
+13:    reg [1:0] rr_ptr;
+25:        input [N-1:0] mask;
+26:        input [1:0] ptr;
+65:    always @(*) begin
+72:    always @(*) begin
+73:        aged_selected = rr_select(aged_req, rr_ptr);
+74:        rr_selected   = rr_select(req, rr_ptr);
+77:            grant = {N{1'b0}};
+79:            grant = aged_selected;
+81:            grant = rr_selected;
+84:    // Update ages and advance the round-robin pointer after a grant.
+85:    always @(posedge clk) begin
+87:            rr_ptr <= 2'd0;
+93:                if (!req[i] || (ready && grant[i]))
+95:                else if (!grant[i] &&
+100:            case (grant)
+101:                4'b0001: rr_ptr <= 2'd1;
+102:                4'b0010: rr_ptr <= 2'd2;
+103:                4'b0100: rr_ptr <= 2'd3;
+104:                4'b1000: rr_ptr <= 2'd0;
+105:                default: rr_ptr <= rr_ptr;
+
+===== POINTER-OPT SDC =====
+create_clock -name clk -period 10.0 [get_ports clk]
+
+set_input_delay 1.0 -clock clk [get_ports {req[*] ready rst}]
+set_output_delay 1.0 -clock clk [get_ports {grant[*]}]
+
+===== ORIGINAL SDC =====
+create_clock -name clk -period 10.0 [get_ports clk]
+
+set_input_delay 1.0 -clock clk [get_ports {req[*] ready rst}]
+set_output_delay 1.0 -clock clk [get_ports {grant[*]}]
