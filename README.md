@@ -93,7 +93,7 @@ Detailed report:
 - `evidence/` — simulation, formal, physical-design and STA evidence
 
 ## Demonstration Video
-Video link: To be added after recording and uploading.
+https://drive.google.com/file/d/1QHK_RGPgjCXMkog_qJZ7HzqGA3vkzrXX/view?usp=drive_link
 
 ## Conclusion
 This project demonstrates RTL design, functional simulation,
