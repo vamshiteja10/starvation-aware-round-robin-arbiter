@@ -43,6 +43,35 @@ of starvation freedom.
 OpenLane physical implementation completed. See the evidence files
 for implementation reports and physical verification results.
 
+### Physical Implementation Metrics
+
+| Metric | Result |
+|---|---:|
+| Standard-cell count | 102 |
+| Die area | 0.004392 mm² |
+| Routing violations | 0 |
+| Magic DRC violations | 0 |
+| LVS mismatches | 0 |
+
+These results correspond to the 2-bit age-counter physical implementation candidate.
+
+### Physical Design Evidence
+
+#### Floorplan
+![Floorplan](evidence/layout_images/stage1_floorplan.png)
+
+#### Placement
+![Placement](evidence/layout_images/stage2_placement.png)
+
+#### Clock Tree Synthesis
+![Clock Tree Synthesis](evidence/layout_images/stage3_cts.png)
+
+#### Routing
+![Routing](evidence/layout_images/stage4_routing.png)
+
+#### Final Layout
+![Final Layout](evidence/layout_images/layout_magic_final.png)
+
 ## Multi-Corner Static Timing Analysis
 | Corner | Operating Point | Reported Worst Slack | TNS |
 |---|---|---:|---:|
